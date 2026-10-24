@@ -1,148 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="UCC Maharashtra — Individual questionnaire responses for the Maharashtra Uniform Civil Code Committee in Urdu, English and Hindi. یو سی سی سوالنامہ — समान नागरिक संहिता प्रश्नावली.">
-  <title>UCC Maharashtra — Uniform Civil Code Questionnaire | یو سی سی سوالنامہ | समान नागरिक संहिता प्रश्नावली</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Maharashtra UCC Questionnaire Portal | مہاراشٹر یو سی سی پورٹل | महाराष्ट्र समान नागरिक संहिता</title>
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <!-- Fonts: Inter (English) / Noto Nastaliq Urdu / Noto Sans Devanagari (Hindi) -->
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description"
+    content="Official public awareness portal for the Maharashtra Uniform Civil Code (UCC) Committee Questionnaire. View complete bilingual/trilingual verified responses in Urdu, English, and Hindi.">
+  <meta name="keywords"
+    content="Maharashtra UCC, Uniform Civil Code, UCC Questionnaire, Muslim Personal Law, Sharia, Indian Constitution, Article 44, Maharashtra Government Questionnaire, اردو, English, हिन्दी">
+  <meta name="author" content="Public Awareness Initiative">
+  <meta name="theme-color" content="#0f2744">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Maharashtra UCC Questionnaire Portal | Public Awareness & Verified Responses">
+  <meta property="og:description"
+    content="Complete 37 questions and proposed responses for the Maharashtra Uniform Civil Code Committee questionnaire in Urdu, English, and Hindi.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Inter/Plus Jakarta Sans (EN), Noto Sans Devanagari (HI), Noto Nastaliq Urdu & Amiri (UR) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <a class="skip-link" href="#mainContent">Skip to questionnaire · جوابات پر جائیں · प्रश्नावली पर जाएँ</a>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ===================== TOP NAVBAR ===================== -->
-  <nav class="navbar top-nav sticky-top" aria-label="Main navigation">
-    <div class="container">
-      <span class="navbar-brand d-flex align-items-center gap-2">
-        <i class="bi bi-bank2 brand-icon" aria-hidden="true"></i>
-        <span class="brand-text">UCC <span class="brand-sub">Maharashtra</span></span>
-      </span>
-      <div class="nav-lang d-flex align-items-center gap-2" role="group" aria-label="Language selection">
-        <button type="button" class="btn btn-sm nav-lang-btn js-lang-btn" data-lang="ur" lang="ur">اردو</button>
-        <button type="button" class="btn btn-sm nav-lang-btn js-lang-btn" data-lang="en">English</button>
-        <button type="button" class="btn btn-sm nav-lang-btn js-lang-btn" data-lang="hi" lang="hi">हिन्दी</button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ===================== HERO: ALL THREE INTRODUCTORY HEADINGS ===================== -->
-  <header class="hero" id="top">
-    <div class="container hero-container">
-
-      <div class="hero-kicker">
-        <span>UCC Awareness</span><span class="k-dot" aria-hidden="true">•</span><span lang="ur" dir="rtl">عوامی آگاہی</span><span class="k-dot" aria-hidden="true">•</span><span lang="hi">जन-जागरूकता</span>
-      </div>
-
-      <div class="h-grid">
-
-      <div class="h-block h-ur" lang="ur" dir="rtl">
-        <p class="h-line1">🏛️ یو سی سی: جانئے، سمجھئے، اپنی رائے دیجئے اور ذمہ داری نبھائیے!</p>
-        <p class="h-line2">📢 حکومتِ مہاراشٹر کی جانب سے جاری کردہ سوالنامے پر اپنی رائے ضرور درج کریں اور دوسروں کو بھی رائے دینے کے لیے آمادہ کریں۔</p>
-      </div>
-
-      <div class="h-block h-en" lang="en">
-        <p class="h-line1">🏛️ UCC: Know It. Understand It. Share Your Views. Fulfil Your Responsibility!</p>
-        <p class="h-line2">📢 Make sure to submit your response to the questionnaire issued by the Government of Maharashtra and encourage others to share their views as well.</p>
-      </div>
-
-      <div class="h-block h-hi" lang="hi">
-        <p class="h-line1">🏛️ UCC: जानिए, समझिए, अपनी राय दीजिए और अपनी ज़िम्मेदारी निभाइए!</p>
-        <p class="h-line2">📢 महाराष्ट्र सरकार द्वारा जारी प्रश्नावली पर अपनी राय ज़रूर दर्ज करें और दूसरों को भी अपनी राय देने के लिए प्रेरित करें।</p>
-      </div>
-
-      </div><!-- /.h-grid -->
-
-      <!-- Language selection buttons -->
-      <div class="lang-btns d-flex flex-wrap justify-content-center gap-3" role="group" aria-label="Choose questionnaire language">
-        <button type="button" class="btn btn-lang js-lang-btn" data-lang="ur" lang="ur" dir="rtl">
-          <i class="bi bi-translate" aria-hidden="true"></i> اردو
-        </button>
-        <button type="button" class="btn btn-lang js-lang-btn" data-lang="en">
-          <i class="bi bi-translate" aria-hidden="true"></i> English
-        </button>
-        <button type="button" class="btn btn-lang js-lang-btn" data-lang="hi" lang="hi">
-          <i class="bi bi-translate" aria-hidden="true"></i> हिन्दी
-        </button>
-      </div>
-
-      <!-- Initial message: select a language -->
-      <div class="select-prompt" id="selectPrompt" role="status">
-        <i class="bi bi-hand-index-thumb" aria-hidden="true"></i>
-        <span class="sp-ur" lang="ur" dir="rtl">براہِ کرم اپنی زبان منتخب کریں۔</span>
-        <span class="sp-en">Please select a language to view the questionnaire.</span>
-        <span class="sp-hi" lang="hi">कृपया प्रश्नावली देखने के लिए अपनी भाषा चुनें।</span>
-      </div>
-
+  <!-- Top Announcement Bar -->
+  <header class="top-notice-bar" role="banner">
+    <div class="container-xl d-flex align-items-center justify-content-center flex-wrap">
+      <span class="badge-official"><i class="bi bi-shield-check me-1"></i> Public Awareness Portal</span>
+      <span>Maharashtra Uniform Civil Code Committee Questionnaire Guidance</span>
     </div>
   </header>
 
-  <!-- ===================== QUESTIONNAIRE (hidden until a language is selected) ===================== -->
-  <main class="main-wrap" id="mainContent">
-    <div class="container">
-      <section id="questionnaire" class="questionnaire" hidden aria-label="Questionnaire">
+  <!-- Hero Header & Three Introductory Headings Section -->
+  <section class="hero-wrapper text-center" aria-label="Introduction and Language Selection">
+    <div class="container-xl position-relative" style="z-index: 2;">
 
-        <!-- Title card + question cards are rendered here by script.js -->
-        <div id="qContent" class="q-content"></div>
+      <!-- Emblem & Title -->
+      <div class="hero-emblem-badge">
+        <i class="bi bi-bank2"></i>
+        <span>Maharashtra Uniform Civil Code Questionnaire</span>
+      </div>
 
-        <!-- Search -->
-        <div class="search-card" id="searchCard">
-          <label class="search-label" for="searchInput" id="searchLabel">
-            <i class="bi bi-search" aria-hidden="true"></i> Search
-          </label>
-          <div class="input-group">
-            <input type="text" class="form-control search-input" id="searchInput" autocomplete="off"
-                   placeholder="Search by question number, question or answer…" aria-label="Search questions">
-            <button class="btn btn-clear-search" type="button" id="clearSearchBtn">
-              <i class="bi bi-x-lg" aria-hidden="true"></i> <span id="clearSearchText">Clear</span>
+      <h1 class="hero-main-title">
+        UCC Public Response &amp; Awareness Portal
+      </h1>
+      <p class="hero-subtitle">
+        Civic Awareness, Constitutional Rights &amp; Multi-Lingual Questionnaire Answers
+      </p>
+
+      <!-- All Three Introductory Headings Displayed Simultaneously in a Compact, Elegant Grid -->
+      <div class="intro-headings-container text-start" id="intro-headings-box">
+        <div class="intro-headings-header">
+          <span class="section-label">
+            <i class="bi bi-megaphone-fill"></i>
+            <span>Official Public Notice / عوامی نوٹس / सार्वजनिक सूचना</span>
+          </span>
+        </div>
+
+        <div class="intro-grid">
+          <!-- 1. Urdu Introductory Heading -->
+          <div class="intro-item" data-intro-lang="ur" dir="rtl">
+            <span class="intro-badge badge-ur">اردو</span>
+            <h2 class="intro-h font-ur">🏛️ یو سی سی: جانئے، سمجھئے، اپنی رائے دیجئے اور ذمہ داری نبھائیے!</h2>
+            <p class="intro-sub font-ur">📢 حکومتِ مہاراشٹر کی جانب سے جاری کردہ سوالنامے پر اپنی رائے ضرور درج کریں اور
+              دوسروں کو بھی رائے دینے کے لیے آمادہ کریں۔</p>
+          </div>
+
+          <!-- 2. English Introductory Heading -->
+          <div class="intro-item" data-intro-lang="en" dir="ltr">
+            <span class="intro-badge badge-en">English</span>
+            <h2 class="intro-h">🏛️ UCC: Know It. Understand It. Share Your Views. Fulfil Your Responsibility!</h2>
+            <p class="intro-sub">📢 Make sure to submit your response to the questionnaire issued by the Government of
+              Maharashtra and encourage others to share their views as well.</p>
+          </div>
+
+          <!-- 3. Hindi Introductory Heading -->
+          <div class="intro-item" data-intro-lang="hi" dir="ltr">
+            <span class="intro-badge badge-hi">हिन्दी</span>
+            <h2 class="intro-h font-hi">🏛️ UCC: जानिए, समझिए, अपनी राय दीजिए और अपनी ज़िम्मेदारी निभाइए!</h2>
+            <p class="intro-sub font-hi">📢 महाराष्ट्र सरकार द्वारा जारी प्रश्नावली पर अपनी राय ज़रूर दर्ज करें और
+              दूसरों को भी अपनी राय देने के लिए प्रेरित करें।</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Language Selection Section with Step 1 Instruction -->
+      <nav class="language-selector-section" aria-label="Language Selector">
+        <div class="lang-instruction-pill">
+          <i class="bi bi-hand-index-thumb"></i>
+          <span>Select Your Preferred Language / اپنی زبان منتخب کریں / भाषा चुनें:</span>
+        </div>
+
+        <div class="lang-btn-group" role="group" aria-label="Select Language">
+          <button type="button" class="btn-lang btn-lang-ur" data-lang="ur" id="btn-select-ur"
+            aria-label="Select Urdu language">
+            <i class="bi bi-translate"></i>
+            <span>اردو</span>
+          </button>
+
+          <button type="button" class="btn-lang" data-lang="en" id="btn-select-en" aria-label="Select English language">
+            <i class="bi bi-globe2"></i>
+            <span>English</span>
+          </button>
+
+          <button type="button" class="btn-lang btn-lang-hi" data-lang="hi" id="btn-select-hi"
+            aria-label="Select Hindi language">
+            <i class="bi bi-translate"></i>
+            <span>हिन्दी</span>
+          </button>
+        </div>
+      </nav>
+
+    </div>
+  </section>
+
+  <!-- Quick Utility Toolbar (Share, Font-Sizer) -->
+  <div class="quick-tools-bar">
+    <div class="container-xl d-flex align-items-center justify-content-between flex-wrap gap-2">
+      <!-- Font Size Adjuster for Readability -->
+      <div class="font-resizer-group" title="Adjust text size">
+        <span class="text-muted fw-bold small me-1"><i class="bi bi-fonts"></i> Text:</span>
+        <button type="button" class="btn-tool-sm" id="btn-font-decrease" onclick="adjustFontSize(-1)"
+          title="Decrease font size" aria-label="Decrease font size">A-</button>
+        <button type="button" class="btn-tool-sm" id="btn-font-reset" onclick="resetFontSize()" title="Reset font size"
+          aria-label="Reset font size">Reset</button>
+        <button type="button" class="btn-tool-sm" id="btn-font-increase" onclick="adjustFontSize(1)"
+          title="Increase font size" aria-label="Increase font size">A+</button>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="btn-share-whatsapp" id="btn-share-whatsapp" onclick="shareOnWhatsApp()"
+          title="Share guidance on WhatsApp">
+          <i class="bi bi-whatsapp"></i>
+          <span>Share Guidance on WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Initial State Callout: Shown before language is selected -->
+  <main id="main-content" class="flex-grow-1">
+
+    <section class="initial-selection-prompt" id="initial-selection-prompt" aria-live="polite">
+      <div class="container-xl">
+        <div class="prompt-card">
+          <div class="prompt-icon-bubble">
+            <i class="bi bi-ui-checks"></i>
+          </div>
+
+          <h2 class="prompt-title">
+            Select a Language to View the Complete Questionnaire<br>
+            سوالنامہ اور جوابات دیکھنے کے لیے زبان کا انتخاب کیجیے<br>
+            प्रश्नावली और उत्तर देखने के लिए भाषा का चयन करें
+          </h2>
+
+          <p class="prompt-desc">
+            To view the complete 37 questions with verified responses, click on your language above. You can easily
+            search, filter by answer type, and copy answers with a single tap.
+          </p>
+
+          <!-- 3-Step Simple Guide -->
+          <div class="step-guide-row">
+            <div class="step-card">
+              <strong>1. Choose Language</strong>
+              Select Urdu, English or Hindi.
+            </div>
+            <div class="step-card">
+              <strong>2. Copy Answer</strong>
+              Tap "Copy Answer" on written questions.
+            </div>
+            <div class="step-card">
+              <strong>3. Submit Response</strong>
+              Paste into the Maharashtra UCC form.
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center gap-2 flex-wrap">
+            <button class="btn btn-success px-4 py-2 fw-bold" onclick="selectLanguage('ur')">
+              <i class="bi bi-translate me-1"></i> اردو شروع کریں
+            </button>
+            <button class="btn btn-primary px-4 py-2 fw-bold" onclick="selectLanguage('en')">
+              <i class="bi bi-globe2 me-1"></i> Start in English
+            </button>
+            <button class="btn btn-warning px-4 py-2 fw-bold text-dark" onclick="selectLanguage('hi')">
+              <i class="bi bi-translate me-1"></i> हिन्दी शुरू करें
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky Navigation & Search Controls (Revealed after language selection) -->
+    <section class="sticky-controls-bar" id="sticky-controls" style="display: none;"
+      aria-label="Search and Filter Controls">
+      <div class="container-xl">
+        <div class="row g-2 align-items-center">
+
+          <!-- Unicode Live Search Input -->
+          <div class="col-12 col-md-5 col-lg-4">
+            <div class="search-box-wrapper">
+              <i class="bi bi-search search-icon-left"></i>
+              <input type="text" id="search-input" class="search-input"
+                placeholder="Search by question number (1-37), question or answer..." aria-label="Search questionnaire"
+                autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                oninput="handleSearchInput(this.value)" onkeyup="handleSearchInput(this.value)"
+                onsearch="handleSearchInput(this.value)">
+              <button type="button" id="clear-search-btn" class="search-clear-btn" title="Clear search"
+                aria-label="Clear search" onclick="clearSearch()">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Section Filter Chips & Jump Trigger -->
+          <div class="col-12 col-md-7 col-lg-8 d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <div class="filter-chips-wrapper" role="tablist" aria-label="Question section filter">
+              <button type="button" class="chip-btn active" data-filter="all" id="chip-btn-all"
+                onclick="setFilter('all')">
+                <i class="bi bi-list-stars"></i>
+                <span id="chip-label-all">All (37)</span>
+              </button>
+              <button type="button" class="chip-btn" data-filter="part1" id="chip-btn-part1"
+                onclick="setFilter('part1')">
+                <i class="bi bi-check2-circle"></i>
+                <span id="chip-label-part1">Part I (1-31)</span>
+              </button>
+              <button type="button" class="chip-btn" data-filter="part2" id="chip-btn-part2"
+                onclick="setFilter('part2')">
+                <i class="bi bi-pencil-square"></i>
+                <span id="chip-label-part2">Part II (32-37)</span>
+              </button>
+              <button type="button" class="chip-btn" data-filter="no" id="chip-btn-no" onclick="setFilter('no')">
+                <i class="bi bi-x-circle text-danger"></i>
+                <span id="chip-label-no">NO (15)</span>
+              </button>
+              <button type="button" class="chip-btn" data-filter="yes" id="chip-btn-yes" onclick="setFilter('yes')">
+                <i class="bi bi-check-circle text-success"></i>
+                <span id="chip-label-yes">YES (3)</span>
+              </button>
+              <button type="button" class="chip-btn" data-filter="neutral" id="chip-btn-neutral"
+                onclick="setFilter('neutral')">
+                <i class="bi bi-dash-circle text-warning"></i>
+                <span id="chip-label-neutral">NO COMMENT (13)</span>
+              </button>
+            </div>
+
+            <div class="d-flex align-items-center gap-2">
+              <!-- Jump to Q# Trigger Button -->
+              <!-- <button type="button" class="btn-jump-trigger" id="btn-jump-trigger" title="Jump to any question 1-37">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Jump Q#</span>
+              </button> -->
+
+              <!-- Question Counter -->
+              <!-- <div class="count-badge" id="count-display">
+                37 questions
+              </div> -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Questionnaire Container (Hidden initially until language is selected) -->
+    <section class="questionnaire-container" id="questionnaire-wrapper" style="display: none;"
+      aria-label="Questionnaire content">
+      <div class="container-xl">
+
+        <!-- Title & Subtitle Card in Active Language -->
+        <div class="portal-title-card" id="portal-title-card">
+          <div class="flex-grow-1">
+            <h2 class="portal-page-title" id="portal-title">Title</h2>
+            <p class="portal-page-subtitle" id="portal-subtitle">Subtitle</p>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn btn-outline-secondary btn-sm"
+              onclick="DOM.jumpModal && DOM.jumpModal.show()">
+              <i class="bi bi-grid-3x3-gap-fill me-1"></i> View Question Grid
             </button>
           </div>
         </div>
 
-        <!-- No results message -->
-        <div class="alert no-results" id="noResults" role="status" hidden>
-          <i class="bi bi-emoji-neutral" aria-hidden="true"></i>
-          <span id="noResultsText">No matching questions found.</span>
+        <!-- Empty Search State -->
+        <div class="no-results-card" id="no-results-state" style="display: none;">
+          <div class="no-results-icon">
+            <i class="bi bi-search"></i>
+          </div>
+          <h3 class="fw-bold h5" id="no-results-title">No matching questions found</h3>
+          <p class="text-muted small" id="no-results-desc">Try searching with different keywords or reset your search
+            query.</p>
+          <button class="btn btn-outline-primary btn-sm mt-2"
+            onclick="setFilter('all'); DOM.searchInput.value=''; AppState.searchQuery=''; renderFilteredQuestions();">
+            Reset Filters &amp; Search
+          </button>
         </div>
 
-        <div id="questionList"></div>
-      </section>
-    </div>
+        <!-- PART I: OBJECTIVE QUESTIONS (1 - 31) -->
+        <section id="part1-section" aria-labelledby="part1-title-text">
+          <div class="part-section-header">
+            <h3 class="part-section-title">
+              <i class="bi bi-list-check"></i>
+              <span id="part1-title-text">Part I: Objective Questions</span>
+            </h3>
+            <span class="part-count-pill" id="part1-count-pill">31 / 31</span>
+          </div>
+
+          <div id="part1-container" class="questions-list">
+            <!-- Dynamic Part I Cards generated here -->
+          </div>
+        </section>
+
+        <!-- PART II: WRITTEN / DESCRIPTIVE QUESTIONS (32 - 37) -->
+        <section id="part2-section" aria-labelledby="part2-title-text">
+          <div class="part-section-header">
+            <h3 class="part-section-title">
+              <i class="bi bi-pencil-square"></i>
+              <span id="part2-title-text">Part II: Written Questions</span>
+            </h3>
+            <span class="part-count-pill" id="part2-count-pill">6 / 6</span>
+          </div>
+
+          <div id="part2-container" class="questions-list">
+            <!-- Dynamic Part II Cards generated here -->
+          </div>
+        </section>
+
+      </div>
+    </section>
+
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer">
-    <div class="container text-center">
-      <div class="footer-brand">
-        <i class="bi bi-bank2" aria-hidden="true"></i>
-        UCC Maharashtra
+  <!-- Jump to Question Modal (Numbers 1 to 37) -->
+  <div class="modal fade" id="jumpModal" tabindex="-1" aria-labelledby="jumpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="jumpModalLabel">
+            <i class="bi bi-lightning-charge-fill text-warning me-1"></i>
+            Jump Directly to Any Question (1–37)
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-muted mb-2">
+            Tap a number to instantly scroll and highlight that question:
+          </p>
+          <div class="d-flex align-items-center gap-3 mb-3 small">
+            <span><span class="badge bg-light text-dark border">1-31</span> Objective</span>
+            <span><span class="badge bg-success">32-37</span> Written</span>
+          </div>
+          <div class="jump-grid-container" id="jump-grid-container">
+            <!-- 1 to 37 pills built dynamically -->
+          </div>
+        </div>
+        <div class="modal-footer py-2">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
-      <p class="footer-line f-en">Public awareness page — individual responses to the questionnaire issued by the Government of Maharashtra regarding the Uniform Civil Code.</p>
-      <p class="footer-line f-ur" lang="ur" dir="rtl">عوامی آگاہی صفحہ — یکساں سول کوڈ کے حوالے سے حکومتِ مہاراشٹر کے سوالنامے پر انفرادی جوابات۔</p>
-      <p class="footer-line f-hi" lang="hi">जन-जागरूकता पृष्ठ — समान नागरिक संहिता के संबंध में महाराष्ट्र सरकार द्वारा जारी प्रश्नावली पर व्यक्तिगत उत्तर।</p>
-      <div class="footer-top-link">
-        <a href="#top" class="footer-link">Back to top <i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Bottom Navigation Bar -->
+  <nav class="mobile-bottom-bar" aria-label="Mobile Navigation">
+    <div class="mobile-bottom-bar-inner">
+      <button type="button" class="btn-mobile-nav" id="mob-nav-ur" onclick="selectLanguage('ur')">
+        <i class="bi bi-translate"></i>
+        <span>اردو</span>
+      </button>
+      <button type="button" class="btn-mobile-nav" id="mob-nav-en" onclick="selectLanguage('en')">
+        <i class="bi bi-globe2"></i>
+        <span>English</span>
+      </button>
+      <button type="button" class="btn-mobile-nav" id="mob-nav-hi" onclick="selectLanguage('hi')">
+        <i class="bi bi-translate"></i>
+        <span>हिन्दी</span>
+      </button>
+      <button type="button" class="btn-mobile-nav" id="mob-nav-written" onclick="jumpToWritten()">
+        <i class="bi bi-pencil-fill text-success"></i>
+        <span>Written</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Back to Top Floating Action Button -->
+  <button type="button" class="back-to-top-btn" id="back-to-top-btn" onclick="scrollToTop()" title="Back to top"
+    aria-label="Back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Toast Notification for Copy Feedback -->
+  <div class="toast-notice" id="toast-notice" role="alert" aria-live="assertive">
+    <i class="bi bi-check-circle-fill"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-wrapper" role="contentinfo">
+    <div class="container-xl">
+      <div class="row g-3">
+        <div class="col-12 col-md-7">
+          <h4 class="footer-heading">
+            <i class="bi bi-journal-text me-2 text-success"></i>
+            Maharashtra UCC Public Awareness Initiative
+          </h4>
+          <!-- <p class="mb-0">
+            This portal is developed for civic engagement and public awareness regarding the Uniform Civil Code
+            questionnaire issued by the Government of Maharashtra committee. All responses reflect the perspective of
+            Muslim citizens upholding Islamic Personal Law alongside Indian Constitutional guarantees.
+          </p> -->
+        </div>
+        <div class="col-12 col-md-5">
+          <div class="footer-disclaimer-card">
+            <strong><i class="bi bi-info-circle me-1"></i> Civic Responsibility:</strong>
+            Make sure to register your opinions and encourage community members to participate thoughtfully in
+            democratic consultations.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="mb-0">
+          © 2026 Maharashtra UCC Awareness Portal • Multi-Lingual Public Awareness Portal (Urdu • English • हिन्दी)
+        </p>
       </div>
     </div>
   </footer>
 
-  <!-- Back to top button -->
-  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="bi bi-arrow-up" aria-hidden="true"></i>
-  </button>
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-  <!-- Bootstrap 5 JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Main Application Script -->
   <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,500 +1,1496 @@
-/* ==========================================================================
-   UCC Maharashtra — Multilingual Questionnaire (Urdu / English / Hindi)
-   script.js — data + rendering + search + copy (vanilla JS, safe DOM methods)
-   ========================================================================== */
-"use strict";
+/**
+ * MAHARASHTRA UCC QUESTIONNAIRE PUBLIC AWARENESS PORTAL
+ * Data & Logic Script
+ * Developer-grade User-Friendly Implementation
+ * 100% Complete original content without omissions or placeholders.
+ */
 
-/* ---------------------------------------------------------------------------
-   URDU QUESTIONNAIRE (RTL)
---------------------------------------------------------------------------- */
-const URDU = {
-  code: "ur",
-  dir: "rtl",
-  qLabel: "سوال",
-  aLabel: "جواب:",
-  aLabelWritten: "مجوزہ جواب:",
-  part1: "حصہ اول: معروضی سوالات کے جوابات",
-  part1Note: "سوالات 1 تا 31",
-  part2: "حصہ دوم: فارم کے تحریری سوالات کے جوابات",
-  part2Note: "سوالات 32 تا 37",
-  title: "مہاراشٹر یکساں سول کوڈ کمیٹی کے انفرادی فارم کے جوابات",
-  subtitle: "بحیثیت مسلمان، اسلامی پرسنل لا کے تحفظ اور آئینی حقوق کے تناظر میں",
-  searchLabel: "تلاش کریں",
-  searchPlaceholder: "سوال نمبر، سوال یا جواب کے مطابق تلاش کریں…",
-  clearBtn: "صاف کریں",
-  noResults: "کوئی سوال نہیں ملا۔ براہِ کرم کوئی اور لفظ آزمائیں۔",
-  copyBtn: "جواب کاپی کریں",
-  copied: "کاپی ہو گئی!",
-  copyFail: "کاپی ناکام رہی، براہِ کرم دوبارہ کوشش کریں۔",
-  questions: [
-    { q: "کیا آپ اس وقت مہاراشٹر میں یکساں سول کوڈ نافذ کرنے کی حمایت کرتے ہیں؟", a: "NO" },
-    { q: "کیا یکساں سول کوڈ مذہبی آزادی کے حق کی خلاف ورزی کیے بغیر نافذ کیا جا سکتا ہے؟", a: "NO" },
-    { q: "کیا یکساں سول کوڈ قانونی تنازعات کو کم کرکے عدالتی کارروائی کو زیادہ مؤثر بنا سکتا ہے؟", a: "NO" },
-    { q: "کیا شادی، طلاق اور دیگر خاندانی معاملات کے لیے تمام مذاہب پر ایک ہی قانون لاگو ہونا چاہیے؟", a: "NO" },
-    { q: "کیا شادی، طلاق اور لِو اِن ریلیشن شپ وغیرہ کے اندراج کے لیے مشترکہ نظام ہونا چاہیے؟", a: "No" },
-    { q: "شادی کی کم از کم عمر کیا ہونی چاہیے؟", a: "موجودہ قابلِ اطلاع قانون کے مطابق قانونی کم از کم عمر کی پابندی ہونی چاہیے۔" },
-    { q: "کیا کسی شخص کو پہلے سے شادی شدہ ہونے کے باوجود دوسری شادی کی اجازت ہونی چاہیے؟", a: "YES" },
-    { q: "کیا روایتی رسوم اور مذہبی طریقوں سے شادی کرنے کی اجازت برقرار رہنی چاہیے؟", a: "YES" },
-    { q: "کیا تمام مذاہب کے لیے ممنوعہ رشتوں کی ایک ہی فہرست ہونی چاہیے؟", a: "NO" },
-    { q: "کیا تمام مذاہب کے لیے طلاق کی وجوہات اور طریقۂ کار یکساں ہونا چاہیے؟", a: "NO" },
-    { q: "کیا مردوں اور خواتین کے لیے طلاق کی وجوہات یکساں ہونی چاہییں؟", a: "NO COMMENT" },
-    { q: "کیا غیر عدالتی طلاق کے تمام طریقوں پر پابندی لگائی جانی چاہیے؟", a: "NO" },
-    { q: "کیا تمام مذاہب میں مردوں اور خواتین کو وراثت کے یکساں حقوق ملنے چاہییں؟", a: "NO" },
-    { q: "کیا وصیت کے بغیر وراثت کی تقسیم کے لیے تمام مذاہب میں یکساں قانون ہونا چاہیے؟", a: "NO" },
-    { q: "کیا ہر شخص کو وصیت کے ذریعے اپنی پوری جائیداد اپنی مرضی سے منتقل کرنے کی آزادی ہونی چاہیے؟", a: "NO" },
-    { q: "کیا تمام بچوں کو ان کے والدین کی ازدواجی حیثیت سے قطع نظر یکساں وراثتی حقوق ملنے چاہییں؟", a: "No Comment" },
-    { q: "کیا لِو اِن ریلیشن شپ کے معاملات کو یکساں سول کوڈ کے تحت منظم کیا جانا چاہیے؟", a: "NO" },
-    { q: "کیا لِو اِن ریلیشن شپ کا اندراج لازمی ہونا چاہیے؟", a: "NO" },
-    { q: "کیا لِو اِن ریلیشن شپ ختم ہونے پر اس کے خاتمے کا اندراج لازمی ہونا چاہیے؟", a: "NO" },
-    { q: "کیا لِو اِن ریلیشن شپ میں خواتین کو کفالت اور وراثت کے حقوق ملنے چاہییں؟", a: "No Comment" },
-    { q: "کیا لِو اِن ریلیشن شپ سے پیدا ہونے والے بچوں کو وراثت کے حقوق ملنے چاہییں؟", a: "No Comment" },
-    { q: "کیا ایسے بچوں کو والدین سے نگہداشت اور کفالت حاصل کرنے کا حق ہونا چاہیے؟", a: "No Comment" },
-    { q: "کیا تمام بچوں کی کفالت کے لیے ایک یکساں قانون ہونا چاہیے؟", a: "No Comment" },
-    { q: "کیا بچوں کی تحویل کے معاملات میں ان کی فلاح و بہبود کو اولین اہمیت دی جانی چاہیے؟", a: "YES" },
-    { q: "کیا ازدواجی تنازعات سے متعلق پیچیدہ قوانین لوگوں کو شادی کے بجائے لِو اِن ریلیشن شپ کی طرف مائل کرتے ہیں؟", a: "NO COMMENT" },
-    { q: "کیا لِو اِن ریلیشن شپ میں شامل مرد اور خواتین کے حقوق کے تحفظ کے لیے قانون ہونا چاہیے؟", a: "No Comment" },
-    { q: "کیا کسی لِو اِن ریلیشن شپ میں داخل ہونے کے وقت اندراج لازمی ہونا چاہیے؟", a: "No Comment" },
-    { q: "کیا لِو اِن ریلیشن شپ ختم ہونے پر لازمی اندراج ہونا چاہیے؟", a: "No Comment" },
-    { q: "کیا لِو اِن ریلیشن شپ میں خواتین کو بے دخل کیے جانے کی صورت میں کفالت اور دیگر حقوق کا تحفظ ملنا چاہیے؟", a: "No Comment" },
-    { q: "کیا لِو اِن ریلیشن شپ سے پیدا ہونے والے بچوں کو وراثت کے حقوق حاصل ہونے چاہییں؟", a: "No Comment" },
-    { q: "کیا ایسے بچوں کو والدین کی طرف سے نگہداشت اور کفالت حاصل کرنے کا حق ہونا چاہیے؟", a: "No Comment" },
-    { q: "یکساں سول کوڈ میں کن امور کو شامل کیا جانا چاہیے؟", a: "آئینِ ہند کے آرٹیکل 44 میں یکساں سول کوڈ کے حصول کی گنجائش کا مطلب ہرگز یہ نہیں کہ اسے بلا ضرورت نافذ کیا جائے۔ مہاراشٹر میں اس کی کوئی واضح سماجی یا قانونی ضرورت ثابت کیے بغیر اسے نافذ کرنا مناسب نہیں۔ آئین کے رہنما اصولوں میں شراب بندی (آرٹیکل 47)، صحتِ عامہ کی بہتری اور دیگر فلاحی امور سے متعلق ہدایات بھی موجود ہیں۔ ریاست کو چاہیے کہ ان مقاصد کے حصول، عوامی صحت کے تحفظ اور سماجی مسائل کے حل کے لیے مؤثر اقدامات کرے۔ مسلمانوں کے مذہبی حقوق اور مسلم پرسنل لا کا احترام کرتے ہوئے خواتین اور بچوں کے حقوق کا تحفظ یقینی بنایا جائے اور کسی بھی قانون سازی سے پہلے تمام متعلقہ فریقوں سے بامعنی مشاورت کی جائے۔" },
-    { q: "ذاتی اور خاندانی قوانین کے معاملات میں آپ کو کن مسائل کا سامنا کرنا پڑا ہے؟", a: "انسانی سماج میں مختلف مسائل کا پیدا ہونا فطری بات ہے۔ لیکن اس کے حل کے لیے پہلے سے موجود مذہبی اصول و رہنمائی کی سمجھ اور اس کا نفاذ مسئلے کے حل کے لیے کافی ہیں۔ پرسنل لاء کے ذریعے تنازعات حل کیے جاسکتے ہیں۔" },
-    { q: "خاندانی قوانین کے کون سے پہلو خواتین کے لیے غیر منصفانہ ہیں؟ ان کے حل کے لیے کیا تجاویز ہیں؟", a: "خواتین کو وراثت سے محروم کرنا، مہر کی ادائیگی میں ٹال مٹول، نفقہ کے معاملات میں غیر ضروری تاخیر اور خاندانی تنازعات میں قانونی امداد کی کمی قابلِ توجہ مسائل ہیں۔ ان کے حل کے لیے موجودہ قوانین کا مؤثر نفاذ، مفت قانونی امداد، وراثتی حقوق کے بارے میں بیداری اور شکایات کے فوری ازالے کا نظام قائم کیا جائے۔ اصلاحات کے نام پر مذہبی آزادی ختم کرنے کے بجائے حقوق کے نفاذ اور انصاف کی فراہمی کو یقینی بنایا جائے۔" },
-    { q: "زرعی زمین اور آبائی مکان کی وراثت کے لیے کیا الگ اصول ہونے چاہییں؟", a: "زرعی زمین، آبائی مکان اور دیگر جائیداد کی وراثت میں متعلقہ قوانین، زمین کی نوعیت اور جائز وارثوں کے حقوق کو مدنظر رکھا جائے۔ مسلمانوں کے لیے وراثت کے تسلیم شدہ شرعی اصولوں کا احترام کیا جائے۔ کسی خاتون یا دوسرے وارث کو دباؤ، دھوکا دہی یا غلط ریکارڈ کے ذریعے اس کے جائز حصے سے محروم نہ کیا جائے۔ جائیداد کے ریکارڈ کی درستگی، شفاف تقسیم اور آسان قانونی چارہ جوئی کے مؤثر انتظامات کیے جائیں۔" },
-    { q: "کیا موجودہ خاندانی قوانین میں کسی تبدیلی یا اصلاح کی ضرورت ہے؟", a: "نہیں۔ خاندانی قوانین میں اصلاحات کا مقصد انصاف کی فراہمی، خواتین اور بچوں کے حقوق کا تحفظ، قانونی تنازعات میں کمی اور عدالتی کارروائی کو مؤثر بنانا ہونا چاہیے۔ اصلاحات کے لیے تمام مذہبی برادریوں سے مشاورت کی جائے اور مسلمانوں کے تسلیم شدہ پرسنل لا کے اصولوں اور آئینی مذہبی آزادی کا احترام کیا جائے۔ خواتین کو وراثت سے محروم کرنے، نفقہ کی ادائیگی میں غفلت اور قانونی چارہ جوئی میں غیر ضروری تاخیر جیسے عملی مسائل کے حل کو ترجیح دی جائے۔" },
-    { q: "یکساں سول کوڈ کے بارے میں آپ کی دیگر تجاویز کیا ہیں؟", a: "مہاراشٹر میں یکساں سول کوڈ سے متعلق کسی بھی فیصلے سے قبل اس کے آئینی، قانونی، مذہبی اور سماجی اثرات کا تفصیلی جائزہ لیا جائے۔ تمام مذہبی برادریوں، خواتین کی تنظیموں، قانونی ماہرین اور شہریوں سے بامعنی مشاورت کی جائے۔ کسی بھی قانون کے نفاذ میں مذہبی آزادی، مساوات، انصاف اور بنیادی حقوق کا تحفظ یقینی بنایا جائے۔ مسلم پرسنل لا سے متعلق معاملات میں متعلقہ مذہبی اصولوں اور قانونی حقوق کو نظرانداز نہ کیا جائے۔ خواتین اور بچوں کے حقوق کے مؤثر تحفظ کے لیے موجودہ قوانین پر عمل درآمد بہتر بنایا جائے۔" }
-  ]
-};
-
-/* ---------------------------------------------------------------------------
-   ENGLISH QUESTIONNAIRE (LTR)
---------------------------------------------------------------------------- */
-const ENGLISH = {
-  code: "en",
-  dir: "ltr",
-  qLabel: "Question",
-  aLabel: "Answer:",
-  aLabelWritten: "Proposed Response:",
-  part1: "Part I: Responses to Objective Questions",
-  part1Note: "Questions 1 to 31",
-  part2: "Part II: Responses to the Written Questions",
-  part2Note: "Questions 32 to 37",
-  title: "Individual Questionnaire Responses for the Maharashtra Uniform Civil Code Committee",
-  subtitle: "From the Perspective of a Muslim Citizen: Protection of Islamic Personal Law and Constitutional Rights",
-  searchLabel: "Search",
-  searchPlaceholder: "Search by question number, question or answer…",
-  clearBtn: "Clear",
-  noResults: "No matching questions found. Please try a different word.",
-  copyBtn: "Copy Answer",
-  copied: "Copied!",
-  copyFail: "Copy failed, please try again.",
-  questions: [
-    { q: "Do you currently support the implementation of a Uniform Civil Code in Maharashtra?", a: "NO" },
-    { q: "Can a Uniform Civil Code be implemented without violating the right to religious freedom?", a: "NO" },
-    { q: "Can a Uniform Civil Code reduce legal disputes and make judicial proceedings more effective?", a: "NO" },
-    { q: "Should the same law apply to all religions in matters of marriage, divorce and other family affairs?", a: "NO" },
-    { q: "Should there be a common registration system for marriage, divorce, live-in relationships and related matters?", a: "NO" },
-    { q: "What should be the minimum legal age for marriage?", a: "The legally prescribed minimum age under the applicable law should be strictly followed." },
-    { q: "Should a person be permitted to enter into a second marriage while already married?", a: "YES" },
-    { q: "Should the freedom to solemnise marriages according to traditional customs and religious practices be retained?", a: "YES" },
-    { q: "Should there be a uniform list of prohibited relationships for all religions?", a: "NO" },
-    { q: "Should the grounds and procedures for divorce be uniform across all religions?", a: "NO" },
-    { q: "Should the grounds for divorce be the same for men and women?", a: "NO COMMENT" },
-    { q: "Should all forms of non-judicial divorce be prohibited?", a: "NO" },
-    { q: "Should men and women have equal inheritance rights across all religions?", a: "NO" },
-    { q: "Should there be a uniform law of intestate succession, that is, inheritance in the absence of a will, for all religions?", a: "NO" },
-    { q: "Should every person have the freedom to transfer their entire property according to their wishes through a will?", a: "NO" },
-    { q: "Should all children have equal inheritance rights irrespective of the marital status of their parents?", a: "NO COMMENT" },
-    { q: "Should matters relating to live-in relationships be regulated under a Uniform Civil Code?", a: "NO" },
-    { q: "Should the registration of live-in relationships be compulsory?", a: "NO" },
-    { q: "Should the termination of a live-in relationship be compulsorily registered?", a: "NO" },
-    { q: "Should women in live-in relationships have maintenance and inheritance rights?", a: "NO COMMENT" },
-    { q: "Should children born out of live-in relationships have inheritance rights?", a: "NO COMMENT" },
-    { q: "Should such children have the right to care and maintenance from their parents?", a: "NO COMMENT" },
-    { q: "Should there be a uniform law governing the maintenance of all children?", a: "NO COMMENT" },
-    { q: "Should the welfare of children be given the highest priority in child custody matters?", a: "YES" },
-    { q: "Do complex laws relating to marital disputes encourage people to choose live-in relationships instead of marriage?", a: "NO COMMENT" },
-    { q: "Should there be a law to protect the rights of men and women involved in live-in relationships?", a: "NO COMMENT" },
-    { q: "Should registration be compulsory when entering into a live-in relationship?", a: "NO COMMENT" },
-    { q: "Should registration be compulsory when a live-in relationship ends?", a: "NO COMMENT" },
-    { q: "Should women be protected through maintenance and other legal rights if they are evicted from a live-in relationship?", a: "NO COMMENT" },
-    { q: "Should children born out of live-in relationships have inheritance rights?", a: "NO COMMENT" },
-    { q: "Should such children have the right to care and maintenance from their parents?", a: "NO COMMENT" },
-    { q: "What matters should be included in a Uniform Civil Code?", a: "Article 44 of the Constitution of India provides for efforts towards securing a Uniform Civil Code. However, this does not mean that such a code should be implemented without establishing a genuine need for it. Implementing a Uniform Civil Code in Maharashtra without demonstrating a clear social or legal necessity would not be appropriate.\n\nThe Directive Principles of State Policy also contain provisions relating to prohibition of intoxicating drinks under Article 47, improvement of public health and other public welfare objectives. The State should take effective measures to achieve these objectives, protect public health and address existing social problems.\n\nWhile respecting the religious rights of Muslims and the principles of Muslim Personal Law, the rights of women and children must be effectively protected. Meaningful consultation with all stakeholders should take place before any legislation is introduced." },
-    { q: "What problems have you faced in matters relating to personal and family laws?", a: "The occurrence of different types of problems in human society is natural. However, a proper understanding of existing religious principles and guidance, along with their appropriate implementation, can be sufficient to address many such problems. Family disputes can be resolved through personal laws." },
-    { q: "Which aspects of family laws are unfair to women? What measures would you suggest to address them?", a: "Denying women their rightful inheritance, delaying the payment of mehr (dower), unnecessary delays in maintenance matters, and inadequate access to legal assistance in family disputes are important concerns that require attention.\n\nThese issues should be addressed through the effective implementation of existing laws, free legal aid, greater awareness of inheritance rights, and an efficient mechanism for the timely resolution of complaints.\n\nInstead of undermining religious freedom in the name of reform, priority should be given to enforcing existing rights effectively and ensuring access to justice." },
-    { q: "Should separate principles apply to the inheritance of agricultural land and ancestral houses?", a: "The inheritance of agricultural land, ancestral houses and other properties should be dealt with by taking into account the applicable laws, the nature of the property and the rights of lawful heirs.\n\nThe recognised principles of Sharia governing inheritance for Muslims should be respected. No woman or other lawful heir should be deprived of their rightful share through coercion, fraud or incorrect property records.\n\nAccurate property records, transparent distribution of assets and accessible, effective legal remedies should be ensured." },
-    { q: "Is there a need to introduce changes or reforms in the existing family laws?", a: "The objective of reforms in family laws should be to ensure justice, protect the rights of women and children, reduce legal disputes and improve the effectiveness of judicial proceedings.\n\nAny proposed reforms should be developed through consultation with all religious communities, while respecting the recognised principles of Muslim Personal Law and the constitutional guarantee of religious freedom.\n\nPriority should be given to resolving practical problems, including the denial of women's inheritance rights, negligence in the payment of maintenance and unnecessary delays in legal proceedings." },
-    { q: "What other suggestions do you have regarding the Uniform Civil Code?", a: "Before taking any decision regarding a Uniform Civil Code in Maharashtra, a detailed assessment of its constitutional, legal, religious and social implications should be undertaken.\n\nMeaningful consultations should be held with all religious communities, women's organisations, legal experts and citizens.\n\nAny legislation must safeguard religious freedom, equality, justice and fundamental rights. The recognised religious principles and legal rights associated with Muslim Personal Law should not be disregarded.\n\nImproving the implementation of existing laws should be prioritised to ensure the effective protection of the rights of women and children." }
-  ]
-};
-
-/* ---------------------------------------------------------------------------
-   HINDI QUESTIONNAIRE (LTR)
---------------------------------------------------------------------------- */
-const HINDI = {
-  code: "hi",
-  dir: "ltr",
-  qLabel: "प्रश्न",
-  aLabel: "उत्तर:",
-  aLabelWritten: "प्रस्तावित उत्तर:",
-  part1: "भाग I: वस्तुनिष्ठ प्रश्नों के उत्तर",
-  part1Note: "प्रश्न 1 से 31 तक",
-  part2: "भाग II: प्रपत्र के लिखित प्रश्नों के उत्तर",
-  part2Note: "प्रश्न 32 से 37 तक",
-  title: "महाराष्ट्र समान नागरिक संहिता समिति के व्यक्तिगत प्रपत्र के उत्तर",
-  subtitle: "एक मुस्लिम नागरिक के रूप में इस्लामी पर्सनल लॉ के संरक्षण एवं संवैधानिक अधिकारों के संदर्भ में",
-  searchLabel: "खोजें",
-  searchPlaceholder: "प्रश्न संख्या, प्रश्न या उत्तर के अनुसार खोजें…",
-  clearBtn: "साफ़ करें",
-  noResults: "कोई मेल खाता प्रश्न नहीं मिला। कृपया कोई अन्य शब्द आज़माएँ।",
-  copyBtn: "उत्तर कॉपी करें",
-  copied: "कॉपी हो गया!",
-  copyFail: "कॉपी विफल रहा, कृपया पुनः प्रयास करें।",
-  questions: [
-    { q: "क्या आप वर्तमान में महाराष्ट्र में समान नागरिक संहिता लागू करने का समर्थन करते हैं?", a: "NO (नहीं)" },
-    { q: "क्या धार्मिक स्वतंत्रता के अधिकार का उल्लंघन किए बिना समान नागरिक संहिता लागू की जा सकती है?", a: "NO (नहीं)" },
-    { q: "क्या समान नागरिक संहिता कानूनी विवादों को कम करके न्यायिक प्रक्रिया को अधिक प्रभावी बना सकती है?", a: "NO (नहीं)" },
-    { q: "क्या विवाह, तलाक और अन्य पारिवारिक मामलों में सभी धर्मों पर एक ही कानून लागू होना चाहिए?", a: "NO (नहीं)" },
-    { q: "क्या विवाह, तलाक और लिव-इन रिलेशनशिप आदि के पंजीकरण के लिए एक समान व्यवस्था होनी चाहिए?", a: "NO (नहीं)" },
-    { q: "विवाह की न्यूनतम आयु क्या होनी चाहिए?", a: "वर्तमान में लागू कानून के अनुसार निर्धारित कानूनी न्यूनतम आयु का पालन अनिवार्य होना चाहिए।" },
-    { q: "क्या किसी व्यक्ति को पहले से विवाहित होने के बावजूद दूसरी शादी करने की अनुमति होनी चाहिए?", a: "YES (हाँ)" },
-    { q: "क्या पारंपरिक रीति-रिवाजों और धार्मिक विधियों के अनुसार विवाह करने की अनुमति जारी रहनी चाहिए?", a: "YES (हाँ)" },
-    { q: "क्या सभी धर्मों के लिए निषिद्ध वैवाहिक संबंधों की एक समान सूची होनी चाहिए?", a: "NO (नहीं)" },
-    { q: "क्या सभी धर्मों के लिए तलाक के आधार और प्रक्रिया एक समान होनी चाहिए?", a: "NO (नहीं)" },
-    { q: "क्या पुरुषों और महिलाओं के लिए तलाक के आधार एक समान होने चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या गैर-न्यायिक तलाक की सभी प्रक्रियाओं पर प्रतिबंध लगाया जाना चाहिए?", a: "NO (नहीं)" },
-    { q: "क्या सभी धर्मों में पुरुषों और महिलाओं को विरासत में समान अधिकार मिलने चाहिए?", a: "NO (नहीं)" },
-    { q: "क्या बिना वसीयत के संपत्ति के उत्तराधिकार के लिए सभी धर्मों में एक समान कानून होना चाहिए?", a: "NO (नहीं)" },
-    { q: "क्या प्रत्येक व्यक्ति को वसीयत के माध्यम से अपनी पूरी संपत्ति अपनी इच्छानुसार हस्तांतरित करने की स्वतंत्रता होनी चाहिए?", a: "NO (नहीं)" },
-    { q: "क्या सभी बच्चों को उनके माता-पिता की वैवाहिक स्थिति से अलग, विरासत में समान अधिकार मिलने चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या लिव-इन रिलेशनशिप से संबंधित मामलों को समान नागरिक संहिता के अंतर्गत विनियमित किया जाना चाहिए?", a: "NO (नहीं)" },
-    { q: "क्या लिव-इन रिलेशनशिप का पंजीकरण अनिवार्य होना चाहिए?", a: "NO (नहीं)" },
-    { q: "क्या लिव-इन रिलेशनशिप समाप्त होने पर उसके समापन का पंजीकरण अनिवार्य होना चाहिए?", a: "NO (नहीं)" },
-    { q: "क्या लिव-इन रिलेशनशिप में महिलाओं को भरण-पोषण और विरासत के अधिकार मिलने चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या लिव-इन रिलेशनशिप से जन्मे बच्चों को विरासत के अधिकार मिलने चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या ऐसे बच्चों को अपने माता-पिता से देखभाल और भरण-पोषण प्राप्त करने का अधिकार होना चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या सभी बच्चों के भरण-पोषण के लिए एक समान कानून होना चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या बच्चों की अभिरक्षा के मामलों में उनके कल्याण को सर्वोच्च प्राथमिकता दी जानी चाहिए?", a: "YES (हाँ)" },
-    { q: "क्या वैवाहिक विवादों से संबंधित जटिल कानून लोगों को विवाह के बजाय लिव-इन रिलेशनशिप की ओर आकर्षित करते हैं?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या लिव-इन रिलेशनशिप में शामिल पुरुषों और महिलाओं के अधिकारों की रक्षा के लिए कानून होना चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या लिव-इन रिलेशनशिप में प्रवेश करते समय पंजीकरण अनिवार्य होना चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या लिव-इन रिलेशनशिप समाप्त होने पर उसका पंजीकरण अनिवार्य होना चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या लिव-इन रिलेशनशिप में किसी महिला को घर से निकाले जाने की स्थिति में भरण-पोषण तथा अन्य अधिकारों की सुरक्षा मिलनी चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या लिव-इन रिलेशनशिप से जन्मे बच्चों को विरासत के अधिकार प्राप्त होने चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "क्या ऐसे बच्चों को अपने माता-पिता से देखभाल और भरण-पोषण प्राप्त करने का अधिकार होना चाहिए?", a: "NO COMMENT (कोई टिप्पणी नहीं)" },
-    { q: "समान नागरिक संहिता में किन विषयों को शामिल किया जाना चाहिए?", a: "भारतीय संविधान के अनुच्छेद 44 में समान नागरिक संहिता की दिशा में प्रयास करने का प्रावधान होने का अर्थ यह नहीं है कि इसे बिना किसी ठोस आवश्यकता के लागू कर दिया जाए। महाराष्ट्र में इसे लागू करने की कोई स्पष्ट सामाजिक या कानूनी आवश्यकता सिद्ध किए बिना ऐसा करना उचित नहीं होगा।\n\nसंविधान के नीति-निर्देशक सिद्धांतों में शराबबंदी (अनुच्छेद 47), सार्वजनिक स्वास्थ्य में सुधार तथा अन्य जनकल्याणकारी उद्देश्यों से संबंधित निर्देश भी शामिल हैं। राज्य को इन उद्देश्यों की प्राप्ति, सार्वजनिक स्वास्थ्य की रक्षा और सामाजिक समस्याओं के समाधान के लिए प्रभावी कदम उठाने चाहिए।\n\nमुसलमानों के धार्मिक अधिकारों और मुस्लिम पर्सनल लॉ का सम्मान करते हुए महिलाओं और बच्चों के अधिकारों की रक्षा सुनिश्चित की जानी चाहिए। किसी भी कानून के निर्माण से पहले सभी संबंधित पक्षों के साथ सार्थक परामर्श किया जाना चाहिए।" },
-    { q: "व्यक्तिगत और पारिवारिक कानूनों से संबंधित मामलों में आपको किन समस्याओं का सामना करना पड़ा है?", a: "मानव समाज में विभिन्न प्रकार की समस्याओं का उत्पन्न होना स्वाभाविक है। लेकिन उनके समाधान के लिए पहले से मौजूद धार्मिक सिद्धांतों और मार्गदर्शन की सही समझ तथा उनका उचित पालन पर्याप्त हो सकता है। व्यक्तिगत कानूनों के माध्यम से पारिवारिक विवादों का समाधान किया जा सकता है।" },
-    { q: "पारिवारिक कानूनों के कौन-से पहलू महिलाओं के लिए अन्यायपूर्ण हैं? उनके समाधान के लिए क्या सुझाव हैं?", a: "महिलाओं को विरासत से वंचित करना, मेहर के भुगतान में टालमटोल करना, भरण-पोषण के मामलों में अनावश्यक देरी और पारिवारिक विवादों में कानूनी सहायता की कमी ऐसे महत्वपूर्ण मुद्दे हैं जिन पर ध्यान देने की आवश्यकता है।\n\nइन समस्याओं के समाधान के लिए वर्तमान कानूनों का प्रभावी क्रियान्वयन, निःशुल्क कानूनी सहायता, विरासत संबंधी अधिकारों के बारे में जागरूकता तथा शिकायतों के त्वरित निवारण की व्यवस्था स्थापित की जानी चाहिए।\n\nसुधारों के नाम पर धार्मिक स्वतंत्रता समाप्त करने के बजाय अधिकारों के प्रभावी क्रियान्वयन और न्याय की उपलब्धता सुनिश्चित की जानी चाहिए।" },
-    { q: "कृषि भूमि और पैतृक मकान की विरासत के लिए क्या अलग-अलग सिद्धांत होने चाहिए?", a: "कृषि भूमि, पैतृक मकान और अन्य संपत्तियों के उत्तराधिकार के मामलों में संबंधित कानूनों, भूमि की प्रकृति तथा वैध उत्तराधिकारियों के अधिकारों को ध्यान में रखा जाना चाहिए।\n\nमुसलमानों के लिए विरासत से संबंधित मान्य शरीयत सिद्धांतों का सम्मान किया जाना चाहिए। किसी महिला या अन्य उत्तराधिकारी को दबाव, धोखाधड़ी अथवा गलत अभिलेखों के माध्यम से उसके वैध हिस्से से वंचित नहीं किया जाना चाहिए।\n\nसंपत्ति अभिलेखों की शुद्धता, पारदर्शी बँटवारे तथा सरल और प्रभावी कानूनी उपायों की व्यवस्था सुनिश्चित की जानी चाहिए।" },
-    { q: "क्या वर्तमान पारिवारिक कानूनों में किसी बदलाव या सुधार की आवश्यकता है?", a: "पारिवारिक कानूनों में सुधार का उद्देश्य न्याय प्रदान करना, महिलाओं और बच्चों के अधिकारों की रक्षा करना, कानूनी विवादों को कम करना तथा न्यायिक प्रक्रिया को प्रभावी बनाना होना चाहिए।\n\nसुधारों के लिए सभी धार्मिक समुदायों से परामर्श किया जाना चाहिए और मुसलमानों के मान्य व्यक्तिगत कानूनों के सिद्धांतों तथा संविधान द्वारा प्रदत्त धार्मिक स्वतंत्रता का सम्मान किया जाना चाहिए।\n\nमहिलाओं को विरासत से वंचित करने, भरण-पोषण के भुगतान में लापरवाही तथा कानूनी कार्यवाही में अनावश्यक देरी जैसी व्यावहारिक समस्याओं के समाधान को प्राथमिकता दी जानी चाहिए।" },
-    { q: "समान नागरिक संहिता के संबंध में आपके अन्य सुझाव क्या हैं?", a: "महाराष्ट्र में समान नागरिक संहिता के संबंध में कोई भी निर्णय लेने से पहले उसके संवैधानिक, कानूनी, धार्मिक और सामाजिक प्रभावों का विस्तृत अध्ययन किया जाना चाहिए।\n\nसभी धार्मिक समुदायों, महिला संगठनों, कानूनी विशेषज्ञों और नागरिकों के साथ सार्थक परामर्श किया जाना चाहिए।\n\nकिसी भी कानून के क्रियान्वयन में धार्मिक स्वतंत्रता, समानता, न्याय और मौलिक अधिकारों की सुरक्षा सुनिश्चित की जानी चाहिए। मुस्लिम पर्सनल लॉ से संबंधित मामलों में मान्य धार्मिक सिद्धांतों और कानूनी अधिकारों की अनदेखी नहीं की जानी चाहिए।\n\nमहिलाओं और बच्चों के अधिकारों की प्रभावी सुरक्षा के लिए वर्तमान कानूनों के बेहतर क्रियान्वयन को प्राथमिकता दी जानी चाहिए।" }
-  ]
-};
-
-/* ---------------------------------------------------------------------------
-   LANGUAGE REGISTRY
---------------------------------------------------------------------------- */
-const LANGUAGES = { ur: URDU, en: ENGLISH, hi: HINDI };
-
-/* ---------------------------------------------------------------------------
-   STATE + ELEMENT REFERENCES
---------------------------------------------------------------------------- */
-let currentLang = null;
-let cardRefs = [];      // { el, hay }
-let part1El = null;
-let part2El = null;
-
-const els = {};
-
-/* ---------------------------------------------------------------------------
-   HELPERS (safe DOM creation)
---------------------------------------------------------------------------- */
-function el(tag, className, text) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text !== undefined && text !== null) node.textContent = text;
-  return node;
-}
-
-function icon(name) {
-  const i = document.createElement("i");
-  i.className = "bi " + name;
-  i.setAttribute("aria-hidden", "true");
-  return i;
-}
-
-/* Classify categorical answers to render them as coloured badges.
-   The exact answer text is always preserved. */
-function answerBadgeClass(answer) {
-  const t = answer.trim();
-  if (/^NO[\s]*COMMENT/i.test(t)) return "ans-nocomment";
-  if (/^YES/i.test(t)) return "ans-yes";
-  if (/^NO(\s|\(|$)/i.test(t)) return "ans-no";
-  return null;
-}
-
-/* ---------------------------------------------------------------------------
-   COPY TO CLIPBOARD
---------------------------------------------------------------------------- */
-function fallbackCopy(text) {
-  const ta = document.createElement("textarea");
-  ta.value = text;
-  ta.setAttribute("readonly", "");
-  ta.style.position = "fixed";
-  ta.style.top = "-9999px";
-  ta.style.left = "-9999px";
-  ta.style.opacity = "0";
-  document.body.appendChild(ta);
-  ta.select();
-  ta.setSelectionRange(0, text.length);
-  let ok = false;
-  try {
-    ok = document.execCommand("copy");
-  } catch (err) {
-    ok = false;
-  }
-  document.body.removeChild(ta);
-  return ok;
-}
-
-async function copyText(text) {
-  if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
-    try {
-      await navigator.clipboard.writeText(text);
-      return true;
-    } catch (err) {
-      /* fall through to fallback */
+const UCC_DATA = {
+  introHeadings: {
+    ur: {
+      lang: "اردو",
+      heading: "🏛️ یو سی سی: جانئے، سمجھئے، اپنی رائے دیجئے اور ذمہ داری نبھائیے!",
+      subheading: "📢 حکومتِ مہاراشٹر کی جانب سے جاری کردہ سوالنامے پر اپنی رائے ضرور درج کریں اور دوسروں کو بھی رائے دینے کے لیے آمادہ کریں۔"
+    },
+    en: {
+      lang: "English",
+      heading: "🏛️ UCC: Know It. Understand It. Share Your Views. Fulfil Your Responsibility!",
+      subheading: "📢 Make sure to submit your response to the questionnaire issued by the Government of Maharashtra and encourage others to share their views as well."
+    },
+    hi: {
+      lang: "हिन्दी",
+      heading: "🏛️ UCC: जानिए, समझिए, अपनी राय दीजिए और अपनी ज़िम्मेदारी निभाइए!",
+      subheading: "📢 महाराष्ट्र सरकार द्वारा जारी प्रश्नावली पर अपनी राय ज़रूर दर्ज करें और दूसरों को भी अपनी राय देने के लिए प्रेरित करें।"
     }
-  }
-  return fallbackCopy(text);
+  },
+
+  translations: {
+    ur: {
+      langName: "اردو",
+      dir: "rtl",
+      portalTitle: "مہاراشٹر یکساں سول کوڈ کمیٹی کے انفرادی فارم کے جوابات",
+      portalSubtitle: "بحیثیت مسلمان، اسلامی پرسنل لا کے تحفظ اور آئینی حقوق کے تناظر میں",
+      part1Title: "حصہ اول: معروضی سوالات کے جوابات",
+      part2Title: "حصہ دوم: فارم کے تحریری سوالات کے جوابات",
+      searchPlaceholder: "سوال نمبر (1-37)، سوال یا جواب کا متن تلاش کریں...",
+      clearSearchTitle: "تلاش صاف کریں",
+      filterAll: "تمام (37)",
+      filterPart1: "حصہ اول: معروضی (1-31)",
+      filterPart2: "حصہ دوم: تحریری (32-37)",
+      filterNo: "NO جوابات (15)",
+      filterYes: "YES جوابات (3)",
+      filterNoComment: "NO COMMENT (13)",
+      copyAnswer: "جواب کاپی کریں",
+      copied: "Copied!",
+      copyFailed: "کاپی نہیں ہو سکا",
+      questionLabel: "سوال",
+      answerLabel: "جواب:",
+      proposedAnswerLabel: "مجوزہ جواب:",
+      writtenTag: "تحریری سوال",
+      jumpToQ: "سوال پر جائیں",
+      jumpModalTitle: "کسی بھی سوال پر براہ راست جائیں (1 تا 37)",
+      noResultsTitle: "کوئی مماثل سوال نہیں ملا",
+      noResultsDesc: "براہ کرم کوئی دوسرا لفظ تلاش کریں یا فلٹر کو ری سیٹ کریں۔",
+      showingCount: "{count} سوالات",
+      whatsappText: "🏛️ مہاراشٹر یو سی سی سوالنامے کے جوابات اور رہنما معلومات:\nحکومتِ مہاراشٹر کے جاری کردہ سوالنامے پر اپنی رائے ضرور درج کریں۔ تفصیلی سوالات اور جوابات کے لیے ملاحظہ فرمائیں:\n",
+      selectPromptTitle: "براہ کرم سوالنامہ دیکھنے کے لیے اپنی زبان کا انتخاب کریں",
+      selectPromptDesc: "مہاراشٹر یو سی سی سوالنامے کے تمام ۳۷ سوالات اور تصدیق شدہ جوابات دیکھنے کے لیے اوپر دیے گئے بٹنوں میں سے اپنی زبان منتخب کیجیے۔",
+      officialPortalNotice: "حکومتِ مہاراشٹر کے سرکاری فارم میں جوابات درج کرنے کے لیے یہاں سے تصدیق شدہ جوابات کاپی کریں۔"
+    },
+    en: {
+      langName: "English",
+      dir: "ltr",
+      portalTitle: "Individual Questionnaire Responses for the Maharashtra Uniform Civil Code Committee",
+      portalSubtitle: "From the Perspective of a Muslim Citizen: Protection of Islamic Personal Law and Constitutional Rights",
+      part1Title: "Part I: Responses to Objective Questions",
+      part2Title: "Part II: Responses to the Written Questions",
+      searchPlaceholder: "Search by question number (1-37), question or answer...",
+      clearSearchTitle: "Clear search",
+      filterAll: "All (37)",
+      filterPart1: "Part I: Objective (1-31)",
+      filterPart2: "Part II: Written (32-37)",
+      filterNo: "NO Answers (15)",
+      filterYes: "YES Answers (3)",
+      filterNoComment: "NO COMMENT (13)",
+      copyAnswer: "Copy Answer",
+      copied: "Copied!",
+      copyFailed: "Copy failed",
+      questionLabel: "Question",
+      answerLabel: "Answer:",
+      proposedAnswerLabel: "Proposed Response:",
+      writtenTag: "Written Question",
+      jumpToQ: "Jump to Q#",
+      jumpModalTitle: "Jump Directly to Any Question (1 to 37)",
+      noResultsTitle: "No matching questions found",
+      noResultsDesc: "Try searching with different keywords or clear the filter.",
+      showingCount: "{count} questions",
+      whatsappText: "🏛️ Maharashtra UCC Questionnaire Verified Guidance & Responses:\nMake sure to submit your response to the questionnaire issued by the Government of Maharashtra. Access all questions and responses here:\n",
+      selectPromptTitle: "Please Select Your Language to View Questionnaire",
+      selectPromptDesc: "Select اردو, English, or हिन्दी above to view the complete 37 questionnaire responses and verified answers.",
+      officialPortalNotice: "Use these verified responses to submit your opinion on the Government of Maharashtra UCC form."
+    },
+    hi: {
+      langName: "हिन्दी",
+      dir: "ltr",
+      portalTitle: "महाराष्ट्र समान नागरिक संहिता समिति के व्यक्तिगत प्रपत्र के उत्तर",
+      portalSubtitle: "एक मुस्लिम नागरिक के रूप में इस्लामी पर्सनल लॉ के संरक्षण एवं संवैधानिक अधिकारों के संदर्भ में",
+      part1Title: "भाग I: वस्तुनिष्ठ प्रश्नों के उत्तर",
+      part2Title: "भाग II: प्रपत्र के लिखित प्रश्नों के उत्तर",
+      searchPlaceholder: "प्रश्न संख्या (1-37), प्रश्न या उत्तर खोजें...",
+      clearSearchTitle: "खोज साफ़ करें",
+      filterAll: "सभी (37)",
+      filterPart1: "भाग I: वस्तुनिष्ठ (1-31)",
+      filterPart2: "भाग II: लिखित (32-37)",
+      filterNo: "NO उत्तर (15)",
+      filterYes: "YES उत्तर (3)",
+      filterNoComment: "NO COMMENT (13)",
+      copyAnswer: "उत्तर कॉपी करें",
+      copied: "Copied!",
+      copyFailed: "कॉपी विफल",
+      questionLabel: "प्रश्न",
+      answerLabel: "उत्तर:",
+      proposedAnswerLabel: "प्रस्तावित उत्तर:",
+      writtenTag: "लिखित प्रश्न",
+      jumpToQ: "प्रश्न पर जाएं",
+      jumpModalTitle: "सीधे किसी भी प्रश्न पर जाएं (1 से 37)",
+      noResultsTitle: "कोई परिणाम नहीं मिला",
+      noResultsDesc: "कृपया अन्य शब्दों से खोजें या खोज साफ़ करें।",
+      showingCount: "{count} प्रश्न प्रदर्शित",
+      whatsappText: "🏛️ महाराष्ट्र समान नागरिक संहिता (UCC) प्रश्नावली उत्तर एवं मार्गदर्शन:\nमहाराष्ट्र सरकार द्वारा जारी प्रश्नावली पर अपनी राय ज़रूर दर्ज करें। सभी प्रश्नों और उत्तरों के लिए देखें:\n",
+      selectPromptTitle: "कृपया प्रश्नावली देखने के लिए अपनी भाषा चुनें",
+      selectPromptDesc: "महाराष्ट्र समान नागरिक संहिता (UCC) के सभी ३७ प्रश्नों के उत्तर देखने के लिए ऊपर दिए गए विकल्पों में से اردو, English या हिन्दी का चयन करें।",
+      officialPortalNotice: "महाराष्ट्र सरकार के आधिकारिक पोर्टल पर अपनी राय दर्ज करने के लिए यहाँ से प्रामाणिक उत्तर कॉपी करें।"
+    }
+  },
+
+  questions: [
+    // PART I: OBJECTIVE QUESTIONS (1 - 31)
+    {
+      id: 1,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا آپ اس وقت مہاراشٹر میں یکساں سول کوڈ نافذ کرنے کی حمایت کرتے ہیں؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Do you currently support the implementation of a Uniform Civil Code in Maharashtra?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या आप वर्तमान में महाराष्ट्र में समान नागरिक संहिता लागू करने का समर्थन करते हैं?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 2,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا یکساں سول کوڈ مذہبی آزادی کے حق کی خلاف ورزی کیے بغیر نافذ کیا جا سکتا ہے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Can a Uniform Civil Code be implemented without violating the right to religious freedom?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या धार्मिक स्वतंत्रता के अधिकार का उल्लंघन किए बिना समान नागरिक संहिता लागू की जा सकती है?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 3,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا یکساں سول کوڈ قانونی تنازعات کو کم کرکے عدالتی کارروائی کو زیادہ مؤثر بنا سکتا ہے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Can a Uniform Civil Code reduce legal disputes and make judicial proceedings more effective?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या समान नागरिक संहिता कानूनी विवादों को कम करके न्यायिक प्रक्रिया को अधिक प्रभावी बना सकती है?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 4,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا شادی، طلاق اور دیگر خاندانی معاملات کے لیے تمام مذاہب پر ایک ہی قانون لاگو ہونا چاہیے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Should the same law apply to all religions in matters of marriage, divorce and other family affairs?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या विवाह, तलाक और अन्य पारिवारिक मामलों में सभी धर्मों पर एक ही कानून लागू होना चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 5,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا شادی، طلاق اور لِو اِن ریلیشن شپ وغیرہ کے اندراج کے لیے مشترکہ نظام ہونا چاہیے؟",
+        answer: "No"
+      },
+      en: {
+        question: "Should there be a common registration system for marriage, divorce, live-in relationships and related matters?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या विवाह, तलाक और लिव-इन रिलेशनशिप आदि के पंजीकरण के लिए एक समान व्यवस्था होनी चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 6,
+      part: 1,
+      type: "TEXT",
+      ur: {
+        question: "شادی کی کم از کم عمر کیا ہونی چاہیے؟",
+        answer: "موجودہ قابلِ اطلاق قانون کے مطابق قانونی کم از کم عمر کی پابندی ہونی چاہیے۔"
+      },
+      en: {
+        question: "What should be the minimum legal age for marriage?",
+        answer: "The legally prescribed minimum age under the applicable law should be strictly followed."
+      },
+      hi: {
+        question: "विवाह की न्यूनतम आयु क्या होनी चाहिए?",
+        answer: "वर्तमान में लागू कानून के अनुसार निर्धारित कानूनी न्यूनतम आयु का पालन अनिवार्य होना चाहिए।"
+      }
+    },
+    {
+      id: 7,
+      part: 1,
+      type: "YES",
+      ur: {
+        question: "کیا کسی شخص کو پہلے سے شادی شدہ ہونے کے باوجود دوسری شادی کی اجازت ہونی چاہیے؟",
+        answer: "YES"
+      },
+      en: {
+        question: "Should a person be permitted to enter into a second marriage while already married?",
+        answer: "YES"
+      },
+      hi: {
+        question: "क्या किसी व्यक्ति को पहले से विवाहित होने के बावजूद दूसरी शादी करने की अनुमति होनी चाहिए?",
+        answer: "YES (हाँ)"
+      }
+    },
+    {
+      id: 8,
+      part: 1,
+      type: "YES",
+      ur: {
+        question: "کیا روایتی رسوم اور مذہبی طریقوں سے شادی کرنے کی اجازت برقرار رہنی چاہیے؟",
+        answer: "YES"
+      },
+      en: {
+        question: "Should the freedom to solemnise marriages according to traditional customs and religious practices be retained?",
+        answer: "YES"
+      },
+      hi: {
+        question: "क्या पारंपरिक रीति-रिवाजों और धार्मिक विधियों के अनुसार विवाह करने की अनुमति जारी रहनी चाहिए?",
+        answer: "YES (हाँ)"
+      }
+    },
+    {
+      id: 9,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا تمام مذاہب کے لیے ممنوعہ رشتوں کی ایک ہی فہرست ہونی چاہیے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Should there be a uniform list of prohibited relationships for all religions?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या सभी धर्मों के लिए निषिद्ध वैवाहिक संबंधों की एक समान सूची होनी चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 10,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا تمام مذاہب کے لیے طلاق کی وجوہات اور طریقۂ کار یکساں ہونا چاہیے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Should the grounds and procedures for divorce be uniform across all religions?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या सभी धर्मों के लिए तलाक के आधार और प्रक्रिया एक समान होनी चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 11,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا مردوں اور خواتین کے لیے طلاق کی وجوہات یکساں ہونی چاہییں؟",
+        answer: "NO COMMENT"
+      },
+      en: {
+        question: "Should the grounds for divorce be the same for men and women?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या पुरुषों और महिलाओं के लिए तलाक के आधार एक समान होने चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 12,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا غیر عدالتی طلاق کے تمام طریقوں پر پابندی لگائی جانی چاہیے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Should all forms of non-judicial divorce be prohibited?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या गैर-न्यायिक तलाक की सभी प्रक्रियाओं पर प्रतिबंध लगाया जाना चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 13,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا تمام مذاہب میں مردوں اور خواتین کو وراثت کے یکساں حقوق ملنے چاہییں؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Should men and women have equal inheritance rights across all religions?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या सभी धर्मों में पुरुषों और महिलाओं को विरासत में समान अधिकार मिलने चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 14,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا وصیت کے بغیر وراثت کی تقسیم کے لیے تمام مذاہب میں یکساں قانون ہونا چاہیے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Should there be a uniform law of intestate succession, that is, inheritance in the absence of a will, for all religions?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या बिना वसीयत के संपत्ति के उत्तराधिकार के लिए सभी धर्मों में एक समान कानून होना चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 15,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا ہر شخص کو وصیت کے ذریعے اپنی پوری جائیداد اپنی مرضی سے منتقل کرنے کی آزادی ہونی چاہیے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Should every person have the freedom to transfer their entire property according to their wishes through a will?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या प्रत्येक व्यक्ति को वसीयत के माध्यम से अपनी पूरी संपत्ति अपनी इच्छानुसार हस्तांतरित करने की स्वतंत्रता होनी चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 16,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا تمام بچوں کو ان کے والدین کی ازدواجی حیثیت سے قطع نظر یکساں وراثتی حقوق ملنے چاہییں؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should all children have equal inheritance rights irrespective of the marital status of their parents?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या सभी बच्चों को उनके माता-पिता की वैवाहिक स्थिति से अलग, विरासत में समान अधिकार मिलने चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 17,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا لِو اِن ریلیشن شپ کے معاملات کو یکساں سول کوڈ کے تحت منظم کیا جانا چاہیے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Should matters relating to live-in relationships be regulated under a Uniform Civil Code?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या लिव-इन रिलेशनशिप से संबंधित मामलों को समान नागरिक संहिता के अंतर्गत विनियमित किया जाना चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 18,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا لِو اِن ریلیشن شپ کا اندراج لازمی ہونا چاہیے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Should the registration of live-in relationships be compulsory?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या लिव-इन रिलेशनशिप का पंजीकरण अनिवार्य होना चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 19,
+      part: 1,
+      type: "NO",
+      ur: {
+        question: "کیا لِو اِن ریلیشن شپ ختم ہونے پر اس کے خاتمے کا اندراج لازمی ہونا چاہیے؟",
+        answer: "NO"
+      },
+      en: {
+        question: "Should the termination of a live-in relationship be compulsorily registered?",
+        answer: "NO"
+      },
+      hi: {
+        question: "क्या लिव-इन रिलेशनशिप समाप्त होने पर उसके समापन का पंजीकरण अनिवार्य होना चाहिए?",
+        answer: "NO (नहीं)"
+      }
+    },
+    {
+      id: 20,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا لِو اِن ریلیشن شپ میں خواتین کو کفالت اور وراثت کے حقوق ملنے چاہییں؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should women in live-in relationships have maintenance and inheritance rights?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या लिव-इन रिलेशनशिप में महिलाओं को भरण-पोषण और विरासत के अधिकार मिलने चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 21,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا لِو اِن ریلیشن شپ سے پیدا ہونے والے بچوں کو وراثت کے حقوق ملنے چاہییں؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should children born out of live-in relationships have inheritance rights?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या लिव-इन रिलेशनशिप से जन्मे बच्चों को विरासत के अधिकार मिलने चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 22,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا ایسے بچوں کو والدین سے نگہداشت اور کفالت حاصل کرنے کا حق ہونا چاہیے؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should such children have the right to care and maintenance from their parents?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या ऐसे बच्चों को अपने माता-पिता से देखभाल और भरण-पोषण प्राप्त करने का अधिकार होना चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 23,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا تمام بچوں کی کفالت کے لیے ایک یکساں قانون ہونا چاہیے؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should there be a uniform law governing the maintenance of all children?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या सभी बच्चों के भरण-पोषण के लिए एक समान कानून होना चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 24,
+      part: 1,
+      type: "YES",
+      ur: {
+        question: "کیا بچوں کی تحویل کے معاملات میں ان کی فلاح و بہبود کو اولین اہمیت دی جانی چاہیے؟",
+        answer: "YES"
+      },
+      en: {
+        question: "Should the welfare of children be given the highest priority in child custody matters?",
+        answer: "YES"
+      },
+      hi: {
+        question: "क्या बच्चों की अभिरक्षा के मामलों में उनके कल्याण को सर्वोच्च प्राथमिकता दी जानी चाहिए?",
+        answer: "YES (हाँ)"
+      }
+    },
+    {
+      id: 25,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا ازدواجی تنازعات سے متعلق پیچیدہ قوانین لوگوں کو شادی کے بجائے لِو اِن ریلیشن شپ کی طرف مائل کرتے ہیں؟",
+        answer: "NO COMMENT"
+      },
+      en: {
+        question: "Do complex laws relating to marital disputes encourage people to choose live-in relationships instead of marriage?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या वैवाहिक विवादों से संबंधित जटिल कानून लोगों को विवाह के बजाय लिव-इन रिलेशनशिप की ओर आकर्षित करते हैं?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 26,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا لِو اِن ریلیشن شپ میں شامل مرد اور خواتین کے حقوق کے تحفظ کے لیے قانون ہونا چاہیے؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should there be a law to protect the rights of men and women involved in live-in relationships?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या लिव-इन रिलेशनशिप में शामिल पुरुषों और महिलाओं के अधिकारों की रक्षा के लिए कानून होना चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 27,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا کسی لِو اِن ریلیشن شپ میں داخل ہونے کے وقت اندراج لازمی ہونا چاہیے؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should registration be compulsory when entering into a live-in relationship?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या लिव-इन रिलेशनशिप में प्रवेश करते समय पंजीकरण अनिवार्य होना चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 28,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا لِو اِن ریلیشن شپ ختم ہونے پر لازمی اندراج ہونا چاہیے؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should registration be compulsory when a live-in relationship ends?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या लिव-इन रिलेशनशिप समाप्त होने पर उसका पंजीकरण अनिवार्य होना चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 29,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا لِو اِن ریلیشن شپ میں خواتین کو بے دخل کیے جانے کی صورت میں کفالت اور دیگر حقوق کا تحفظ ملنا چاہیے؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should women be protected through maintenance and other legal rights if they are evicted from a live-in relationship?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या लिव-इन रिलेशनशिप में किसी महिला को घर से निकाले जाने की स्थिति में भरण-पोषण तथा अन्य अधिकारों की सुरक्षा मिलनी चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 30,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا لِو اِن ریلیشن شپ سے پیدا ہونے والے بچوں کو وراثت کے حقوق حاصل ہونے چاہییں؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should children born out of live-in relationships have inheritance rights?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या लिव-इन रिलेशनशिप से जन्मे बच्चों को विरासत के अधिकार प्राप्त होने चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+    {
+      id: 31,
+      part: 1,
+      type: "NO_COMMENT",
+      ur: {
+        question: "کیا ایسے بچوں کو والدین کی طرف سے نگہداشت اور کفالت حاصل کرنے کا حق ہونا چاہیے؟",
+        answer: "No Comment"
+      },
+      en: {
+        question: "Should such children have the right to care and maintenance from their parents?",
+        answer: "NO COMMENT"
+      },
+      hi: {
+        question: "क्या ऐसे बच्चों को अपने माता-पिता से देखभाल और भरण-पोषण प्राप्त करने का अधिकार होना चाहिए?",
+        answer: "NO COMMENT (कोई टिप्पणी नहीं)"
+      }
+    },
+
+    // PART II: WRITTEN QUESTIONS (32 - 37)
+    {
+      id: 32,
+      part: 2,
+      type: "WRITTEN",
+      ur: {
+        question: "یکساں سول کوڈ میں کن امور کو شامل کیا جانا چاہیے؟",
+        answer: "آئینِ ہند کے آرٹیکل 44 میں یکساں سول کوڈ کے حصول کی گنجائش کا مطلب ہرگز یہ نہیں کہ اسے بلا ضرورت نافذ کیا جائے۔ مہاراشٹر میں اس کی کوئی واضح سماجی یا قانونی ضرورت ثابت کیے بغیر اسے نافذ کرنا مناسب نہیں۔ آئین کے رہنما اصولوں میں شراب بندی (آرٹیکل 47)، صحتِ عامہ کی بہتری اور دیگر فلاحی امور سے متعلق ہدایات بھی موجود ہیں۔ ریاست کو چاہیے کہ ان مقاصد کے حصول، عوامی صحت کے تحفظ اور سماجی مسائل کے حل کے لیے مؤثر اقدامات کرے۔ مسلمانوں کے مذہبی حقوق اور مسلم پرسنل لا کا احترام کرتے ہوئے خواتین اور بچوں کے حقوق کا تحفظ یقینی بنایا جائے اور کسی بھی قانون سازی سے پہلے تمام متعلقہ فریقوں سے بامعنی مشاورت کی جائے۔"
+      },
+      en: {
+        question: "What matters should be included in a Uniform Civil Code?",
+        answer: "Article 44 of the Constitution of India provides for efforts towards securing a Uniform Civil Code. However, this does not mean that such a code should be implemented without establishing a genuine need for it. Implementing a Uniform Civil Code in Maharashtra without demonstrating a clear social or legal necessity would not be appropriate.\n\nThe Directive Principles of State Policy also contain provisions relating to prohibition of intoxicating drinks under Article 47, improvement of public health and other public welfare objectives. The State should take effective measures to achieve these objectives, protect public health and address existing social problems.\n\nWhile respecting the religious rights of Muslims and the principles of Muslim Personal Law, the rights of women and children must be effectively protected. Meaningful consultation with all stakeholders should take place before any legislation is introduced."
+      },
+      hi: {
+        question: "समान नागरिक संहिता में किन विषयों को शामिल किया जाना चाहिए?",
+        answer: "भारतीय संविधान के अनुच्छेद 44 में समान नागरिक संहिता की दिशा में प्रयास करने का प्रावधान होने का अर्थ यह नहीं है कि इसे बिना किसी ठोस आवश्यकता के लागू कर दिया जाए। महाराष्ट्र में इसे लागू करने की कोई स्पष्ट सामाजिक या कानूनी आवश्यकता सिद्ध किए बिना ऐसा करना उचित नहीं होगा।\n\nसंविधान के नीति-निर्देशक सिद्धांतों में शराबबंदी (अनुच्छेद 47), सार्वजनिक स्वास्थ्य में सुधार तथा अन्य जनकल्याणकारी उद्देश्यों से संबंधित निर्देश भी शामिल हैं। राज्य को इन उद्देश्यों की प्राप्ति, सार्वजनिक स्वास्थ्य की रक्षा और सामाजिक समस्याओं के समाधान के लिए प्रभावी कदम उठाने चाहिए।\n\nमुसलमानों के धार्मिक अधिकारों और मुस्लिम पर्सनल लॉ का सम्मान करते हुए महिलाओं और बच्चों के अधिकारों की रक्षा सुनिश्चित की जानी चाहिए। किसी भी कानून के निर्माण से पहले सभी संबंधित पक्षों के साथ सार्थक परामर्श किया जाना चाहिए।"
+      }
+    },
+    {
+      id: 33,
+      part: 2,
+      type: "WRITTEN",
+      ur: {
+        question: "ذاتی اور خاندانی قوانین کے معاملات میں آپ کو کن مسائل کا سامنا کرنا پڑا ہے؟",
+        answer: "انسانی سماج میں مختلف مسائل کا  پیدا ہونا فطری بات ہے۔لیکن اس کے حل کے لیے پہلے سے موجود مذہبی اصول و رہنمائی  کی سمجھ اور اس کا نفاذ مسئلے کے حل کے لیے کافی ہیں ۔پرسنل لاء کے ذریعے تنازعات حل کیے جاسکتے ہیں ۔"
+      },
+      en: {
+        question: "What problems have you faced in matters relating to personal and family laws?",
+        answer: "The occurrence of different types of problems in human society is natural. However, a proper understanding of existing religious principles and guidance, along with their appropriate implementation, can be sufficient to address many such problems. Family disputes can be resolved through personal laws."
+      },
+      hi: {
+        question: "व्यक्तिगत और पारिवारिक कानूनों से संबंधित मामलों में आपको किन समस्याओं का सामना करना पड़ा है?",
+        answer: "मानव समाज में विभिन्न प्रकार की समस्याओं का उत्पन्न होना स्वाभाविक है। लेकिन उनके समाधान के लिए पहले से मौजूद धार्मिक सिद्धांतों और मार्गदर्शन की सही समझ तथा उनका उचित पालन पर्याप्त हो सकता है। व्यक्तिगत कानूनों के माध्यम से पारिवारिक विवादों का समाधान किया जा सकता है।"
+      }
+    },
+    {
+      id: 34,
+      part: 2,
+      type: "WRITTEN",
+      ur: {
+        question: "خاندانی قوانین کے کون سے پہلو خواتین کے لیے غیر منصفانہ ہیں؟ ان کے حل کے لیے کیا تجاویز ہیں؟",
+        answer: "خواتین کو وراثت سے محروم کرنا، مہر کی ادائیگی میں ٹال مٹول، نفقہ کے معاملات میں غیر ضروری تاخیر اور خاندانی تنازعات میں قانونی امداد کی کمی قابلِ توجہ مسائل ہیں۔ ان کے حل کے لیے موجودہ قوانین کا مؤثر نفاذ، مفت قانونی امداد، وراثتی حقوق کے بارے میں بیداری اور شکایات کے فوری ازالے کا نظام قائم کیا جائے۔ اصلاحات کے نام پر مذہبی آزادی ختم کرنے کے بجائے حقوق کے نفاذ اور انصاف کی فراہمی کو یقینی بنایا جائے۔"
+      },
+      en: {
+        question: "Which aspects of family laws are unfair to women? What measures would you suggest to address them?",
+        answer: "Denying women their rightful inheritance, delaying the payment of mehr (dower), unnecessary delays in maintenance matters, and inadequate access to legal assistance in family disputes are important concerns that require attention.\n\nThese issues should be addressed through the effective implementation of existing laws, free legal aid, greater awareness of inheritance rights, and an efficient mechanism for the timely resolution of complaints.\n\nInstead of undermining religious freedom in the name of reform, priority should be given to enforcing existing rights effectively and ensuring access to justice."
+      },
+      hi: {
+        question: "पारिवारिक कानूनों के कौन-से पहलू महिलाओं के लिए अन्यायपूर्ण हैं? उनके समाधान के लिए क्या सुझाव हैं?",
+        answer: "महिलाओं को विरासत से वंचित करना, मेहर के भुगतान में टालमटोल करना, भरण-पोषण के मामलों में अनावश्यक देरी और पारिवारिक विवादों में कानूनी सहायता की कमी ऐसे महत्वपूर्ण मुद्दे हैं जिन पर ध्यान देने की आवश्यकता है।\n\nइन समस्याओं के समाधान के लिए वर्तमान कानूनों का प्रभावी क्रियान्वयन, निःशुल्क कानूनी सहायता, विरासत संबंधी अधिकारों के बारे में जागरूकता तथा शिकायतों के त्वरित निवारण की व्यवस्था स्थापित की जानी चाहिए।\n\nसुधारों के नाम पर धार्मिक स्वतंत्रता समाप्त करने के बजाय अधिकारों के प्रभावी क्रियान्वयन और न्याय की उपलब्धता सुनिश्चित की जानी चाहिए।"
+      }
+    },
+    {
+      id: 35,
+      part: 2,
+      type: "WRITTEN",
+      ur: {
+        question: "زرعی زمین اور آبائی مکان کی وراثت کے لیے کیا الگ اصول ہونے چاہییں؟",
+        answer: "زرعی زمین، آبائی مکان اور دیگر جائیداد کی وراثت میں متعلقہ قوانین، زمین کی نوعیت اور جائز وارثوں کے حقوق کو مدنظر رکھا جائے۔ مسلمانوں کے لیے وراثت کے تسلیم شدہ شرعی اصولوں کا احترام کیا جائے۔ کسی خاتون یا دوسرے وارث کو دباؤ، دھوکا دہی یا غلط ریکارڈ کے ذریعے اس کے جائز حصے سے محروم نہ کیا جائے۔ جائیداد کے ریکارڈ کی درستگی، شفاف تقسیم اور آسان قانونی چارہ جوئی کے مؤثر انتظامات کیے جائیں۔"
+      },
+      en: {
+        question: "Should separate principles apply to the inheritance of agricultural land and ancestral houses?",
+        answer: "The inheritance of agricultural land, ancestral houses and other properties should be dealt with by taking into account the applicable laws, the nature of the property and the rights of lawful heirs.\n\nThe recognised principles of Sharia governing inheritance for Muslims should be respected. No woman or other lawful heir should be deprived of their rightful share through coercion, fraud or incorrect property records.\n\nAccurate property records, transparent distribution of assets and accessible, effective legal remedies should be ensured."
+      },
+      hi: {
+        question: "कृषि भूमि और पैतृक मकान की विरासत के लिए क्या अलग-अलग सिद्धांत होने चाहिए?",
+        answer: "कृषि भूमि, पैतृक मकान और अन्य संपत्तियों के उत्तराधिकार के मामलों में संबंधित कानूनों, भूमि की प्रकृति तथा वैध उत्तराधिकारियों के अधिकारों को ध्यान में रखा जाना चाहिए।\n\nमुसलमानों के लिए विरासत से संबंधित मान्य शरीयत सिद्धांतों का सम्मान किया जाना चाहिए। किसी महिला या अन्य उत्तराधिकारी को दबाव, धोखाधड़ी अथवा गलत अभिलेखों के माध्यम से उसके वैध हिस्से से वंचित नहीं किया जाना चाहिए।\n\nसंपत्ति अभिलेखों की शुद्धता, पारदर्शी बँटवारे तथा सरल और प्रभावी कानूनी उपायों की व्यवस्था सुनिश्चित की जानी चाहिए।"
+      }
+    },
+    {
+      id: 36,
+      part: 2,
+      type: "WRITTEN",
+      ur: {
+        question: "کیا موجودہ خاندانی قوانین میں کسی تبدیلی یا اصلاح کی ضرورت ہے؟",
+        answer: "نہیں۔خاندانی قوانین میں اصلاحات کا مقصد انصاف کی فراہمی، خواتین اور بچوں کے حقوق کا تحفظ، قانونی تنازعات میں کمی اور عدالتی کارروائی کو مؤثر بنانا ہونا چاہیے۔ اصلاحات کے لیے تمام مذہبی برادریوں سے مشاورت کی جائے اور مسلمانوں کے تسلیم شدہ پرسنل لا کے اصولوں اور آئینی مذہبی آزادی کا احترام کیا جائے۔ خواتین کو وراثت سے محروم کرنے، نفقہ کی ادائیگی میں غفلت اور قانونی چارہ جوئی میں غیر ضروری تاخیر جیسے عملی مسائل کے حل کو ترجیح دی جائے۔"
+      },
+      en: {
+        question: "Is there a need to introduce changes or reforms in the existing family laws?",
+        answer: "The objective of reforms in family laws should be to ensure justice, protect the rights of women and children, reduce legal disputes and improve the effectiveness of judicial proceedings.\n\nAny proposed reforms should be developed through consultation with all religious communities, while respecting the recognised principles of Muslim Personal Law and the constitutional guarantee of religious freedom.\n\nPriority should be given to resolving practical problems, including the denial of women's inheritance rights, negligence in the payment of maintenance and unnecessary delays in legal proceedings."
+      },
+      hi: {
+        question: "क्या वर्तमान पारिवारिक कानूनों में किसी बदलाव या सुधार की आवश्यकता है?",
+        answer: "पारिवारिक कानूनों में सुधार का उद्देश्य न्याय प्रदान करना, महिलाओं और बच्चों के अधिकारों की रक्षा करना, कानूनी विवादों को कम करना तथा न्यायिक प्रक्रिया को प्रभावी बनाना होना चाहिए।\n\nसुधारों के लिए सभी धार्मिक समुदायों से परामर्श किया जाना चाहिए और मुसलमानों के मान्य व्यक्तिगत कानूनों के सिद्धांतों तथा संविधान द्वारा प्रदत्त धार्मिक स्वतंत्रता का सम्मान किया जाना चाहिए।\n\nमहिलाओं को विरासत से वंचित करने, भरण-पोषण के भुगतान में लापरवाही तथा कानूनी कार्यवाही में अनावश्यक देरी जैसी व्यावहारिक समस्याओं के समाधान को प्राथमिकता दी जानी चाहिए।"
+      }
+    },
+    {
+      id: 37,
+      part: 2,
+      type: "WRITTEN",
+      ur: {
+        question: "یکساں سول کوڈ کے بارے میں آپ کی دیگر تجاویز کیا ہیں؟",
+        answer: "مہاراشٹر میں یکساں سول کوڈ سے متعلق کسی بھی فیصلے سے قبل اس کے آئینی، قانونی، مذہبی اور سماجی اثرات کا تفصیلی جائزہ لیا جائے۔ تمام مذہبی برادریوں، خواتین کی تنظیموں، قانونی ماہرین اور شہریوں سے بامعنی مشاورت کی جائے۔ کسی بھی قانون کے نفاذ میں مذہبی آزادی، مساوات، انصاف اور بنیادی حقوق کا تحفظ یقینی بنایا جائے۔ مسلم پرسنل لا سے متعلق معاملات میں متعلقہ مذہبی اصولوں اور قانونی حقوق کو نظرانداز نہ کیا جائے۔ خواتین اور بچوں کے حقوق کے مؤثر تحفظ کے لیے موجودہ قوانین پر عمل درآمد بہتر بنایا جائے۔"
+      },
+      en: {
+        question: "What other suggestions do you have regarding the Uniform Civil Code?",
+        answer: "Before taking any decision regarding a Uniform Civil Code in Maharashtra, a detailed assessment of its constitutional, legal, religious and social implications should be undertaken.\n\nMeaningful consultations should be held with all religious communities, women's organisations, legal experts and citizens.\n\nAny legislation must safeguard religious freedom, equality, justice and fundamental rights. The recognised religious principles and legal rights associated with Muslim Personal Law should not be disregarded.\n\nImproving the implementation of existing laws should be prioritised to ensure the effective protection of the rights of women and children."
+      },
+      hi: {
+        question: "समान नागरिक संहिता के संबंध में आपके अन्य सुझाव क्या हैं?",
+        answer: "महाराष्ट्र में समान नागरिक संहिता के संबंध में कोई भी निर्णय लेने से पहले उसके संवैधानिक, कानूनी, धार्मिक और सामाजिक प्रभावों का विस्तृत अध्ययन किया जाना चाहिए।\n\nसभी धार्मिक समुदायों, महिला संगठनों, कानूनी विशेषज्ञों और नागरिकों के साथ सार्थक परामर्श किया जाना चाहिए।\n\nकिसी भी कानून के क्रियान्वयन में धार्मिक स्वतंत्रता, समानता, न्याय और मौलिक अधिकारों की सुरक्षा सुनिश्चित की जानी चाहिए। मुस्लिम पर्सनल लॉ से संबंधित मामलों में मान्य धार्मिक सिद्धांतों और कानूनी अधिकारों की अनदेखी नहीं की जानी चाहिए।\n\nमहिलाओं और बच्चों के अधिकारों की प्रभावी सुरक्षा के लिए वर्तमान कानूनों के बेहतर क्रियान्वयन को प्राथमिकता दी जानी चाहिए।"
+      }
+    }
+  ]
+};
+
+// Application State
+const AppState = {
+  currentLang: null, // Initially null as required by prompt
+  activeFilter: 'all', // 'all', 'part1', 'part2', 'no', 'yes', 'neutral'
+  searchQuery: '',
+  fontSizeOffset: 0
+};
+
+// DOM Cache
+const DOM = {
+  initialPrompt: document.getElementById('initial-selection-prompt'),
+  questionnaireWrapper: document.getElementById('questionnaire-wrapper'),
+  stickyControls: document.getElementById('sticky-controls'),
+  langBtns: document.querySelectorAll('.btn-lang'),
+  introItems: document.querySelectorAll('.intro-item'),
+  searchInput: document.getElementById('search-input'),
+  clearSearchBtn: document.getElementById('clear-search-btn'),
+  filterChips: document.querySelectorAll('.chip-btn'),
+  countDisplay: document.getElementById('count-display'),
+  portalTitle: document.getElementById('portal-title'),
+  portalSubtitle: document.getElementById('portal-subtitle'),
+  part1Container: document.getElementById('part1-container'),
+  part2Container: document.getElementById('part2-container'),
+  part1Section: document.getElementById('part1-section'),
+  part2Section: document.getElementById('part2-section'),
+  part1TitleText: document.getElementById('part1-title-text'),
+  part2TitleText: document.getElementById('part2-title-text'),
+  part1CountPill: document.getElementById('part1-count-pill'),
+  part2CountPill: document.getElementById('part2-count-pill'),
+  noResults: document.getElementById('no-results-state'),
+  noResultsTitle: document.getElementById('no-results-title'),
+  noResultsDesc: document.getElementById('no-results-desc'),
+  backToTopBtn: document.getElementById('back-to-top-btn'),
+  toast: document.getElementById('toast-notice'),
+  toastMsg: document.getElementById('toast-message'),
+  btnShareWhatsapp: document.getElementById('btn-share-whatsapp'),
+  btnFontIncrease: document.getElementById('btn-font-increase'),
+  btnFontDecrease: document.getElementById('btn-font-decrease'),
+  btnFontReset: document.getElementById('btn-font-reset'),
+  jumpGridModal: document.getElementById('jump-grid-container'),
+  jumpModal: (typeof bootstrap !== 'undefined' && document.getElementById('jumpModal')) ? new bootstrap.Modal(document.getElementById('jumpModal')) : null,
+  btnJumpTrigger: document.getElementById('btn-jump-trigger'),
+  // Mobile bar
+  mobNavUr: document.getElementById('mob-nav-ur'),
+  mobNavEn: document.getElementById('mob-nav-en'),
+  mobNavHi: document.getElementById('mob-nav-hi'),
+  mobNavJump: document.getElementById('mob-nav-jump'),
+  mobNavWritten: document.getElementById('mob-nav-written'),
+  mobNavTop: document.getElementById('mob-nav-top')
+};
+
+// Initialize Application
+function initApp() {
+  buildJumpGrid();
+  bindEvents();
+  setupScrollSpy();
 }
 
-function setCopyButton(btn, iconName, label, cssClass, lang) {
-  btn.replaceChildren();
-  btn.appendChild(icon(iconName));
-  btn.appendChild(document.createTextNode(" " + label));
-  btn.className = "btn btn-copy" + (cssClass ? " " + cssClass : "");
-  if (lang === "ur") btn.setAttribute("lang", "ur");
-  else if (lang === "hi") btn.setAttribute("lang", "hi");
-  else btn.removeAttribute("lang");
+// Build the 1 to 37 Question Grid inside the Jump Modal
+function buildJumpGrid() {
+  if (!DOM.jumpGridModal) return;
+  DOM.jumpGridModal.innerHTML = '';
+
+  UCC_DATA.questions.forEach(q => {
+    const pill = document.createElement('button');
+    pill.type = 'button';
+    pill.className = `jump-num-pill ${q.part === 2 ? 'part2-pill' : ''}`;
+    pill.textContent = q.id;
+    pill.title = `Question ${q.id} (${q.part === 2 ? 'Written' : 'Objective'})`;
+    
+    pill.addEventListener('click', () => {
+      if (DOM.jumpModal) DOM.jumpModal.hide();
+      jumpToQuestion(q.id);
+    });
+
+    DOM.jumpGridModal.appendChild(pill);
+  });
 }
 
-async function handleCopy(answerText, btn, meta) {
-  if (btn.dataset.busy === "1") return;
-  btn.dataset.busy = "1";
-  const ok = await copyText(answerText);
-  if (ok) {
-    setCopyButton(btn, "bi-check-lg", meta.copied, "copied", meta.code);
-  } else {
-    setCopyButton(btn, "bi-exclamation-triangle", meta.copyFail, "fail", meta.code);
-  }
-  setTimeout(() => {
-    setCopyButton(btn, "bi-clipboard", meta.copyBtn, "", meta.code);
-    delete btn.dataset.busy;
-  }, ok ? 1500 : 2500);
-}
-
-/* ---------------------------------------------------------------------------
-   RENDERING
---------------------------------------------------------------------------- */
-function buildTitleCard(meta) {
-  const card = el("div", "q-title-card");
-  card.setAttribute("lang", meta.code);
-  card.setAttribute("dir", meta.dir);
-  card.appendChild(el("h2", "q-title", meta.title));
-  card.appendChild(el("p", "q-subtitle", meta.subtitle));
-  return card;
-}
-
-function buildPartHeader(text, note) {
-  const header = el("div", "part-header");
-  header.appendChild(el("h2", null, text));
-  if (note) header.appendChild(el("p", "part-note", note));
-  return header;
-}
-
-function buildCard(number, meta) {
-  const item = meta.questions[number - 1];
-
-  const card = el("article", "question-card");
-  card.setAttribute("lang", meta.code);
-  card.setAttribute("dir", meta.dir);
-
-  const body = el("div", "card-body");
-
-  // Question number chip
-  body.appendChild(el("span", "q-num", meta.qLabel + " " + number));
-
-  // Question text
-  body.appendChild(el("h3", "q-text", item.q));
-
-  // Answer section — clearly separated
-  const aBox = el("div", "a-box");
-  const aLabel = el("div", "a-label");
-  aLabel.appendChild(icon(number <= 31 ? "bi-patch-check" : "bi-journal-text"));
-  aLabel.appendChild(document.createTextNode(number <= 31 ? meta.aLabel : meta.aLabelWritten));
-  aBox.appendChild(aLabel);
-
-  const badgeClass = answerBadgeClass(item.a);
-  if (badgeClass) {
-    aBox.appendChild(el("span", "a-badge " + badgeClass, item.a));
-  } else {
-    aBox.appendChild(el("p", "a-text", item.a));
-  }
-
-  // Copy Answer button (copies ONLY the answer text)
-  const btn = el("button", "btn btn-copy");
-  btn.type = "button";
-  btn.setAttribute("aria-live", "polite");
-  setCopyButton(btn, "bi-clipboard", meta.copyBtn, "", meta.code);
-  btn.addEventListener("click", () => handleCopy(item.a, btn, meta));
-  aBox.appendChild(btn);
-
-  body.appendChild(aBox);
-  card.appendChild(body);
-  return card;
-}
-
-function buildQuestionnaire(meta) {
-  // Title card
-  els.qContent.replaceChildren(buildTitleCard(meta));
-  els.qContent.setAttribute("dir", meta.dir);
-  els.qContent.setAttribute("lang", meta.code);
-
-  // Search + status localisation
-  els.searchLabel.replaceChildren(icon("bi-search"), document.createTextNode(" " + meta.searchLabel));
-  els.searchInput.placeholder = meta.searchPlaceholder;
-  els.searchInput.classList.toggle("urdu-input", meta.code === "ur");
-  els.searchInput.classList.toggle("hindi-input", meta.code === "hi");
-  els.clearSearchText.textContent = meta.clearBtn;
-  els.noResultsText.textContent = meta.noResults;
-  if (meta.code === "ur") {
-    els.noResults.setAttribute("lang", "ur");
-    els.noResults.setAttribute("dir", "rtl");
-  } else {
-    els.noResults.removeAttribute("lang");
-    els.noResults.setAttribute("dir", "ltr");
-  }
-
-  // Question list: Part I (Q1–31), Part II (Q32–37)
-  els.questionList.replaceChildren();
-  cardRefs = [];
-
-  part1El = buildPartHeader(meta.part1, meta.part1Note);
-  els.questionList.appendChild(part1El);
-
-  for (let n = 1; n <= 31; n++) {
-    const card = buildCard(n, meta);
-    els.questionList.appendChild(card);
-    cardRefs.push({ el: card, hay: (n + " " + meta.questions[n - 1].q + " " + meta.questions[n - 1].a).toLowerCase() });
-  }
-
-  part2El = buildPartHeader(meta.part2, meta.part2Note);
-  els.questionList.appendChild(part2El);
-
-  for (let n = 32; n <= 37; n++) {
-    const card = buildCard(n, meta);
-    els.questionList.appendChild(card);
-    cardRefs.push({ el: card, hay: (n + " " + meta.questions[n - 1].q + " " + meta.questions[n - 1].a).toLowerCase() });
-  }
-}
-
-/* ---------------------------------------------------------------------------
-   LANGUAGE SELECTION
---------------------------------------------------------------------------- */
-function selectLanguage(lang) {
-  const meta = LANGUAGES[lang];
-  if (!meta) return;
-  currentLang = lang;
-
-  // Active states on every language button (hero + navbar)
-  document.querySelectorAll(".js-lang-btn").forEach((b) => {
-    b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+// Bind Event Handlers
+function bindEvents() {
+  // Language Button Clicks (Hero Header)
+  DOM.langBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      selectLanguage(lang);
+    });
   });
 
-  // Hide the "select a language" prompt, show the questionnaire
-  els.selectPrompt.hidden = true;
-  els.questionnaire.hidden = false;
+  // Mobile Bottom Bar Navigation
+  if (DOM.mobNavUr) DOM.mobNavUr.addEventListener('click', () => selectLanguage('ur'));
+  if (DOM.mobNavEn) DOM.mobNavEn.addEventListener('click', () => selectLanguage('en'));
+  if (DOM.mobNavHi) DOM.mobNavHi.addEventListener('click', () => selectLanguage('hi'));
+  if (DOM.mobNavTop) DOM.mobNavTop.addEventListener('click', scrollToTop);
+  if (DOM.mobNavJump) {
+    DOM.mobNavJump.addEventListener('click', () => {
+      if (!AppState.currentLang) selectLanguage('ur');
+      if (DOM.jumpModal) DOM.jumpModal.show();
+    });
+  }
+  if (DOM.mobNavWritten) {
+    DOM.mobNavWritten.addEventListener('click', jumpToWritten);
+  }
 
-  // Render the chosen questionnaire
-  buildQuestionnaire(meta);
+  // Jump Trigger Button in Sticky Controls
+  if (DOM.btnJumpTrigger) {
+    DOM.btnJumpTrigger.addEventListener('click', () => {
+      if (DOM.jumpModal) DOM.jumpModal.show();
+    });
+  }
 
-  // Reset any previous search
-  els.searchInput.value = "";
-  applySearch();
+  // Search Input Events (Input, Keyup, Search)
+  if (DOM.searchInput) {
+    DOM.searchInput.addEventListener('input', (e) => handleSearchInput(e.target.value));
+    DOM.searchInput.addEventListener('keyup', (e) => handleSearchInput(e.target.value));
+    DOM.searchInput.addEventListener('search', (e) => handleSearchInput(e.target.value));
+  }
 
-  // Bring the questionnaire into view
-  els.questionnaire.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+  // Clear Search Button
+  if (DOM.clearSearchBtn) {
+    DOM.clearSearchBtn.addEventListener('click', clearSearch);
+  }
 
-/* ---------------------------------------------------------------------------
-   SEARCH
---------------------------------------------------------------------------- */
-function applySearch() {
-  const term = els.searchInput.value.trim().toLowerCase();
-  const searching = term.length > 0;
-  let visibleCount = 0;
-
-  cardRefs.forEach((ref) => {
-    const match = !searching || ref.hay.includes(term);
-    ref.el.hidden = !match;
-    if (match) visibleCount++;
+  // Filter Chips (All, Part 1, Part 2, NO, YES, NO COMMENT)
+  DOM.filterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const filter = chip.getAttribute('data-filter');
+      setFilter(filter);
+    });
   });
-
-  // While searching, hide the part headers for a clean results view
-  if (part1El) part1El.hidden = searching;
-  if (part2El) part2El.hidden = searching;
-
-  els.noResults.hidden = !(searching && visibleCount === 0);
-}
-
-function clearSearch() {
-  els.searchInput.value = "";
-  applySearch();
-  els.searchInput.focus();
-}
-
-/* ---------------------------------------------------------------------------
-   BACK TO TOP
---------------------------------------------------------------------------- */
-function handleScroll() {
-  els.backToTop.classList.toggle("show", window.scrollY > 400);
-}
-
-/* ---------------------------------------------------------------------------
-   INITIALISATION
---------------------------------------------------------------------------- */
-function init() {
-  els.qContent = document.getElementById("qContent");
-  els.searchCard = document.getElementById("searchCard");
-  els.searchLabel = document.getElementById("searchLabel");
-  els.searchInput = document.getElementById("searchInput");
-  els.clearSearchBtn = document.getElementById("clearSearchBtn");
-  els.clearSearchText = document.getElementById("clearSearchText");
-  els.noResults = document.getElementById("noResults");
-  els.noResultsText = document.getElementById("noResultsText");
-  els.questionList = document.getElementById("questionList");
-  els.questionnaire = document.getElementById("questionnaire");
-  els.selectPrompt = document.getElementById("selectPrompt");
-  els.backToTop = document.getElementById("backToTop");
-
-  // Language buttons (hero + navbar)
-  document.querySelectorAll(".js-lang-btn").forEach((btn) => {
-    btn.addEventListener("click", () => selectLanguage(btn.getAttribute("data-lang")));
-  });
-
-  // Search
-  els.searchInput.addEventListener("input", applySearch);
-  els.clearSearchBtn.addEventListener("click", clearSearch);
 
   // Back to top
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  els.backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-  handleScroll();
+  if (DOM.backToTopBtn) {
+    DOM.backToTopBtn.addEventListener('click', scrollToTop);
+  }
+
+  // Font Size Adjusters
+  if (DOM.btnFontIncrease) DOM.btnFontIncrease.addEventListener('click', () => adjustFontSize(1));
+  if (DOM.btnFontDecrease) DOM.btnFontDecrease.addEventListener('click', () => adjustFontSize(-1));
+  if (DOM.btnFontReset) DOM.btnFontReset.addEventListener('click', () => resetFontSize());
+
+  // WhatsApp Share Button
+  if (DOM.btnShareWhatsapp) DOM.btnShareWhatsapp.addEventListener('click', shareOnWhatsApp);
 }
 
-document.addEventListener("DOMContentLoaded", init);
+// Convert Urdu/Arabic digits (۰-۹, ٠-٩) and Devanagari digits (०-९) to ASCII 0-9
+function normalizeNumerals(str) {
+  if (!str) return '';
+  return str
+    .replace(/[۰٠०]/g, '0')
+    .replace(/[۱١१]/g, '1')
+    .replace(/[۲٢२]/g, '2')
+    .replace(/[۳٣३]/g, '3')
+    .replace(/[۴٤४]/g, '4')
+    .replace(/[۵٥५]/g, '5')
+    .replace(/[۶٦६]/g, '6')
+    .replace(/[۷٧७]/g, '7')
+    .replace(/[۸٨८]/g, '8')
+    .replace(/[۹٩९]/g, '9');
+}
+window.normalizeNumerals = normalizeNumerals;
+
+// Handle Search Input (Called on input, keyup, search, or inline)
+function handleSearchInput(val) {
+  AppState.searchQuery = (val !== undefined ? val : (DOM.searchInput ? DOM.searchInput.value : '')).trim();
+  toggleClearButton();
+  renderFilteredQuestions();
+}
+window.handleSearchInput = handleSearchInput;
+
+// Clear Search Input
+function clearSearch() {
+  if (DOM.searchInput) {
+    DOM.searchInput.value = '';
+    DOM.searchInput.focus();
+  }
+  AppState.searchQuery = '';
+  toggleClearButton();
+  renderFilteredQuestions();
+}
+window.clearSearch = clearSearch;
+
+// Set Active Filter
+function setFilter(filterName) {
+  DOM.filterChips.forEach(c => {
+    if (c.getAttribute('data-filter') === filterName) {
+      c.classList.add('active');
+    } else {
+      c.classList.remove('active');
+    }
+  });
+  AppState.activeFilter = filterName;
+
+  // Clear search query if user picks a specific category filter so it doesn't conflict
+  if (filterName !== 'all' && AppState.searchQuery) {
+    AppState.searchQuery = '';
+    if (DOM.searchInput) DOM.searchInput.value = '';
+    toggleClearButton();
+  }
+
+  renderFilteredQuestions();
+}
+window.setFilter = setFilter;
+
+// Select Language
+function selectLanguage(lang) {
+  if (!UCC_DATA.translations[lang]) return;
+
+  AppState.currentLang = lang;
+  const t = UCC_DATA.translations[lang];
+
+  // Set Language Direction and Class globally
+  document.documentElement.setAttribute('dir', t.dir);
+  document.documentElement.setAttribute('lang', lang);
+  document.body.className = `lang-${lang}`;
+
+  if (DOM.stickyControls) {
+    DOM.stickyControls.setAttribute('dir', t.dir);
+    DOM.stickyControls.className = `sticky-controls-bar lang-${lang}`;
+  }
+
+  // Update Hero language buttons
+  DOM.langBtns.forEach(btn => {
+    const btnLang = btn.getAttribute('data-lang');
+    btn.classList.toggle('active', btnLang === lang);
+  });
+
+  // Highlight corresponding intro card in hero
+  DOM.introItems.forEach(item => {
+    const itemLang = item.getAttribute('data-intro-lang');
+    item.classList.toggle('active-lang-intro', itemLang === lang);
+  });
+
+  // Mobile Bottom bar active states
+  if (DOM.mobNavUr) {
+    DOM.mobNavUr.classList.toggle('active', lang === 'ur');
+    DOM.mobNavEn.classList.toggle('active', lang === 'en');
+    DOM.mobNavHi.classList.toggle('active', lang === 'hi');
+  }
+
+  // Set Language Direction and Class on questionnaire wrapper
+  DOM.questionnaireWrapper.setAttribute('dir', t.dir);
+  DOM.questionnaireWrapper.className = `questionnaire-container lang-${lang}`;
+  
+  // Set placeholders and titles
+  DOM.searchInput.placeholder = t.searchPlaceholder;
+  DOM.clearSearchBtn.title = t.clearSearchTitle;
+  
+  // Update Filter chip labels safely
+  const chipAll = document.getElementById('chip-label-all');
+  if (chipAll) chipAll.textContent = t.filterAll;
+  const chipP1 = document.getElementById('chip-label-part1');
+  if (chipP1) chipP1.textContent = t.filterPart1;
+  const chipP2 = document.getElementById('chip-label-part2');
+  if (chipP2) chipP2.textContent = t.filterPart2;
+  const chipNo = document.getElementById('chip-label-no');
+  if (chipNo) chipNo.textContent = t.filterNo;
+  const chipYes = document.getElementById('chip-label-yes');
+  if (chipYes) chipYes.textContent = t.filterYes;
+  const chipNeutral = document.getElementById('chip-label-neutral');
+  if (chipNeutral) chipNeutral.textContent = t.filterNoComment;
+
+  // Update Titles
+  DOM.portalTitle.textContent = t.portalTitle;
+  DOM.portalSubtitle.textContent = t.portalSubtitle;
+  DOM.part1TitleText.textContent = t.part1Title;
+  DOM.part2TitleText.textContent = t.part2Title;
+  DOM.noResultsTitle.textContent = t.noResultsTitle;
+  DOM.noResultsDesc.textContent = t.noResultsDesc;
+
+  // Reveal Questionnaire and Hide Initial Prompt
+  DOM.initialPrompt.style.display = 'none';
+  DOM.questionnaireWrapper.style.display = 'block';
+  DOM.stickyControls.style.display = 'block';
+
+  // Render Questions
+  renderFilteredQuestions();
+}
+window.selectLanguage = selectLanguage;
+
+// Filter and Render Questions
+function renderFilteredQuestions() {
+  if (!AppState.currentLang) return;
+
+  const lang = AppState.currentLang;
+  const t = UCC_DATA.translations[lang];
+  const rawQuery = (AppState.searchQuery || '').trim();
+  const normalizedQuery = normalizeNumerals(rawQuery).toLowerCase();
+  const filter = AppState.activeFilter;
+
+  // Check if query is targeting a specific question number (e.g. "20", "۲۰", "q20", "سوال 20", "سوال نمبر 20", "प्रश्न 20")
+  const numMatch = normalizedQuery.match(/(?:q|question|سوال|سوال\s*نمبر|प्रश्न|no\.?|#)?\s*(\d{1,2})\b/i);
+  const targetNum = numMatch ? parseInt(numMatch[1], 10) : null;
+  const isPureNumQuery = targetNum !== null && targetNum >= 1 && targetNum <= 37 && (normalizedQuery.length <= 16);
+
+  // Filter matching questions
+  const matchedQuestions = UCC_DATA.questions.filter(q => {
+    // If user searched for a specific question number (e.g. 20), show that question directly across all sections
+    if (isPureNumQuery) {
+      return q.id === targetNum;
+    }
+
+    // Specific Filter Rules
+    if (filter === 'part1' && q.part !== 1) return false;
+    if (filter === 'part2' && q.part !== 2) return false;
+    if (filter === 'no' && q.type !== 'NO') return false;
+    if (filter === 'yes' && q.type !== 'YES') return false;
+    if (filter === 'neutral' && q.type !== 'NO_COMMENT') return false;
+
+    // Search Query Filter
+    if (normalizedQuery) {
+      const qNumStr = q.id.toString();
+      const localizedContent = q[lang];
+      const qText = localizedContent.question.toLowerCase();
+      const aText = localizedContent.answer.toLowerCase();
+
+      const matchesNum = qNumStr === normalizedQuery || qNumStr.startsWith(normalizedQuery);
+      const matchesQuestion = qText.includes(normalizedQuery) || qText.includes(rawQuery.toLowerCase());
+      const matchesAnswer = aText.includes(normalizedQuery) || aText.includes(rawQuery.toLowerCase());
+
+      return matchesNum || matchesQuestion || matchesAnswer;
+    }
+
+    return true;
+  });
+
+  // Clear containers
+  DOM.part1Container.innerHTML = '';
+  DOM.part2Container.innerHTML = '';
+
+  let part1Count = 0;
+  let part2Count = 0;
+
+  matchedQuestions.forEach(q => {
+    const cardNode = createQuestionCard(q, lang, t);
+    if (q.part === 1) {
+      DOM.part1Container.appendChild(cardNode);
+      part1Count++;
+    } else {
+      DOM.part2Container.appendChild(cardNode);
+      part2Count++;
+    }
+  });
+
+  // Toggle Visibility of Sections based on match counts and filters
+  DOM.part1Section.style.display = (part1Count > 0) ? 'block' : 'none';
+  DOM.part1CountPill.textContent = `${part1Count} / 31`;
+
+  DOM.part2Section.style.display = (part2Count > 0) ? 'block' : 'none';
+  DOM.part2CountPill.textContent = `${part2Count} / 6`;
+
+  // Update Global Counter safely
+  const totalShown = matchedQuestions.length;
+  if (DOM.countDisplay) {
+    DOM.countDisplay.textContent = t.showingCount.replace('{count}', totalShown);
+  }
+
+  // Toggle Empty State
+  DOM.noResults.style.display = (totalShown === 0) ? 'block' : 'none';
+}
+
+// Create DOM Node for a Question Card using safe DOM methods
+function createQuestionCard(q, lang, t) {
+  const card = document.createElement('article');
+  const isPart2 = q.part === 2;
+  card.className = `question-card ${isPart2 ? 'written-question-card' : ''}`;
+  card.id = `q-${q.id}`;
+
+  const langContent = q[lang];
+  const answerRawText = langContent.answer;
+
+  if (isPart2) {
+    // ----------------------------------------------------
+    // WRITTEN QUESTION CARD (Questions 32 - 37)
+    // ----------------------------------------------------
+    const writtenCardHeader = document.createElement('div');
+    writtenCardHeader.className = 'written-card-header';
+
+    const headerLeft = document.createElement('div');
+    headerLeft.className = 'd-flex align-items-center gap-2';
+
+    const numBadge = document.createElement('span');
+    numBadge.className = 'q-number-badge';
+    numBadge.textContent = lang === 'ur' ? (q.id === 32 ? `سوال نمبر ${q.id}` : `سوال ${q.id}`) : (lang === 'hi' ? `प्रश्न ${q.id}` : `Question ${q.id}`);
+    headerLeft.appendChild(numBadge);
+
+    const typeTag = document.createElement('span');
+    typeTag.className = 'written-type-tag';
+    typeTag.innerHTML = `<i class="bi bi-pencil-fill me-1"></i> ${t.writtenTag}`;
+    headerLeft.appendChild(typeTag);
+
+    writtenCardHeader.appendChild(headerLeft);
+    card.appendChild(writtenCardHeader);
+
+    // Question Title
+    const qText = document.createElement('h3');
+    qText.className = 'q-text mb-3';
+    qText.textContent = langContent.question;
+    card.appendChild(qText);
+
+    // Answer Box with Paragraphs
+    const answerBox = document.createElement('div');
+    answerBox.className = 'written-answer-box';
+
+    const leadLabel = document.createElement('div');
+    leadLabel.className = 'answer-lead-label mb-2 text-success fw-bold';
+    leadLabel.innerHTML = `<i class="bi bi-file-earmark-check-fill me-1"></i> ${t.proposedAnswerLabel}`;
+    answerBox.appendChild(leadLabel);
+
+    const answerBody = document.createElement('div');
+    answerBody.className = 'written-answer-text';
+
+    // Split paragraphs
+    const paragraphs = answerRawText.split('\n\n');
+    paragraphs.forEach(paraText => {
+      const p = document.createElement('p');
+      p.textContent = paraText.trim();
+      answerBody.appendChild(p);
+    });
+    answerBox.appendChild(answerBody);
+
+    // Bottom Action Bar
+    const actionBar = document.createElement('div');
+    actionBar.className = 'written-action-bar';
+
+    const bottomCopyBtn = createCopyButton(answerRawText, t.copyAnswer, t);
+    actionBar.appendChild(bottomCopyBtn);
+
+    answerBox.appendChild(actionBar);
+    card.appendChild(answerBox);
+
+  } else {
+    // ----------------------------------------------------
+    // OBJECTIVE QUESTION CARD (Questions 1 - 31)
+    // ----------------------------------------------------
+    const header = document.createElement('div');
+    header.className = 'question-header';
+
+    const numBadge = document.createElement('span');
+    numBadge.className = 'q-number-badge';
+    numBadge.textContent = lang === 'ur' ? `سوال ${q.id}` : (lang === 'hi' ? `प्रश्न ${q.id}` : `Question ${q.id}`);
+    header.appendChild(numBadge);
+
+    const qText = document.createElement('h3');
+    qText.className = 'q-text';
+    qText.textContent = langContent.question;
+    header.appendChild(qText);
+
+    card.appendChild(header);
+
+    // Answer row with big distinct badge and instant copy button
+    const answerBox = document.createElement('div');
+    answerBox.className = 'answer-box';
+
+    const labelGroup = document.createElement('div');
+    labelGroup.className = 'answer-label-group';
+
+    const leadLabel = document.createElement('span');
+    leadLabel.className = 'answer-lead-label';
+    leadLabel.textContent = t.answerLabel;
+    labelGroup.appendChild(leadLabel);
+
+    // Formatted badge based on answer type
+    const upperAns = answerRawText.toUpperCase();
+    if (upperAns.startsWith('NO COMMENT')) {
+      const pill = document.createElement('span');
+      pill.className = 'badge-ans ans-neutral';
+      pill.innerHTML = `<i class="bi bi-dash-circle-fill"></i> ${answerRawText}`;
+      labelGroup.appendChild(pill);
+    } else if (upperAns.startsWith('NO')) {
+      const pill = document.createElement('span');
+      pill.className = 'badge-ans ans-no';
+      pill.innerHTML = `<i class="bi bi-x-circle-fill"></i> ${answerRawText}`;
+      labelGroup.appendChild(pill);
+    } else if (upperAns.startsWith('YES')) {
+      const pill = document.createElement('span');
+      pill.className = 'badge-ans ans-yes';
+      pill.innerHTML = `<i class="bi bi-check-circle-fill"></i> ${answerRawText}`;
+      labelGroup.appendChild(pill);
+    } else {
+      // Q6 legal age text answer
+      const textSpan = document.createElement('span');
+      textSpan.className = 'answer-text-regular';
+      textSpan.textContent = answerRawText;
+      labelGroup.appendChild(textSpan);
+    }
+
+    answerBox.appendChild(labelGroup);
+    card.appendChild(answerBox);
+  }
+
+  return card;
+}
+
+// Reusable Copy Button Generator
+function createCopyButton(textToCopy, defaultLabel, t) {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'btn-copy-action';
+
+  const icon = document.createElement('i');
+  icon.className = 'bi bi-clipboard me-1';
+  btn.appendChild(icon);
+
+  const label = document.createElement('span');
+  label.textContent = defaultLabel;
+  btn.appendChild(label);
+
+  btn.addEventListener('click', () => {
+    copyTextToClipboard(textToCopy, btn, label, icon, defaultLabel, t);
+  });
+
+  return btn;
+}
+
+// Jump directly to Question with highlight pulse
+function jumpToQuestion(qNum) {
+  if (!AppState.currentLang) selectLanguage('en');
+
+  // If a filter is hiding this question, reset to 'all' or appropriate part
+  const qObj = UCC_DATA.questions.find(q => q.id === qNum);
+  if (qObj) {
+    const isHiddenByFilter = (
+      (AppState.activeFilter === 'part1' && qObj.part !== 1) || 
+      (AppState.activeFilter === 'part2' && qObj.part !== 2) ||
+      (AppState.activeFilter === 'no' && qObj.type !== 'NO') ||
+      (AppState.activeFilter === 'yes' && qObj.type !== 'YES') ||
+      (AppState.activeFilter === 'neutral' && qObj.type !== 'NO_COMMENT')
+    );
+    if (isHiddenByFilter) {
+      setFilter('all');
+    }
+  }
+
+  // Clear search if it hides the question
+  if (AppState.searchQuery) {
+    DOM.searchInput.value = '';
+    AppState.searchQuery = '';
+    toggleClearButton();
+    renderFilteredQuestions();
+  }
+
+  setTimeout(() => {
+    const targetCard = document.getElementById(`q-${qNum}`);
+    if (targetCard) {
+      targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      targetCard.classList.remove('highlight-pulse');
+      void targetCard.offsetWidth; // Trigger reflow for animation restart
+      targetCard.classList.add('highlight-pulse');
+    }
+  }, 100);
+}
+
+// Copy Answer to Clipboard with 1.5s visual feedback & fallback
+function copyTextToClipboard(text, btn, labelSpan, iconEl, originalText, t) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text)
+      .then(() => triggerCopySuccess(btn, labelSpan, iconEl, originalText))
+      .catch(() => fallbackCopy(text, btn, labelSpan, iconEl, originalText, t));
+  } else {
+    fallbackCopy(text, btn, labelSpan, iconEl, originalText, t);
+  }
+}
+
+// Fallback clipboard method using temporary textarea
+function fallbackCopy(text, btn, labelSpan, iconEl, originalText, t) {
+  try {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.width = '2em';
+    textArea.style.height = '2em';
+    textArea.style.padding = '0';
+    textArea.style.border = 'none';
+    textArea.style.outline = 'none';
+    textArea.style.boxShadow = 'none';
+    textArea.style.background = 'transparent';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    const successful = document.execCommand('copy');
+    document.body.removeChild(textArea);
+
+    if (successful) {
+      triggerCopySuccess(btn, labelSpan, iconEl, originalText);
+    } else {
+      triggerCopyError(btn, labelSpan, iconEl, originalText, t);
+    }
+  } catch (err) {
+    triggerCopyError(btn, labelSpan, iconEl, originalText, t);
+  }
+}
+
+// Copy Success State (1.5 seconds)
+function triggerCopySuccess(btn, labelSpan, iconEl, originalText) {
+  labelSpan.textContent = "Copied!";
+  iconEl.className = 'bi bi-check-circle-fill me-1';
+  btn.classList.add('copied');
+
+  showToast("Copied to clipboard! / جواب کاپی ہو گیا!", "success");
+
+  setTimeout(() => {
+    labelSpan.textContent = originalText;
+    iconEl.className = 'bi bi-clipboard me-1';
+    btn.classList.remove('copied');
+  }, 1500);
+}
+
+// Copy Error State
+function triggerCopyError(btn, labelSpan, iconEl, originalText, t) {
+  labelSpan.textContent = t.copyFailed;
+  iconEl.className = 'bi bi-exclamation-triangle-fill me-1';
+  btn.classList.add('copy-failed');
+
+  showToast(t.copyFailed, "error");
+
+  setTimeout(() => {
+    labelSpan.textContent = originalText;
+    iconEl.className = 'bi bi-clipboard me-1';
+    btn.classList.remove('copy-failed');
+  }, 1500);
+}
+
+// Show Toast Notification
+function showToast(message, type = "success") {
+  DOM.toastMsg.textContent = message;
+  DOM.toast.className = `toast-notice show ${type}`;
+
+  setTimeout(() => {
+    DOM.toast.className = 'toast-notice';
+  }, 2200);
+}
+
+// Toggle Clear Search Button
+function toggleClearButton() {
+  if (DOM.searchInput.value.length > 0) {
+    DOM.clearSearchBtn.style.display = 'flex';
+  } else {
+    DOM.clearSearchBtn.style.display = 'none';
+  }
+}
+
+// Font Size Adjustments
+function adjustFontSize(delta) {
+  AppState.fontSizeOffset = Math.max(-4, Math.min(6, AppState.fontSizeOffset + delta * 2));
+  applyFontSize();
+}
+
+function resetFontSize() {
+  AppState.fontSizeOffset = 0;
+  applyFontSize();
+}
+
+function applyFontSize() {
+  const base = 16 + AppState.fontSizeOffset;
+  document.documentElement.style.fontSize = base + 'px';
+  document.documentElement.style.setProperty('--font-base-size', base + 'px');
+  showToast(`Text size: ${base}px`, "success");
+}
+
+// Expose globally for inline and programmatic calls
+window.adjustFontSize = adjustFontSize;
+window.resetFontSize = resetFontSize;
+window.selectLanguage = selectLanguage;
+window.jumpToQuestion = jumpToQuestion;
+window.setFilter = setFilter;
+window.handleSearchInput = handleSearchInput;
+window.clearSearch = clearSearch;
+
+// Jump to Part II Written Questions (32 - 37)
+function jumpToWritten() {
+  if (!AppState.currentLang) {
+    selectLanguage('ur');
+  }
+  setFilter('part2');
+  setTimeout(() => {
+    const q32 = document.getElementById('q-32');
+    const part2Section = document.getElementById('part2-section');
+    const target = q32 || part2Section;
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (q32) {
+        q32.classList.remove('highlight-pulse');
+        void q32.offsetWidth;
+        q32.classList.add('highlight-pulse');
+      }
+    }
+  }, 80);
+}
+window.jumpToWritten = jumpToWritten;
+
+// WhatsApp Share Handler with Mobile Fallback
+function shareOnWhatsApp() {
+  const lang = AppState.currentLang || 'ur';
+  const t = UCC_DATA.translations[lang] || UCC_DATA.translations['ur'];
+  const url = window.location.href;
+  const message = `${t.whatsappText}\n${url}`;
+  const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+  
+  try {
+    const win = window.open(whatsappUrl, '_blank');
+    if (!win || win.closed || typeof win.closed === 'undefined') {
+      window.location.href = whatsappUrl;
+    }
+  } catch (err) {
+    window.location.href = whatsappUrl;
+  }
+}
+window.shareOnWhatsApp = shareOnWhatsApp;
+window.scrollToTop = scrollToTop;
+
+// Smooth Scroll to Top
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+// Scroll Spy for Back to Top Button
+function setupScrollSpy() {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      DOM.backToTopBtn.classList.add('visible');
+    } else {
+      DOM.backToTopBtn.classList.remove('visible');
+    }
+  }, { passive: true });
+}
+
+// Initialize on DOM Ready
+document.addEventListener('DOMContentLoaded', initApp);
