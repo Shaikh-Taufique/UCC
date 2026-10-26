@@ -149,6 +149,16 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.brand-header-content .badge-official {
+  background: rgba(16, 185, 129, 0.25);
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  color: #a7f3d0;
+  padding: 2px 8px;
+  border-radius: 14px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
 .top-notice-bar .badge-official {
   background: rgba(16, 185, 129, 0.25);
   border: 1px solid rgba(52, 211, 153, 0.5);
