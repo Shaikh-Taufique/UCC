@@ -142,7 +142,7 @@ body {
 .top-notice-bar {
   background: linear-gradient(90deg, #091a30 0%, #0f2744 50%, #064e3b 100%);
   color: #ffffff;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   padding: 6px 14px;
   font-weight: 500;
   letter-spacing: 0.2px;
@@ -1694,7 +1694,7 @@ body {
   }
 
   .brand-org-name {
-    font-size: 1.0rem;
+    font-size: 0.9rem;
   }
 
   .brand-org-sub {
