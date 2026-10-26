@@ -4,23 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Maharashtra UCC Questionnaire Portal | مہاراشٹر یو سی سی پورٹل | महाराष्ट्र समान नागरिक संहिता</title>
+  <title>All India Muslim Personal Law Board | Maharashtra UCC Questionnaire Portal</title>
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" href="assets/aimplb-logo.png">
+  <link rel="apple-touch-icon" href="assets/aimplb-logo.png">
 
   <!-- SEO & Social Meta Tags -->
   <meta name="description"
-    content="Official public awareness portal for the Maharashtra Uniform Civil Code (UCC) Committee Questionnaire. View complete bilingual/trilingual verified responses in Urdu, English, and Hindi.">
+    content="Official public awareness portal by All India Muslim Personal Law Board for Maharashtra Uniform Civil Code (UCC) Committee Questionnaire. Verified responses in Urdu, English, Hindi, and Marathi.">
   <meta name="keywords"
-    content="Maharashtra UCC, Uniform Civil Code, UCC Questionnaire, Muslim Personal Law, Sharia, Indian Constitution, Article 44, Maharashtra Government Questionnaire, اردو, English, हिन्दी">
-  <meta name="author" content="Public Awareness Initiative">
-  <meta name="theme-color" content="#0f2744">
+    content="AIMPLB, All India Muslim Personal Law Board, Maharashtra UCC, Uniform Civil Code Questionnaire, Muslim Personal Law, Shariat, Article 44, Article 25, Maharashtra Government Questionnaire, اردو, English, हिन्दी, मराठी">
+  <meta name="author" content="All India Muslim Personal Law Board">
+  <meta name="theme-color" content="#0a192f">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Maharashtra UCC Questionnaire Portal | Public Awareness & Verified Responses">
+  <meta property="og:title" content="Maharashtra UCC Questionnaire | All India Muslim Personal Law Board">
   <meta property="og:description"
-    content="Complete 37 questions and proposed responses for the Maharashtra Uniform Civil Code Committee questionnaire in Urdu, English, and Hindi.">
+    content="Complete 37 verified questions and proposed responses for the Maharashtra Uniform Civil Code Committee questionnaire in Urdu, English, Hindi, and Marathi.">
+  <meta property="og:image" content="assets/aimplb-logo.png">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts: Inter/Plus Jakarta Sans (EN), Noto Sans Devanagari (HI), Noto Nastaliq Urdu & Amiri (UR) -->
+  <!-- Google Fonts: Inter/Plus Jakarta Sans, Noto Sans Devanagari (Hindi & Marathi), Noto Nastaliq Urdu & Amiri -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -41,74 +46,134 @@
 <body>
 
   <!-- Accessibility Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content </a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Top Announcement Bar -->
   <header class="top-notice-bar" role="banner">
-    <div class="container-xl d-flex align-items-center justify-content-center flex-wrap">
-      <span class="badge-official"><i class="bi bi-shield-check me-1"></i> Public Awareness Portal</span>
-      <span>Maharashtra Uniform Civil Code Committee Questionnaire Guidance</span>
+    <div class="container-xl d-flex align-items-center justify-content-between flex-wrap gap-2">
+      <div class="d-flex align-items-center flex-wrap gap-2">
+        <span class="badge-official"><i class="bi bi-shield-check me-1"></i> Public Awareness Portal</span>
+        <span class="notice-text">Government of Maharashtra Uniform Civil Code Committee Questionnaire Guidance</span>
+      </div>
+      <div class="top-bar-links d-none d-md-flex align-items-center gap-3">
+        <a href="#guidanceModal" data-bs-toggle="modal" class="top-nav-link">
+          <i class="bi bi-info-circle me-1"></i> How to Submit
+        </a>
+        <span class="top-divider">|</span>
+        <span class="text-emerald-light"><i class="bi bi-globe me-1"></i> 4 Languages Available</span>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Header & Three Introductory Headings Section -->
+  <!-- Institutional Brand Header (Muslim Personal Law Board) -->
+  <nav class="main-brand-header" aria-label="Organization Branding">
+    <div class="container-xl">
+      <div class="brand-header-content">
+        <!-- Logo & Organization Titles -->
+        <div class="brand-identity-group">
+          <div class="brand-logo-frame">
+            <img src="assets/aimplb-logo.png" alt="All India Muslim Personal Law Board Logo" class="brand-logo-img"
+              width="72" height="72" loading="eager">
+          </div>
+          <div class="brand-text-block">
+            <div class="brand-org-name">ALL INDIA MUSLIM PERSONAL LAW BOARD</div>
+            <div class="brand-org-sub">آل انڈیا مسلم پرسنل لا بورڈ • ऑल इंडिया मुस्लिम पर्सनल लॉ बोर्ड</div>
+            <div class="brand-portal-tag">
+              <i class="bi bi-journal-bookmark-fill me-1 text-emerald"></i>
+              <span>Maharashtra UCC Public Response &amp; Awareness Initiative</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="brand-header-actions d-none d-lg-flex align-items-center gap-2">
+          <button type="button" class="btn btn-outline-brand-light btn-sm" data-bs-toggle="modal"
+            data-bs-target="#jumpModal">
+            <i class="bi bi-grid-3x3-gap-fill me-1"></i> Question Grid (1-37)
+          </button>
+          <button type="button" class="btn btn-share-header btn-sm" onclick="shareOnWhatsApp()">
+            <i class="bi bi-whatsapp me-1"></i> Share Guidance
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section & 4 Introductory Headings Grid -->
   <section class="hero-wrapper text-center" aria-label="Introduction and Language Selection">
     <div class="container-xl position-relative" style="z-index: 2;">
 
-      <!-- Emblem & Title -->
+      <!-- Emblem & Title Badge -->
       <div class="hero-emblem-badge">
-        <i class="bi bi-bank2"></i>
-        <span>Maharashtra Uniform Civil Code Questionnaire</span>
+        <i class="bi bi-scale"></i>
+        <span>Maharashtra Uniform Civil Code Public Consultation</span>
       </div>
 
       <h1 class="hero-main-title">
         UCC Public Response &amp; Awareness Portal
       </h1>
       <p class="hero-subtitle">
-        Civic Awareness, Constitutional Rights &amp; Multi-Lingual Questionnaire Answers
+        Civic Awareness, Constitutional Rights &amp; Multi-Lingual Questionnaire Answers in Urdu, English, Hindi, and Marathi
       </p>
 
-      <!-- All Three Introductory Headings Displayed Simultaneously in a Compact, Elegant Grid -->
+      <!-- 4 Introductory Headings Displayed in a Balanced, Clean Responsive Grid -->
       <div class="intro-headings-container text-start" id="intro-headings-box">
         <div class="intro-headings-header">
           <span class="section-label">
             <i class="bi bi-megaphone-fill"></i>
-            <span>Official Public Notice / عوامی نوٹس / सार्वजनिक सूचना</span>
+            <span>Official Public Notice / عوامی نوٹس / सार्वजनिक सूचना / जाहीर सूचना</span>
           </span>
+          <span class="intro-note d-none d-sm-inline">Click any language below to start</span>
         </div>
 
         <div class="intro-grid">
           <!-- 1. Urdu Introductory Heading -->
-          <div class="intro-item" data-intro-lang="ur" dir="rtl">
-            <span class="intro-badge badge-ur">اردو</span>
+          <div class="intro-item" data-intro-lang="ur" dir="rtl" role="button" tabindex="0" onclick="selectLanguage('ur')" title="اردو میں سوالنامہ دیکھیں">
+            <div class="intro-item-top">
+              <span class="intro-badge badge-ur">اردو</span>
+              <i class="bi bi-arrow-left-short intro-arrow"></i>
+            </div>
             <h2 class="intro-h font-ur">🏛️ یو سی سی: جانئے، سمجھئے، اپنی رائے دیجئے اور ذمہ داری نبھائیے!</h2>
-            <p class="intro-sub font-ur">📢 حکومتِ مہاراشٹر کی جانب سے جاری کردہ سوالنامے پر اپنی رائے ضرور درج کریں اور
-              دوسروں کو بھی رائے دینے کے لیے آمادہ کریں۔</p>
+            <p class="intro-sub font-ur">📢 حکومتِ مہاراشٹر کی جانب سے جاری کردہ سوالنامے پر اپنی رائے ضرور درج کریں اور دوسروں کو بھی رائے دینے کے لیے آمادہ کریں۔</p>
           </div>
 
           <!-- 2. English Introductory Heading -->
-          <div class="intro-item" data-intro-lang="en" dir="ltr">
-            <span class="intro-badge badge-en">English</span>
+          <div class="intro-item" data-intro-lang="en" dir="ltr" role="button" tabindex="0" onclick="selectLanguage('en')" title="View questionnaire in English">
+            <div class="intro-item-top">
+              <span class="intro-badge badge-en">English</span>
+              <i class="bi bi-arrow-right-short intro-arrow"></i>
+            </div>
             <h2 class="intro-h">🏛️ UCC: Know It. Understand It. Share Your Views. Fulfil Your Responsibility!</h2>
-            <p class="intro-sub">📢 Make sure to submit your response to the questionnaire issued by the Government of
-              Maharashtra and encourage others to share their views as well.</p>
+            <p class="intro-sub">📢 Make sure to submit your response to the questionnaire issued by the Government of Maharashtra and encourage others to share their views as well.</p>
           </div>
 
           <!-- 3. Hindi Introductory Heading -->
-          <div class="intro-item" data-intro-lang="hi" dir="ltr">
-            <span class="intro-badge badge-hi">हिन्दी</span>
+          <div class="intro-item" data-intro-lang="hi" dir="ltr" role="button" tabindex="0" onclick="selectLanguage('hi')" title="हिन्दी में प्रश्नावली देखें">
+            <div class="intro-item-top">
+              <span class="intro-badge badge-hi">हिन्दी</span>
+              <i class="bi bi-arrow-right-short intro-arrow"></i>
+            </div>
             <h2 class="intro-h font-hi">🏛️ UCC: जानिए, समझिए, अपनी राय दीजिए और अपनी ज़िम्मेदारी निभाइए!</h2>
-            <p class="intro-sub font-hi">📢 महाराष्ट्र सरकार द्वारा जारी प्रश्नावली पर अपनी राय ज़रूर दर्ज करें और
-              दूसरों को भी अपनी राय देने के लिए प्रेरित करें।</p>
+            <p class="intro-sub font-hi">📢 महाराष्ट्र सरकार द्वारा जारी प्रश्नावली पर अपनी राय ज़रूर दर्ज करें और दूसरों को भी अपनी राय देने के लिए प्रेरित करें।</p>
+          </div>
+
+          <!-- 4. Marathi Introductory Heading -->
+          <div class="intro-item" data-intro-lang="mr" dir="ltr" role="button" tabindex="0" onclick="selectLanguage('mr')" title="मराठीत प्रश्नावली पहा">
+            <div class="intro-item-top">
+              <span class="intro-badge badge-mr">मराठी</span>
+              <i class="bi bi-arrow-right-short intro-arrow"></i>
+            </div>
+            <h2 class="intro-h font-mr">🏛️ UCC: जाणा, समजून घ्या, आपले मत नोंदवा आणि कर्तव्य पार पाडा!</h2>
+            <p class="intro-sub font-mr">📢 महाराष्ट्र शासनाकडून जारी करण्यात आलेल्या प्रश्नावलीवर आपले मत नक्की नोंदवा आणि इतरांनाही त्यांचे मत नोंदवण्यासाठी प्रवृत्त करा.</p>
           </div>
         </div>
       </div>
 
-      <!-- Language Selection Section with Step 1 Instruction -->
+      <!-- Language Selection Section (Urdu, English, Hindi, Marathi) -->
       <nav class="language-selector-section" aria-label="Language Selector">
         <div class="lang-instruction-pill">
           <i class="bi bi-hand-index-thumb"></i>
-          <span>Select Your Preferred Language / اپنی زبان منتخب کریں / भाषा चुनें:</span>
+          <span>Select Your Language / आपली भाषा निवडा / अपनी भाषा चुनें / اپنی زبان منتخب کریں:</span>
         </div>
 
         <div class="lang-btn-group" role="group" aria-label="Select Language">
@@ -118,7 +183,8 @@
             <span>اردو</span>
           </button>
 
-          <button type="button" class="btn-lang" data-lang="en" id="btn-select-en" aria-label="Select English language">
+          <button type="button" class="btn-lang btn-lang-en" data-lang="en" id="btn-select-en"
+            aria-label="Select English language">
             <i class="bi bi-globe2"></i>
             <span>English</span>
           </button>
@@ -128,83 +194,119 @@
             <i class="bi bi-translate"></i>
             <span>हिन्दी</span>
           </button>
+
+          <button type="button" class="btn-lang btn-lang-mr" data-lang="mr" id="btn-select-mr"
+            aria-label="Select Marathi language">
+            <i class="bi bi-chat-text-fill"></i>
+            <span>मराठी</span>
+          </button>
         </div>
       </nav>
 
     </div>
   </section>
 
-  <!-- Quick Utility Toolbar (Share, Font-Sizer) -->
+  <!-- Quick Utility Toolbar (Share, Font-Sizer, Submission Guide) -->
   <div class="quick-tools-bar">
     <div class="container-xl d-flex align-items-center justify-content-between flex-wrap gap-2">
       <!-- Font Size Adjuster for Readability -->
-      <div class="font-resizer-group" title="Adjust text size">
-        <span class="text-muted fw-bold small me-1"><i class="bi bi-fonts"></i> Text:</span>
-        <button type="button" class="btn-tool-sm" id="btn-font-decrease" onclick="adjustFontSize(-1)"
-          title="Decrease font size" aria-label="Decrease font size">A-</button>
-        <button type="button" class="btn-tool-sm" id="btn-font-reset" onclick="resetFontSize()" title="Reset font size"
-          aria-label="Reset font size">Reset</button>
-        <button type="button" class="btn-tool-sm" id="btn-font-increase" onclick="adjustFontSize(1)"
-          title="Increase font size" aria-label="Increase font size">A+</button>
+      <div class="d-flex align-items-center gap-2 flex-wrap">
+        <div class="font-resizer-group" title="Adjust text size for better readability">
+          <span class="text-muted fw-bold small me-1"><i class="bi bi-fonts"></i> Text:</span>
+          <button type="button" class="btn-tool-sm" id="btn-font-decrease" onclick="adjustFontSize(-1)"
+            title="Decrease font size" aria-label="Decrease font size">A-</button>
+          <button type="button" class="btn-tool-sm" id="btn-font-reset" onclick="resetFontSize()"
+            title="Reset font size" aria-label="Reset font size">Reset</button>
+          <button type="button" class="btn-tool-sm" id="btn-font-increase" onclick="adjustFontSize(1)"
+            title="Increase font size" aria-label="Increase font size">A+</button>
+        </div>
+
+        <button type="button" class="btn-tool-guide" data-bs-toggle="modal" data-bs-target="#guidanceModal"
+          title="Submission steps and advice">
+          <i class="bi bi-question-circle-fill text-primary me-1"></i> How to Submit Guidance
+        </button>
       </div>
 
       <!-- Quick Action Buttons -->
       <div class="d-flex align-items-center gap-2">
+        <button type="button" class="btn-tool-jump" data-bs-toggle="modal" data-bs-target="#jumpModal">
+          <i class="bi bi-grid-3x3-gap-fill me-1"></i> Q1-Q37 Grid
+        </button>
         <button type="button" class="btn-share-whatsapp" id="btn-share-whatsapp" onclick="shareOnWhatsApp()"
           title="Share guidance on WhatsApp">
           <i class="bi bi-whatsapp"></i>
-          <span>Share Guidance on WhatsApp</span>
+          <span>Share Guidance</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Initial State Callout: Shown before language is selected -->
+  <!-- Main Content Area -->
   <main id="main-content" class="flex-grow-1">
 
+    <!-- Initial Welcome State (Shown before language is selected) -->
     <section class="initial-selection-prompt" id="initial-selection-prompt" aria-live="polite">
       <div class="container-xl">
         <div class="prompt-card">
-          <div class="prompt-icon-bubble">
-            <i class="bi bi-ui-checks"></i>
+          <div class="prompt-logo-wrapper">
+            <img src="assets/aimplb-logo.png" alt="AIMPLB Logo" class="prompt-logo-img" width="90" height="90">
           </div>
+
+          <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 rounded-pill fw-bold mb-2">
+            All India Muslim Personal Law Board
+          </span>
 
           <h2 class="prompt-title">
             Select a Language to View the Complete Questionnaire<br>
             سوالنامہ اور جوابات دیکھنے کے لیے زبان کا انتخاب کیجیے<br>
-            प्रश्नावली और उत्तर देखने के लिए भाषा का चयन करें
+            प्रश्नावली और उत्तर देखने के लिए भाषा का चयन करें<br>
+            प्रश्नावली आणि उत्तरे पाहण्यासाठी भाषा निवडा
           </h2>
 
           <p class="prompt-desc">
-            To view the complete 37 questions with verified responses, click on your language above. You can easily
-            search, filter by answer type, and copy answers with a single tap.
+            Access verified responses for all 37 questions issued by the Government of Maharashtra Uniform Civil Code Committee. Easily search, filter, and copy answers with a single click to submit on the official form.
           </p>
 
           <!-- 3-Step Simple Guide -->
           <div class="step-guide-row">
             <div class="step-card">
-              <strong>1. Choose Language</strong>
-              Select Urdu, English or Hindi.
+              <div class="step-num">1</div>
+              <strong>Choose Language</strong>
+              <span>Select Urdu, English, Hindi, or Marathi below.</span>
             </div>
             <div class="step-card">
-              <strong>2. Copy Answer</strong>
-              Tap "Copy Answer" on written questions.
+              <div class="step-num">2</div>
+              <strong>Review &amp; Copy</strong>
+              <span>Tap "Copy Answer" on any question to copy verified text.</span>
             </div>
             <div class="step-card">
-              <strong>3. Submit Response</strong>
-              Paste into the Maharashtra UCC form.
+              <div class="step-num">3</div>
+              <strong>Submit Online</strong>
+              <span>Paste answers into the official Maharashtra UCC portal.</span>
             </div>
           </div>
 
-          <div class="d-flex justify-content-center gap-2 flex-wrap">
-            <button class="btn btn-success px-4 py-2 fw-bold" onclick="selectLanguage('ur')">
-              <i class="bi bi-translate me-1"></i> اردو شروع کریں
+          <!-- 4 Language Choice Buttons -->
+          <div class="prompt-buttons-grid">
+            <button class="btn btn-choice-lang btn-choice-ur" onclick="selectLanguage('ur')">
+              <span class="btn-choice-tag">اردو</span>
+              <span class="btn-choice-main">اردو میں شروع کریں</span>
+              <i class="bi bi-arrow-left-short"></i>
             </button>
-            <button class="btn btn-primary px-4 py-2 fw-bold" onclick="selectLanguage('en')">
-              <i class="bi bi-globe2 me-1"></i> Start in English
+            <button class="btn btn-choice-lang btn-choice-en" onclick="selectLanguage('en')">
+              <span class="btn-choice-tag">EN</span>
+              <span class="btn-choice-main">Start in English</span>
+              <i class="bi bi-arrow-right-short"></i>
             </button>
-            <button class="btn btn-warning px-4 py-2 fw-bold text-dark" onclick="selectLanguage('hi')">
-              <i class="bi bi-translate me-1"></i> हिन्दी शुरू करें
+            <button class="btn btn-choice-lang btn-choice-hi" onclick="selectLanguage('hi')">
+              <span class="btn-choice-tag">हिन्दी</span>
+              <span class="btn-choice-main">हिन्दी में शुरू करें</span>
+              <i class="bi bi-arrow-right-short"></i>
+            </button>
+            <button class="btn btn-choice-lang btn-choice-mr" onclick="selectLanguage('mr')">
+              <span class="btn-choice-tag">मराठी</span>
+              <span class="btn-choice-main">मराठीत सुरू करा</span>
+              <i class="bi bi-arrow-right-short"></i>
             </button>
           </div>
         </div>
@@ -253,7 +355,7 @@
               </button>
               <button type="button" class="chip-btn" data-filter="no" id="chip-btn-no" onclick="setFilter('no')">
                 <i class="bi bi-x-circle text-danger"></i>
-                <span id="chip-label-no">NO (15)</span>
+                <span id="chip-label-no">NO (14)</span>
               </button>
               <button type="button" class="chip-btn" data-filter="yes" id="chip-btn-yes" onclick="setFilter('yes')">
                 <i class="bi bi-check-circle text-success"></i>
@@ -267,16 +369,14 @@
             </div>
 
             <div class="d-flex align-items-center gap-2">
-              <!-- Jump to Q# Trigger Button -->
-              <!-- <button type="button" class="btn-jump-trigger" id="btn-jump-trigger" title="Jump to any question 1-37">
-                <i class="bi bi-lightning-charge-fill"></i>
+              <button type="button" class="btn btn-outline-primary btn-sm rounded-pill d-none d-sm-inline-flex align-items-center gap-1"
+                data-bs-toggle="modal" data-bs-target="#jumpModal">
+                <i class="bi bi-grid-3x3-gap"></i>
                 <span>Jump Q#</span>
-              </button> -->
-
-              <!-- Question Counter -->
-              <!-- <div class="count-badge" id="count-display">
+              </button>
+              <div class="count-badge" id="count-display">
                 37 questions
-              </div> -->
+              </div>
             </div>
           </div>
 
@@ -291,14 +391,17 @@
 
         <!-- Title & Subtitle Card in Active Language -->
         <div class="portal-title-card" id="portal-title-card">
+          <div class="portal-title-icon-box">
+            <img src="assets/aimplb-logo.png" alt="Board Emblem" class="portal-card-logo" width="48" height="48">
+          </div>
           <div class="flex-grow-1">
             <h2 class="portal-page-title" id="portal-title">Title</h2>
             <p class="portal-page-subtitle" id="portal-subtitle">Subtitle</p>
           </div>
           <div class="d-flex align-items-center gap-2">
-            <button type="button" class="btn btn-outline-secondary btn-sm"
+            <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill"
               onclick="DOM.jumpModal && DOM.jumpModal.show()">
-              <i class="bi bi-grid-3x3-gap-fill me-1"></i> View Question Grid
+              <i class="bi bi-grid-3x3-gap-fill me-1"></i> Question Grid
             </button>
           </div>
         </div>
@@ -309,8 +412,7 @@
             <i class="bi bi-search"></i>
           </div>
           <h3 class="fw-bold h5" id="no-results-title">No matching questions found</h3>
-          <p class="text-muted small" id="no-results-desc">Try searching with different keywords or reset your search
-            query.</p>
+          <p class="text-muted small" id="no-results-desc">Try searching with different keywords or reset your search query.</p>
           <button class="btn btn-outline-primary btn-sm mt-2"
             onclick="setFilter('all'); DOM.searchInput.value=''; AppState.searchQuery=''; renderFilteredQuestions();">
             Reset Filters &amp; Search
@@ -357,19 +459,21 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title fw-bold" id="jumpModalLabel">
-            <i class="bi bi-lightning-charge-fill text-warning me-1"></i>
-            Jump Directly to Any Question (1–37)
-          </h5>
+          <div class="d-flex align-items-center gap-2">
+            <img src="assets/aimplb-logo.png" alt="AIMPLB Logo" width="32" height="32">
+            <h5 class="modal-title fw-bold" id="jumpModalLabel">
+              Jump Directly to Any Question (1–37)
+            </h5>
+          </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <p class="small text-muted mb-2">
-            Tap a number to instantly scroll and highlight that question:
+            Tap any number to instantly scroll and highlight that question:
           </p>
-          <div class="d-flex align-items-center gap-3 mb-3 small">
-            <span><span class="badge bg-light text-dark border">1-31</span> Objective</span>
-            <span><span class="badge bg-success">32-37</span> Written</span>
+          <div class="d-flex align-items-center gap-3 mb-3 small flex-wrap">
+            <span><span class="badge bg-light text-dark border">1-31</span> Objective Questions</span>
+            <span><span class="badge bg-emerald text-white">32-37</span> Written Questions</span>
           </div>
           <div class="jump-grid-container" id="jump-grid-container">
             <!-- 1 to 37 pills built dynamically -->
@@ -382,7 +486,54 @@
     </div>
   </div>
 
-  <!-- Mobile Sticky Bottom Navigation Bar -->
+  <!-- How to Submit Guidance Modal -->
+  <div class="modal fade" id="guidanceModal" tabindex="-1" aria-labelledby="guidanceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="d-flex align-items-center gap-2">
+            <img src="assets/aimplb-logo.png" alt="AIMPLB Logo" width="32" height="32">
+            <h5 class="modal-title fw-bold" id="guidanceModalLabel">
+              How to Submit Your Questionnaire Response
+            </h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="guidance-step-item">
+            <div class="guidance-step-badge">1</div>
+            <div>
+              <h6 class="fw-bold mb-1">Select Your Language</h6>
+              <p class="small text-muted mb-0">Choose Urdu (اردو), English, Hindi (हिन्दी), or Marathi (मराठी) using the language selector.</p>
+            </div>
+          </div>
+          <div class="guidance-step-item">
+            <div class="guidance-step-badge">2</div>
+            <div>
+              <h6 class="fw-bold mb-1">Review Verified Responses</h6>
+              <p class="small text-muted mb-0">For questions 1 to 31, mark the recommended choices (NO, YES, or NO COMMENT). For written questions 32 to 37, click "Copy Answer".</p>
+            </div>
+          </div>
+          <div class="guidance-step-item">
+            <div class="guidance-step-badge">3</div>
+            <div>
+              <h6 class="fw-bold mb-1">Submit on Maharashtra Government Form</h6>
+              <p class="small text-muted mb-0">Paste the copied answers into the official consultation form released by the Maharashtra UCC Committee and complete your submission.</p>
+            </div>
+          </div>
+          <div class="alert alert-info py-2 small mb-0 mt-3">
+            <i class="bi bi-shield-lock-fill me-1"></i>
+            <strong>Constitutional Rights:</strong> Article 25 and 29 guarantee the right to freely profess, practice religion, and preserve religious identity.
+          </div>
+        </div>
+        <div class="modal-footer py-2">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Got It</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Bottom Navigation Bar (5 Buttons: Urdu, English, Hindi, Marathi, Written) -->
   <nav class="mobile-bottom-bar" aria-label="Mobile Navigation">
     <div class="mobile-bottom-bar-inner">
       <button type="button" class="btn-mobile-nav" id="mob-nav-ur" onclick="selectLanguage('ur')">
@@ -396,6 +547,10 @@
       <button type="button" class="btn-mobile-nav" id="mob-nav-hi" onclick="selectLanguage('hi')">
         <i class="bi bi-translate"></i>
         <span>हिन्दी</span>
+      </button>
+      <button type="button" class="btn-mobile-nav" id="mob-nav-mr" onclick="selectLanguage('mr')">
+        <i class="bi bi-chat-text-fill"></i>
+        <span>मराठी</span>
       </button>
       <button type="button" class="btn-mobile-nav" id="mob-nav-written" onclick="jumpToWritten()">
         <i class="bi bi-pencil-fill text-success"></i>
@@ -416,33 +571,37 @@
     <span id="toast-message">Copied to clipboard!</span>
   </div>
 
-  <!-- Footer -->
+  <!-- Institutional Footer -->
   <footer class="footer-wrapper" role="contentinfo">
     <div class="container-xl">
-      <div class="row g-3">
+      <div class="row g-4 align-items-center">
+        <!-- Brand & Description -->
         <div class="col-12 col-md-7">
-          <h4 class="footer-heading">
-            <i class="bi bi-journal-text me-2 text-success"></i>
-            Maharashtra UCC Public Awareness Initiative
-          </h4>
-          <!-- <p class="mb-0">
-            This portal is developed for civic engagement and public awareness regarding the Uniform Civil Code
-            questionnaire issued by the Government of Maharashtra committee. All responses reflect the perspective of
-            Muslim citizens upholding Islamic Personal Law alongside Indian Constitutional guarantees.
-          </p> -->
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="assets/aimplb-logo.png" alt="All India Muslim Personal Law Board Logo" class="footer-logo-img"
+              width="60" height="60" loading="lazy">
+            <div>
+              <h4 class="footer-heading mb-0">All India Muslim Personal Law Board</h4>
+              <div class="text-light small">آل انڈیا مسلم پرسنل لا بورڈ • ऑल इंडिया मुस्लिम पर्सनल लॉ बोर्ड</div>
+            </div>
+          </div>
+          <p class="footer-desc mb-0">
+            Public awareness and constitutional consultation portal for the Maharashtra Uniform Civil Code (UCC) Committee Questionnaire. Guiding citizens to fulfill their democratic and civic responsibility while safeguarding constitutional religious freedoms.
+          </p>
         </div>
+
+        <!-- Civic Duty Card -->
         <div class="col-12 col-md-5">
           <div class="footer-disclaimer-card">
-            <strong><i class="bi bi-info-circle me-1"></i> Civic Responsibility:</strong>
-            Make sure to register your opinions and encourage community members to participate thoughtfully in
-            democratic consultations.
+            <strong><i class="bi bi-shield-check text-emerald me-1"></i> Constitutional Protection &amp; Civic Duty:</strong>
+            Make sure to register your opinions thoughtfully on the official Maharashtra Government questionnaire and encourage your family and neighbors to participate.
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p class="mb-0">
-          © 2026 Maharashtra UCC Awareness Portal • Multi-Lingual Public Awareness Portal (Urdu • English • हिन्दी)
+          © 2026 All India Muslim Personal Law Board • Maharashtra UCC Questionnaire Portal (اردو • English • हिन्दी • मराठी)
         </p>
       </div>
     </div>
