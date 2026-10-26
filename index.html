@@ -41,6 +41,15 @@
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QJJK0F72ZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QJJK0F72ZW');
+</script>
 </head>
 
 <body>
@@ -58,6 +67,10 @@
       <div class="top-bar-links d-none d-md-flex align-items-center gap-3">
         <a href="#guidanceModal" data-bs-toggle="modal" class="top-nav-link">
           <i class="bi bi-info-circle me-1"></i> How to Submit
+        </a>
+        <span class="top-divider">|</span>
+        <a href="https://ucc.maharashtra.gov.in/Suggestion/Individual" target="_blank" rel="noopener noreferrer" class="top-nav-link text-warning-emphasis fw-bold">
+          <i class="bi bi-box-arrow-up-right me-1"></i> Submit Suggestion
         </a>
         <span class="top-divider">|</span>
         <span class="text-emerald-light"><i class="bi bi-globe me-1"></i> 4 Languages Available</span>
@@ -97,6 +110,10 @@
 
         <!-- Header Actions -->
         <div class="brand-header-actions d-none d-lg-flex align-items-center gap-2">
+          <a href="https://ucc.maharashtra.gov.in/Suggestion/Individual" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-sm text-white fw-bold d-inline-flex align-items-center gap-1">
+            <i class="bi bi-box-arrow-up-right"></i>
+            <span>Submit Suggestion</span>
+          </a>
           <button type="button" class="btn btn-outline-brand-light btn-sm" data-bs-toggle="modal"
             data-bs-target="#jumpModal">
             <i class="bi bi-grid-3x3-gap-fill me-1"></i> Question Grid (1-37)
@@ -198,6 +215,10 @@
 
       <!-- Quick Action Buttons -->
       <div class="d-flex align-items-center gap-2">
+        <a href="https://ucc.maharashtra.gov.in/Suggestion/Individual" target="_blank" rel="noopener noreferrer" class="btn-tool-submit" title="Open Maharashtra UCC Suggestion Portal">
+          <i class="bi bi-box-arrow-up-right me-1"></i>
+          <span>Submit Suggestion</span>
+        </a>
         <button type="button" class="btn-tool-jump" data-bs-toggle="modal" data-bs-target="#jumpModal">
           <i class="bi bi-grid-3x3-gap-fill me-1"></i> Q1-Q37 Grid
         </button>
@@ -250,6 +271,10 @@
               <div class="step-num">3</div>
               <strong>Submit Online</strong>
               <span>Paste answers into the official Maharashtra UCC portal.</span>
+              <a href="https://ucc.maharashtra.gov.in/Suggestion/Individual" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm mt-2 w-100 fw-bold d-inline-flex align-items-center justify-content-center gap-1">
+                <span>Official Form</span>
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
             </div>
           </div>
 
@@ -365,11 +390,37 @@
             <h2 class="portal-page-title" id="portal-title">Title</h2>
             <p class="portal-page-subtitle" id="portal-subtitle">Subtitle</p>
           </div>
-          <div class="d-flex align-items-center gap-2">
-            <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill"
+          <div class="d-flex align-items-center gap-2 flex-wrap">
+            <a href="https://ucc.maharashtra.gov.in/Suggestion/Individual" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-sm rounded-pill d-inline-flex align-items-center gap-1 fw-bold text-nowrap">
+              <i class="bi bi-box-arrow-up-right"></i>
+              <span>Submit Form</span>
+            </a>
+            <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill text-nowrap"
               onclick="DOM.jumpModal && DOM.jumpModal.show()">
               <i class="bi bi-grid-3x3-gap-fill me-1"></i> Question Grid
             </button>
+          </div>
+        </div>
+
+        <!-- Quick Action Suggestion Bar -->
+        <div class="suggestion-quick-bar" id="suggestion-quick-bar">
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-success text-white px-2 py-1 rounded-pill small fw-bold">
+              <i class="bi bi-shield-check me-1"></i> Official Form
+            </span>
+            <span class="quick-bar-text" id="quick-bar-text">
+              Ready to submit? File your individual response on the official Maharashtra UCC portal:
+            </span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <a href="#submit-suggestion-section" class="btn btn-outline-secondary btn-sm rounded-pill d-none d-sm-inline-flex align-items-center gap-1">
+              <i class="bi bi-arrow-down-circle"></i>
+              <span>Details</span>
+            </a>
+            <a href="https://ucc.maharashtra.gov.in/Suggestion/Individual" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-sm rounded-pill d-inline-flex align-items-center gap-1 fw-bold" id="quick-bar-btn">
+              <span id="quick-bar-btn-text">Submit Suggestion</span>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
           </div>
         </div>
 
@@ -416,6 +467,94 @@
           </div>
         </section>
 
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SUBMIT YOUR SUGGESTION CARD SECTION
+         Clean, Responsive Card Section with Direct Official Portal Submission
+         ===================================================================== -->
+    <section class="submit-suggestion-section" id="submit-suggestion-section" aria-labelledby="suggestion-card-title">
+      <div class="container-xl">
+        <div class="suggestion-card">
+          <div class="row g-4 align-items-center position-relative" style="z-index: 2;">
+
+            <!-- Left / Information Column -->
+            <div class="col-12 col-lg-8">
+              <div class="suggestion-badge-row">
+                <span class="suggestion-badge">
+                  <i class="bi bi-shield-check"></i>
+                  <span id="suggestion-badge-text">Government of Maharashtra UCC Portal</span>
+                </span>
+                <span class="suggestion-badge-link">
+                  <i class="bi bi-link-45deg"></i> ucc.maharashtra.gov.in
+                </span>
+              </div>
+
+              <h2 class="suggestion-card-title" id="suggestion-card-title">
+                Submit Your Suggestion
+              </h2>
+
+              <p class="suggestion-card-desc" id="suggestion-card-desc">
+                The Government of Maharashtra Uniform Civil Code Committee has invited public suggestions and feedback from citizens through their official individual questionnaire. Review the verified proposed responses above, copy any answers, and submit your suggestion directly on the official Government portal.
+              </p>
+
+              <!-- 3 Information Steps -->
+              <div class="suggestion-steps-grid">
+                <div class="suggestion-step-pill">
+                  <span class="s-step-num">1</span>
+                  <span id="suggestion-step-1">Review verified responses above</span>
+                </div>
+                <div class="suggestion-step-pill">
+                  <span class="s-step-num">2</span>
+                  <span id="suggestion-step-2">Copy your answers with one click</span>
+                </div>
+                <div class="suggestion-step-pill">
+                  <span class="s-step-num">3</span>
+                  <span id="suggestion-step-3">Paste &amp; submit on official portal</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right / Action CTA Column -->
+            <div class="col-12 col-lg-4">
+              <div class="suggestion-action-box">
+                <div class="suggestion-action-icon">
+                  <i class="bi bi-send-check-fill"></i>
+                </div>
+
+                <div class="d-flex flex-column gap-2">
+                  <a href="https://ucc.maharashtra.gov.in/Suggestion/Individual"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     class="btn btn-submit-portal"
+                     id="suggestion-btn-submit"
+                     role="button">
+                    <span id="suggestion-btn-text">Submit Your Suggestion</span>
+                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                  </a>
+
+                  <button type="button" class="btn btn-outline-light btn-sm rounded-pill btn-copy-portal-link"
+                          onclick="copyPortalLink()" id="btn-copy-portal-link" title="Copy portal link">
+                    <i class="bi bi-clipboard-check me-1"></i>
+                    <span id="btn-copy-portal-text">Copy Official Link</span>
+                  </button>
+                </div>
+
+                <div class="suggestion-url-preview">
+                  <span class="text-white-50 small d-block mb-1" id="suggestion-url-label">Direct Official Link:</span>
+                  <code class="suggestion-url-code">ucc.maharashtra.gov.in/Suggestion/Individual</code>
+                </div>
+
+                <div class="suggestion-safe-badge">
+                  <i class="bi bi-lock-fill text-success"></i>
+                  <span id="suggestion-safe-text">Opens official Maharashtra Gov portal in a new tab</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
 
@@ -485,7 +624,10 @@
             <div class="guidance-step-badge">3</div>
             <div>
               <h6 class="fw-bold mb-1">Submit on Maharashtra Government Form</h6>
-              <p class="small text-muted mb-0">Paste the copied answers into the official consultation form released by the Maharashtra UCC Committee and complete your submission.</p>
+              <p class="small text-muted mb-2">Paste the copied answers into the official consultation form released by the Maharashtra UCC Committee and complete your submission.</p>
+              <a href="https://ucc.maharashtra.gov.in/Suggestion/Individual" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-success d-inline-flex align-items-center gap-1 fw-bold">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Open Official Suggestion Form
+              </a>
             </div>
           </div>
           <div class="alert alert-info py-2 small mb-0 mt-3">
@@ -543,34 +685,35 @@
     <div class="container-xl">
       <div class="row g-4 align-items-center">
         <!-- Brand & Description -->
-        <div class="col-12 col-md-7">
-          <div class="d-flex align-items-center gap-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="d-flex align-items-center gap-3">
             <img src="assets/aimplb-logo.png" alt="All India Muslim Personal Law Board Logo" class="footer-logo-img"
-              width="60" height="60" loading="lazy">
+              width="54" height="54" loading="lazy">
             <div>
               <h4 class="footer-heading mb-0">All India Muslim Personal Law Board</h4>
               <div class="text-light small">آل انڈیا مسلم پرسنل لا بورڈ • ऑल इंडिया मुस्लिम पर्सनल लॉ बोर्ड</div>
             </div>
           </div>
-         
         </div>
 
-        <div class="col-12 col-md-7">
-          <div class="d-flex align-items-center gap-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="d-flex align-items-center gap-3">
             <img src="assets/FederationofMaharashtraMuslims.jpeg" alt="Federation of Maharashtra Muslims" class="footer-logo-img"
-              width="60" height="60" loading="lazy">
+              width="54" height="54" loading="lazy">
             <div>
               <h4 class="footer-heading mb-0">Federation of Maharashtra Muslims</h4>
-              <div class="text-light small" >مہاراشٹر مسلمانوں کی فیڈریشن•  महाराष्ट्र मुस्लिम संघ</div>
+              <div class="text-light small">مہاراشٹر مسلمانوں کی فیڈریشن • महाराष्ट्र मुस्लिम संघ</div>
             </div>
           </div>
-         
         </div>
 
-       
+        <div class="col-12 col-md-2 text-md-end">
+          <a href="https://ucc.maharashtra.gov.in/Suggestion/Individual" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm text-nowrap d-inline-flex align-items-center gap-1">
+            <span>Submit Suggestion</span>
+            <i class="bi bi-box-arrow-up-right"></i>
+          </a>
+        </div>
       </div>
-
-    
     </div>
   </footer>
 

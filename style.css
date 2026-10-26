@@ -1903,3 +1903,427 @@ body {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   SUBMIT YOUR SUGGESTION CARD SECTION & PROPORTIONAL STYLES
+   ========================================================================== */
+.btn-tool-submit {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.25);
+}
+.btn-tool-submit:hover {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Quick Suggestion Bar inside Questionnaire */
+.suggestion-quick-bar {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-emerald);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.suggestion-quick-bar:hover {
+  border-color: #cbd5e1;
+  box-shadow: var(--shadow-md);
+}
+
+.lang-ur .suggestion-quick-bar {
+  border-left: 1px solid var(--border-color);
+  border-right: 4px solid var(--accent-emerald);
+  direction: rtl;
+  text-align: right;
+}
+
+.quick-bar-text {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.lang-ur .quick-bar-text {
+  font-family: var(--font-ur);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.lang-mr .quick-bar-text,
+.lang-hi .quick-bar-text {
+  font-family: var(--font-mr);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Main "Submit Your Suggestion" Section */
+.submit-suggestion-section {
+  padding: 38px 0 48px 0;
+  background: var(--bg-main);
+  position: relative;
+}
+
+.suggestion-card {
+  background: linear-gradient(140deg, #0a192f 0%, #0f2b48 50%, #064e3b 100%);
+  color: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 36px 34px;
+  border: 1.5px solid rgba(52, 211, 153, 0.4);
+  box-shadow: 0 14px 40px rgba(10, 25, 47, 0.22), 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.suggestion-card:hover {
+  box-shadow: 0 18px 48px rgba(10, 25, 47, 0.3), 0 0 25px rgba(16, 185, 129, 0.25);
+}
+
+.suggestion-card::before {
+  content: "";
+  position: absolute;
+  top: -90px;
+  right: -90px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.suggestion-card::after {
+  content: "";
+  position: absolute;
+  bottom: -90px;
+  left: -90px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.suggestion-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.suggestion-badge {
+  background: rgba(16, 185, 129, 0.22);
+  border: 1px solid rgba(52, 211, 153, 0.55);
+  color: #a7f3d0;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.suggestion-badge-link {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #e2e8f0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.suggestion-card-title {
+  font-size: 1.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.suggestion-card-desc {
+  font-size: 0.98rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  max-width: 95%;
+}
+
+.suggestion-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.suggestion-step-pill {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.suggestion-step-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(52, 211, 153, 0.4);
+}
+
+.s-step-num {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 0.76rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.4);
+}
+
+.suggestion-action-box {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.suggestion-action-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px auto;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.45);
+}
+
+.btn-submit-portal {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 13px 24px;
+  font-weight: 800;
+  font-size: 1.02rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.42);
+  transition: all 0.22s ease;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-submit-portal:hover {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.55);
+}
+
+.btn-submit-portal:active {
+  transform: translateY(0);
+}
+
+.btn-copy-portal-link {
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #e2e8f0;
+  transition: all 0.15s ease;
+}
+
+.btn-copy-portal-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.suggestion-url-preview {
+  margin-top: 14px;
+}
+
+.suggestion-url-code {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: #6ee7b7;
+  font-size: 0.76rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  word-break: break-all;
+  max-width: 100%;
+}
+
+.suggestion-safe-badge {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* RTL rules for Urdu */
+.lang-ur .submit-suggestion-section {
+  direction: rtl;
+  text-align: right;
+}
+
+.lang-ur .suggestion-card-title {
+  font-family: var(--font-ur);
+  font-size: 1.95rem;
+  line-height: 1.75;
+}
+
+.lang-ur .suggestion-card-desc {
+  font-family: var(--font-ur);
+  font-size: 1.05rem;
+  line-height: 2.0;
+  max-width: 100%;
+}
+
+.lang-ur .suggestion-step-pill {
+  font-family: var(--font-ur);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.lang-ur .btn-submit-portal {
+  font-family: var(--font-ur);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  padding: 10px 22px;
+}
+
+.lang-ur .suggestion-badge {
+  font-family: var(--font-ur);
+  font-size: 0.85rem;
+}
+
+.lang-ur .btn-copy-portal-link {
+  font-family: var(--font-ur);
+  font-size: 0.88rem;
+}
+
+/* Marathi & Hindi font enhancements */
+.lang-mr .suggestion-card-title,
+.lang-hi .suggestion-card-title {
+  font-family: var(--font-mr);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.45;
+}
+
+.lang-mr .suggestion-card-desc,
+.lang-hi .suggestion-card-desc {
+  font-family: var(--font-mr);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.lang-mr .suggestion-step-pill,
+.lang-hi .suggestion-step-pill {
+  font-family: var(--font-mr);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.lang-mr .btn-submit-portal,
+.lang-hi .btn-submit-portal {
+  font-family: var(--font-mr);
+  font-size: 1.0rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .suggestion-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .suggestion-card-desc {
+    max-width: 100%;
+  }
+  .suggestion-action-box {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .submit-suggestion-section {
+    padding: 24px 0 36px 0;
+  }
+  .suggestion-card {
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
+  }
+  .suggestion-card-title {
+    font-size: 1.45rem;
+  }
+  .lang-ur .suggestion-card-title {
+    font-size: 1.55rem;
+  }
+  .btn-submit-portal {
+    padding: 12px 18px;
+    font-size: 0.96rem;
+  }
+  .suggestion-quick-bar {
+    padding: 10px 14px;
+  }
+  .quick-bar-text {
+    font-size: 0.84rem;
+  }
+}
+

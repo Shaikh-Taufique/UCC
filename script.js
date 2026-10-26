@@ -58,7 +58,19 @@ const UCC_DATA = {
       "whatsappText": "🏛️ مہاراشٹر یو سی سی سوالنامے کے جوابات اور رہنما معلومات:\nحکومتِ مہاراشٹر کے جاری کردہ سوالنامے پر اپنی رائے ضرور درج کریں۔ تفصیلی سوالات اور جوابات کے لیے ملاحظہ فرمائیں:\n",
       "selectPromptTitle": "براہ کرم سوالنامہ دیکھنے کے لیے اپنی زبان کا انتخاب کریں",
       "selectPromptDesc": "مہاراشٹر یو سی سی سوالنامے کے تمام ۳۷ سوالات اور تصدیق شدہ جوابات دیکھنے کے لیے اوپر دیے گئے بٹنوں میں سے اپنی زبان منتخب کیجیے۔",
-      "officialPortalNotice": "حکومتِ مہاراشٹر کے سرکاری فارم میں جوابات درج کرنے کے لیے یہاں سے تصدیق شدہ جوابات کاپی کریں۔"
+      "officialPortalNotice": "حکومتِ مہاراشٹر کے سرکاری فارم میں جوابات درج کرنے کے لیے یہاں سے تصدیق شدہ جوابات کاپی کریں۔",
+      "suggestionTitle": "اپنی تجاویز / رائے درج کریں",
+      "suggestionBadge": "حکومتِ مہاراشٹر یو سی سی پورٹل",
+      "suggestionDesc": "حکومتِ مہاراشٹر کی یکساں سول کوڈ کمیٹی نے شہریوں سے انفرادی فارم کے ذریعے تجاویز اور رائے طلب کی ہے۔ اوپر دیے گئے تصدیق شدہ جوابات کا جائزہ لیں، کسی بھی سوال کا جواب کاپی کریں اور حکومت کے سرکاری پورٹل پر اپنی رائے براہِ راست درج کریں۔",
+      "suggestionBtnText": "سرکاری پورٹل پر رائے درج کریں",
+      "suggestionUrlLabel": "براہِ راست سرکاری لنک:",
+      "suggestionStep1": "تصدیق شدہ جوابات کا جائزہ لیں",
+      "suggestionStep2": "ایک کلک سے جواب کاپی کریں",
+      "suggestionStep3": "سرکاری پورٹل پر چسپاں کر کے جمع کریں",
+      "suggestionSafeText": "نئے ٹیب میں حکومتِ مہاراشٹر کا سرکاری پورٹل کھلے گا",
+      "quickBarText": "مہاراشٹر حکومت کے پورٹل پر اپنی رائے درج کرنے کے لیے:",
+      "quickBarBtnText": "سرکاری فارم کھولیں",
+      "portalLinkCopied": "سرکاری پورٹل کا لنک کاپی ہو گیا!"
     },
     "en": {
       "langName": "English",
@@ -90,7 +102,19 @@ const UCC_DATA = {
       "whatsappText": "🏛️ Maharashtra UCC Questionnaire Verified Guidance & Responses:\nMake sure to submit your response to the questionnaire issued by the Government of Maharashtra. Access all questions and responses here:\n",
       "selectPromptTitle": "Please Select Your Language to View Questionnaire",
       "selectPromptDesc": "Select اردو, English, or हिन्दी above to view the complete 37 questionnaire responses and verified answers.",
-      "officialPortalNotice": "Use these verified responses to submit your opinion on the Government of Maharashtra UCC form."
+      "officialPortalNotice": "Use these verified responses to submit your opinion on the Government of Maharashtra UCC form.",
+      "suggestionTitle": "Submit Your Suggestion",
+      "suggestionBadge": "Official Government Portal",
+      "suggestionDesc": "The Government of Maharashtra Uniform Civil Code Committee has invited public suggestions and feedback from citizens through their official individual questionnaire. Review the verified proposed responses above, copy any answers, and submit your suggestion directly on the official Government portal.",
+      "suggestionBtnText": "Submit Your Suggestion",
+      "suggestionUrlLabel": "Direct Official Link:",
+      "suggestionStep1": "Review verified responses above",
+      "suggestionStep2": "Copy your answers with one click",
+      "suggestionStep3": "Paste & submit on official portal",
+      "suggestionSafeText": "Opens official Maharashtra Gov portal in a new tab",
+      "quickBarText": "Ready to submit? File your individual response on the official Maharashtra UCC portal:",
+      "quickBarBtnText": "Submit Suggestion",
+      "portalLinkCopied": "Official portal link copied to clipboard!"
     },
     "hi": {
       "langName": "हिन्दी",
@@ -122,7 +146,19 @@ const UCC_DATA = {
       "whatsappText": "🏛️ महाराष्ट्र समान नागरिक संहिता (UCC) प्रश्नावली उत्तर एवं मार्गदर्शन:\nमहाराष्ट्र सरकार द्वारा जारी प्रश्नावली पर अपनी राय ज़रूर दर्ज करें। सभी प्रश्नों और उत्तरों के लिए देखें:\n",
       "selectPromptTitle": "कृपया प्रश्नावली देखने के लिए अपनी भाषा चुनें",
       "selectPromptDesc": "महाराष्ट्र समान नागरिक संहिता (UCC) के सभी ३७ प्रश्नों के उत्तर देखने के लिए ऊपर दिए गए विकल्पों में से اردو, English या हिन्दी का चयन करें।",
-      "officialPortalNotice": "महाराष्ट्र सरकार के आधिकारिक पोर्टल पर अपनी राय दर्ज करने के लिए यहाँ से प्रामाणिक उत्तर कॉपी करें।"
+      "officialPortalNotice": "महाराष्ट्र सरकार के आधिकारिक पोर्टल पर अपनी राय दर्ज करने के लिए यहाँ से प्रामाणिक उत्तर कॉपी करें।",
+      "suggestionTitle": "अपना सुझाव / राय दर्ज करें",
+      "suggestionBadge": "महाराष्ट्र सरकार यूसीसी पोर्टल",
+      "suggestionDesc": "महाराष्ट्र सरकार की समान नागरिक संहिता (UCC) समिति ने नागरिकों से सुझाव एवं राय आमंत्रित करने के लिए व्यक्तिगत प्रश्नावली जारी की है। ऊपर दिए गए प्रमाणित उत्तरों का अवलोकन करें, उत्तर कॉपी करें और सरकार के आधिकारिक पोर्टल पर अपनी राय सीधे दर्ज करें।",
+      "suggestionBtnText": "आधिकारिक पोर्टल पर सुझाव दर्ज करें",
+      "suggestionUrlLabel": "सीधा आधिकारिक लिंक:",
+      "suggestionStep1": "प्रमाणित उत्तरों का अवलोकन करें",
+      "suggestionStep2": "एक क्लिक में उत्तर कॉपी करें",
+      "suggestionStep3": "आधिकारिक पोर्टल पर पेस्ट करके जमा करें",
+      "suggestionSafeText": "नए टैब में महाराष्ट्र सरकार का आधिकारिक पोर्टल खुलेगा",
+      "quickBarText": "महाराष्ट्र सरकार के पोर्टल पर अपनी राय दर्ज करने के लिए:",
+      "quickBarBtnText": "पोर्टल पर जाएं",
+      "portalLinkCopied": "आधिकारिक पोर्टल लिंक कॉपी हो गया!"
     },
     "mr": {
       "langName": "मराठी",
@@ -154,7 +190,19 @@ const UCC_DATA = {
       "whatsappText": "🏛️ महाराष्ट्र समान नागरी संहिता (UCC) प्रश्नावली अधिकृत उत्तरे व मार्गदर्शन:\nमहाराष्ट्र शासनाने जारी केलेल्या प्रश्नावलीवर आपले मत नक्की नोंदवा. सर्व ३७ प्रश्न आणि उत्तरांसाठी येथे भेट द्या:\n",
       "selectPromptTitle": "प्रश्नावली पाहण्यासाठी कृपया आपली भाषा निवडा",
       "selectPromptDesc": "महाराष्ट्र समान नागरी संहिता (UCC) चे सर्व ३७ प्रश्न आणि सत्यापित उत्तरे पाहण्यासाठी वरील पर्यायांमधून اردو, English, हिन्दी किंवा मराठी निवडा.",
-      "officialPortalNotice": "महाराष्ट्र शासनाच्या अधिकृत फॉर्मवर आपले मत नोंदवण्यासाठी येथून सत्यापित उत्तरे कॉपी करा."
+      "officialPortalNotice": "महाराष्ट्र शासनाच्या अधिकृत फॉर्मवर आपले मत नोंदवण्यासाठी येथून सत्यापित उत्तरे कॉपी करा.",
+      "suggestionTitle": "आपली सूचना / मत नोंदवा",
+      "suggestionBadge": "महाराष्ट्र शासन यूसीसी पोर्टल",
+      "suggestionDesc": "महाराष्ट्र शासनाच्या समान नागरी संहिता (UCC) समितीने नागरिकांकडून सूचना व मते मागवण्यासाठी वैयक्तिक प्रश्नावली जारी केली आहे. वरील प्रमाणित उत्तरांचे अवलोकन करा, आवश्यक उत्तरे कॉपी करा आणि शासनाच्या अधिकृत पोर्टलवर आपले मत थेट नोंदवा.",
+      "suggestionBtnText": "अधिकृत पोर्टलवर सूचना नोंदवा",
+      "suggestionUrlLabel": "थेट अधिकृत लिंक:",
+      "suggestionStep1": "प्रमाणित उत्तरे तपासा",
+      "suggestionStep2": "एका क्लिकवर उत्तरे कॉपी करा",
+      "suggestionStep3": "अधिकृत पोर्टलवर पेस्ट करून सादर करा",
+      "suggestionSafeText": "नवीन टॅबमध्ये महाराष्ट्र शासनाचे अधिकृत पोर्टल उघडेल",
+      "quickBarText": "महाराष्ट्र शासनाच्या पोर्टलवर आपले मत नोंदवण्यासाठी:",
+      "quickBarBtnText": "पोर्टलवर जा",
+      "portalLinkCopied": "अधिकृत पोर्टल लिंक कॉपी झाली!"
     }
   },
   "questions": [
@@ -988,7 +1036,21 @@ const DOM = {
   mobNavMr: document.getElementById('mob-nav-mr'),
   mobNavJump: document.getElementById('mob-nav-jump'),
   mobNavWritten: document.getElementById('mob-nav-written'),
-  mobNavTop: document.getElementById('mob-nav-top')
+  mobNavTop: document.getElementById('mob-nav-top'),
+  // Suggestion Card Section
+  suggestionSection: document.getElementById('submit-suggestion-section'),
+  suggestionTitle: document.getElementById('suggestion-card-title'),
+  suggestionDesc: document.getElementById('suggestion-card-desc'),
+  suggestionBadge: document.getElementById('suggestion-badge-text'),
+  suggestionBtnText: document.getElementById('suggestion-btn-text'),
+  suggestionUrlLabel: document.getElementById('suggestion-url-label'),
+  suggestionStep1: document.getElementById('suggestion-step-1'),
+  suggestionStep2: document.getElementById('suggestion-step-2'),
+  suggestionStep3: document.getElementById('suggestion-step-3'),
+  suggestionSafeText: document.getElementById('suggestion-safe-text'),
+  btnCopyPortalText: document.getElementById('btn-copy-portal-text'),
+  quickBarText: document.getElementById('quick-bar-text'),
+  quickBarBtnText: document.getElementById('quick-bar-btn-text')
 };
 
 // Initialize Application
@@ -1220,6 +1282,23 @@ function selectLanguage(lang) {
   DOM.part2TitleText.textContent = t.part2Title;
   DOM.noResultsTitle.textContent = t.noResultsTitle;
   DOM.noResultsDesc.textContent = t.noResultsDesc;
+
+  // Update Suggestion Card Section
+  if (DOM.suggestionSection) {
+    DOM.suggestionSection.setAttribute('dir', t.dir);
+    DOM.suggestionSection.className = `submit-suggestion-section py-5 lang-${lang}`;
+  }
+  if (DOM.suggestionTitle && t.suggestionTitle) DOM.suggestionTitle.textContent = t.suggestionTitle;
+  if (DOM.suggestionDesc && t.suggestionDesc) DOM.suggestionDesc.textContent = t.suggestionDesc;
+  if (DOM.suggestionBadge && t.suggestionBadge) DOM.suggestionBadge.textContent = t.suggestionBadge;
+  if (DOM.suggestionBtnText && t.suggestionBtnText) DOM.suggestionBtnText.textContent = t.suggestionBtnText;
+  if (DOM.suggestionUrlLabel && t.suggestionUrlLabel) DOM.suggestionUrlLabel.textContent = t.suggestionUrlLabel;
+  if (DOM.suggestionStep1 && t.suggestionStep1) DOM.suggestionStep1.textContent = t.suggestionStep1;
+  if (DOM.suggestionStep2 && t.suggestionStep2) DOM.suggestionStep2.textContent = t.suggestionStep2;
+  if (DOM.suggestionStep3 && t.suggestionStep3) DOM.suggestionStep3.textContent = t.suggestionStep3;
+  if (DOM.suggestionSafeText && t.suggestionSafeText) DOM.suggestionSafeText.textContent = t.suggestionSafeText;
+  if (DOM.quickBarText && t.quickBarText) DOM.quickBarText.textContent = t.quickBarText;
+  if (DOM.quickBarBtnText && t.quickBarBtnText) DOM.quickBarBtnText.textContent = t.quickBarBtnText;
 
   // Reveal Questionnaire and Hide Initial Prompt
   DOM.initialPrompt.style.display = 'none';
@@ -1689,6 +1768,42 @@ function scrollToTop() {
     behavior: 'smooth'
   });
 }
+
+// Copy Maharashtra UCC Portal Link to Clipboard
+function copyPortalLink() {
+  const url = "https://ucc.maharashtra.gov.in/Suggestion/Individual";
+  const lang = AppState.currentLang || 'en';
+  const t = UCC_DATA.translations[lang] || UCC_DATA.translations['en'];
+  const msg = t.portalLinkCopied || "Official portal link copied to clipboard!";
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      showToast(msg, "success");
+    }).catch(() => {
+      fallbackCopyPortalLink(url, msg);
+    });
+  } else {
+    fallbackCopyPortalLink(url, msg);
+  }
+}
+
+function fallbackCopyPortalLink(url, msg) {
+  const textarea = document.createElement('textarea');
+  textarea.value = url;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    document.execCommand('copy');
+    showToast(msg, "success");
+  } catch (err) {
+    showToast(url, "info");
+  }
+  document.body.removeChild(textarea);
+}
+window.copyPortalLink = copyPortalLink;
 
 // Scroll Spy for Back to Top Button
 function setupScrollSpy() {
