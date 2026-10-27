@@ -1053,11 +1053,57 @@ const DOM = {
   quickBarBtnText: document.getElementById('quick-bar-btn-text')
 };
 
+// Parse language from URL parameter (?lang=...)
+function getLanguageFromUrl() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang');
+    if (lang) {
+      const normalized = lang.trim().toLowerCase();
+      if (UCC_DATA && UCC_DATA.translations && UCC_DATA.translations[normalized]) {
+        return normalized;
+      }
+    }
+  } catch (err) {
+    console.warn('Error reading language from URL parameter:', err);
+  }
+  return null;
+}
+
+// Update the URL query parameter with the selected language (?lang=...)
+function updateUrlLanguage(lang) {
+  try {
+    const currentUrl = new URL(window.location.href);
+    if (currentUrl.searchParams.get('lang') !== lang) {
+      currentUrl.searchParams.set('lang', lang);
+      window.history.pushState({ lang: lang }, '', currentUrl.toString());
+    }
+  } catch (err) {
+    console.warn('Could not update URL history:', err);
+  }
+}
+
 // Initialize Application
 function initApp() {
   buildJumpGrid();
   bindEvents();
   setupScrollSpy();
+
+  // URL Handling: load language from URL parameter or default to English
+  const urlLang = getLanguageFromUrl();
+  const initialLang = urlLang || 'en';
+  selectLanguage(initialLang, false);
+
+  // Scroll to question if hash exists in URL (e.g., #q-15)
+  if (window.location.hash) {
+    const match = window.location.hash.match(/^#q-(\d+)$/i);
+    if (match) {
+      const qNum = parseInt(match[1], 10);
+      if (qNum >= 1 && qNum <= 37) {
+        setTimeout(() => jumpToQuestion(qNum), 150);
+      }
+    }
+  }
 }
 
 // Build the 1 to 37 Question Grid inside the Jump Modal
@@ -1087,7 +1133,18 @@ function bindEvents() {
   DOM.langBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = btn.getAttribute('data-lang');
-      selectLanguage(lang);
+      if (lang) selectLanguage(lang);
+    });
+  });
+
+  // Keyboard navigation for Intro items (Accessibility)
+  DOM.introItems.forEach(item => {
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const lang = item.getAttribute('data-intro-lang');
+        if (lang) selectLanguage(lang);
+      }
     });
   });
 
@@ -1208,11 +1265,16 @@ function setFilter(filterName) {
 window.setFilter = setFilter;
 
 // Select Language
-function selectLanguage(lang) {
-  if (!UCC_DATA.translations[lang]) return;
+function selectLanguage(lang, updateUrl = true) {
+  if (!UCC_DATA.translations || !UCC_DATA.translations[lang]) return;
 
   AppState.currentLang = lang;
   const t = UCC_DATA.translations[lang];
+
+  // Update URL if requested
+  if (updateUrl) {
+    updateUrlLanguage(lang);
+  }
 
   // Set Language Direction and Class globally
   document.documentElement.setAttribute('dir', t.dir);
@@ -1254,12 +1316,14 @@ function selectLanguage(lang) {
   if (DOM.mobNavMr) DOM.mobNavMr.classList.toggle('active', lang === 'mr');
 
   // Set Language Direction and Class on questionnaire wrapper
-  DOM.questionnaireWrapper.setAttribute('dir', t.dir);
-  DOM.questionnaireWrapper.className = `questionnaire-container lang-${lang}`;
+  if (DOM.questionnaireWrapper) {
+    DOM.questionnaireWrapper.setAttribute('dir', t.dir);
+    DOM.questionnaireWrapper.className = `questionnaire-container lang-${lang}`;
+  }
   
   // Set placeholders and titles
-  DOM.searchInput.placeholder = t.searchPlaceholder;
-  DOM.clearSearchBtn.title = t.clearSearchTitle;
+  if (DOM.searchInput) DOM.searchInput.placeholder = t.searchPlaceholder;
+  if (DOM.clearSearchBtn) DOM.clearSearchBtn.title = t.clearSearchTitle;
   
   // Update Filter chip labels safely
   const chipAll = document.getElementById('chip-label-all');
@@ -1276,12 +1340,18 @@ function selectLanguage(lang) {
   if (chipNeutral) chipNeutral.textContent = t.filterNoComment;
 
   // Update Titles
-  DOM.portalTitle.textContent = t.portalTitle;
-  DOM.portalSubtitle.textContent = t.portalSubtitle;
-  DOM.part1TitleText.textContent = t.part1Title;
-  DOM.part2TitleText.textContent = t.part2Title;
-  DOM.noResultsTitle.textContent = t.noResultsTitle;
-  DOM.noResultsDesc.textContent = t.noResultsDesc;
+  if (DOM.portalTitle) DOM.portalTitle.textContent = t.portalTitle;
+  if (DOM.portalSubtitle) DOM.portalSubtitle.textContent = t.portalSubtitle;
+  if (DOM.part1TitleText) DOM.part1TitleText.textContent = t.part1Title;
+  if (DOM.part2TitleText) DOM.part2TitleText.textContent = t.part2Title;
+  if (DOM.noResultsTitle) DOM.noResultsTitle.textContent = t.noResultsTitle;
+  if (DOM.noResultsDesc) DOM.noResultsDesc.textContent = t.noResultsDesc;
+
+  // Update Modal Title if available
+  const jumpModalLabel = document.getElementById('jumpModalLabel');
+  if (jumpModalLabel && t.jumpModalTitle) {
+    jumpModalLabel.textContent = t.jumpModalTitle;
+  }
 
   // Update Suggestion Card Section
   if (DOM.suggestionSection) {
@@ -1301,9 +1371,9 @@ function selectLanguage(lang) {
   if (DOM.quickBarBtnText && t.quickBarBtnText) DOM.quickBarBtnText.textContent = t.quickBarBtnText;
 
   // Reveal Questionnaire and Hide Initial Prompt
-  DOM.initialPrompt.style.display = 'none';
-  DOM.questionnaireWrapper.style.display = 'block';
-  DOM.stickyControls.style.display = 'block';
+  if (DOM.initialPrompt) DOM.initialPrompt.style.display = 'none';
+  if (DOM.questionnaireWrapper) DOM.questionnaireWrapper.style.display = 'block';
+  if (DOM.stickyControls) DOM.stickyControls.style.display = 'block';
 
   // Render Questions
   renderFilteredQuestions();
@@ -1718,6 +1788,8 @@ window.jumpToQuestion = jumpToQuestion;
 window.setFilter = setFilter;
 window.handleSearchInput = handleSearchInput;
 window.clearSearch = clearSearch;
+window.getLanguageFromUrl = getLanguageFromUrl;
+window.updateUrlLanguage = updateUrlLanguage;
 
 // Jump to Part II Written Questions (32 - 37)
 function jumpToWritten() {
@@ -1816,6 +1888,19 @@ function setupScrollSpy() {
   }, { passive: true });
 }
 
+// Popstate event handler for browser back/forward buttons
+window.addEventListener('popstate', () => {
+  const urlLang = getLanguageFromUrl();
+  const targetLang = urlLang || 'en';
+  if (targetLang !== AppState.currentLang) {
+    selectLanguage(targetLang, false);
+  }
+});
+
 // Initialize on DOM Ready
-document.addEventListener('DOMContentLoaded', initApp);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
