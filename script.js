@@ -215,15 +215,15 @@ const UCC_DATA = {
         "answer": "NO"
       },
       "en": {
-        "question": "Do you currently support the implementation of a Uniform Civil Code in Maharashtra?",
+        "question": " Do you support the implementation of a UCC in the State of Maharashtra at this point in time?",
         "answer": "NO"
       },
       "hi": {
-        "question": "क्या आप वर्तमान में महाराष्ट्र में समान नागरिक संहिता लागू करने का समर्थन करते हैं?",
+        "question": " क्या आप इस समय महाराष्ट्र राज्य में समान नागरिक संहिता (UCC) लागू करने का समर्थन करते हैं?",
         "answer": "NO (नहीं)"
       },
       "mr": {
-        "question": "आपण सध्या महाराष्ट्रात समान नागरी संहिता लागू करण्यास समर्थन देता का?",
+        "question": "सध्याच्या टप्प्यावर महाराष्ट्र राज्यात समान नागरी संहिता (UCC) लागू करण्यास तुमचा पाठिंबा आहे का?",
         "answer": "NO (नाही)"
       }
     },
@@ -236,15 +236,15 @@ const UCC_DATA = {
         "answer": "NO"
       },
       "en": {
-        "question": "Can a Uniform Civil Code be implemented without violating the right to religious freedom?",
+        "question": " Do you believe that a UCC can be implemented without infringing the right to freedom of religion?",
         "answer": "NO"
       },
       "hi": {
-        "question": "क्या धार्मिक स्वतंत्रता के अधिकार का उल्लंघन किए बिना समान नागरिक संहिता लागू की जा सकती है?",
+        "question": " क्या आपको लगता है कि धर्म की स्वतंत्रता के अधिकार का उल्लंघन किए बिना समान नागरिक संहिता लागू की जा सकती है?",
         "answer": "NO (नहीं)"
       },
       "mr": {
-        "question": "धार्मिक स्वातंत्र्याच्या अधिकाराचे उल्लंघन न करता समान नागरी संहिता लागू केली जाऊ शकते का?",
+        "question": "धर्मस्वातंत्र्याच्या अधिकाराचे उल्लंघन न करता समान नागरी संहिता लागू करता येईल, असे तुम्हाला वाटते का?",
         "answer": "NO (नाही)"
       }
     },
@@ -257,15 +257,15 @@ const UCC_DATA = {
         "answer": "NO"
       },
       "en": {
-        "question": "Can a Uniform Civil Code reduce legal disputes and make judicial proceedings more effective?",
+        "question": "Do you believe that implementation of a UCC will promote gender equality and social justice?",
         "answer": "NO"
       },
       "hi": {
-        "question": "क्या समान नागरिक संहिता कानूनी विवादों को कम करके न्यायिक प्रक्रिया को अधिक प्रभावी बना सकती है?",
+        "question": "क्या आपको लगता है कि समान नागरिक संहिता के लागू होने से स्त्री-पुरुष समानता और सामाजिक न्याय को बढ़ावा मिलेगा?",
         "answer": "NO (नहीं)"
       },
       "mr": {
-        "question": "समान नागरी संहितेमुळे कायदेशीर वाद कमी होऊन न्यायालयीन कामकाज अधिक प्रभावी होऊ शकते का?",
+        "question": "समान नागरी संहितेच्या अंमलबजावणीमुळे स्त्री-पुरूष समानता आणि सामाजिक न्याय यांना चालना मिळेल, असे तुम्हाला वाटते का?",
         "answer": "NO (नाही)"
       }
     },
@@ -278,100 +278,100 @@ const UCC_DATA = {
         "answer": "NO"
       },
       "en": {
-        "question": "Should the same law apply to all religions in matters of marriage, divorce and other family affairs?",
+        "question": "Do you think the implementation of a UCC will help in reducing legal disputes and making legal processes more efficient?",
         "answer": "NO"
       },
       "hi": {
-        "question": "क्या विवाह, तलाक और अन्य पारिवारिक मामलों में सभी धर्मों पर एक ही कानून लागू होना चाहिए?",
+        "question": "क्या आपको लगता है कि समान नागरिक संहिता के लागू होने से कानूनी विवादों में कमी आएगी और कानूनी प्रक्रियाएँ अधिक कुशल बनेंगी?",
         "answer": "NO (नहीं)"
       },
       "mr": {
-        "question": "विवाह, घटस्फोट आणि इतर कौटुंबिक बाबींमध्ये सर्व धर्मांसाठी एकच कायदा लागू असावा का?",
+        "question": "समान नागरी संहितेच्या अंमलबजावणीमुळे कायदेशीर वाद कमी होण्यास आणि कायदेशीर प्रक्रिया अधिक कार्यक्षम होण्यास मदत होईल, असे तुम्हाला वाटते का?",
         "answer": "NO (नाही)"
       }
     },
     {
       "id": 5,
       "part": 1,
-      "type": "NO",
+      "type": "NO_COMMENT",
       "ur": {
         "question": "کیا شادی، طلاق اور لِو اِن ریلیشن شپ وغیرہ کے اندراج کے لیے مشترکہ نظام ہونا چاہیے؟",
-        "answer": "No"
+        "answer": "No Comments"
       },
       "en": {
-        "question": "Should there be a common registration system for marriage, divorce, live-in relationships and related matters?",
-        "answer": "NO"
+        "question": " Should there be a common system for registration and maintenance of records relating to marriages, divorces and live-in relationships and other matters covered by the UCC?",
+        "answer": "No Comments"
       },
       "hi": {
-        "question": "क्या विवाह, तलाक और लिव-इन रिलेशनशिप आदि के पंजीकरण के लिए एक समान व्यवस्था होनी चाहिए?",
-        "answer": "NO (नहीं)"
+        "question": "क्या विवाह, विवाह विच्छेद, सहवासी (लिव-इन) संबंधों और समान नागरिक संहिता के दायरे में आने वाले अन्य मामलों के पंजीकरण एवं अभिलेखों के रखरखाव के लिए एक समान व्यवस्था होनी चाहिए?",
+        "answer": "No Comments"
       },
       "mr": {
-        "question": "विवाह, घटस्फोट आणि लिव्ह-इन रिलेशनशिप इत्यादींच्या नोंदणीसाठी एक सामाईक व्यवस्था असावी का?",
-        "answer": "NO (नाही)"
+        "question": " विवाह, घटस्फोट, सहजीवन (लिव्ह-इन) नातेसंबंध आणि समान नागरी संहितेच्या कार्यक्षेत्रातील इतर बाबींच्या नोंदणीसाठी आणि नोंदी ठेवण्यासाठी समान व्यवस्था असावी का?",
+        "answer": "No Comments"
       }
     },
     {
       "id": 6,
       "part": 1,
-      "type": "TEXT",
+      "type": "NO_COMMENT",
       "ur": {
         "question": "شادی کی کم از کم عمر کیا ہونی چاہیے؟",
-        "answer": "موجودہ قابلِ اطلاق قانون کے مطابق قانونی کم از کم عمر کی پابندی ہونی چاہیے۔"
+        "answer": "No Comments"
       },
       "en": {
-        "question": "What should be the minimum legal age for marriage?",
-        "answer": "The legally prescribed minimum age under the applicable law should be strictly followed."
+        "question": "What should be the minimum age of marriage?",
+        "answer": "No Comments"
       },
       "hi": {
         "question": "विवाह की न्यूनतम आयु क्या होनी चाहिए?",
-        "answer": "वर्तमान में लागू कानून के अनुसार निर्धारित कानूनी न्यूनतम आयु का पालन अनिवार्य होना चाहिए।"
+        "answer": "No Comments"
       },
       "mr": {
-        "question": "विवाहासाठी किमान कायदेशीर वय काय असावे?",
-        "answer": "सध्या लागू असलेल्या कायद्यानुसार निर्धारित किमान कायदेशीर वयाचे काटेकोर पालन केले जावे."
+        "question": "विवाहाचे किमान वय काय असावे?",
+        "answer": "No Comments"
       }
     },
     {
       "id": 7,
       "part": 1,
-      "type": "YES",
+      "type": "NO",
       "ur": {
         "question": "کیا کسی شخص کو پہلے سے شادی شدہ ہونے کے باوجود دوسری شادی کی اجازت ہونی چاہیے؟",
-        "answer": "YES"
+        "answer": "No"
       },
       "en": {
-        "question": "Should a person be permitted to enter into a second marriage while already married?",
-        "answer": "YES"
+        "question": "Should there be a standard list of relationships within which marriage is prohibited?",
+        "answer": "No"
       },
       "hi": {
-        "question": "क्या किसी व्यक्ति को पहले से विवाहित होने के बावजूद दूसरी शादी करने की अनुमति होनी चाहिए?",
-        "answer": "YES (हाँ)"
+        "question": " क्या ऐसे संबंधों की एक मानक सूची होनी चाहिए जिनके भीतर विवाह वर्जित हो?",
+        "answer": "No"
       },
       "mr": {
-        "question": "एखाद्या व्यक्तीला आधीच विवाहित असताना दुसऱ्या विवाहाची परवानगी असावी का?",
-        "answer": "YES (होय)"
+        "question": "ज्या नातेसंबंधांमध्ये विवाह प्रतिबंधित आहे, त्यांची एक प्रमाणित यादी असावी का?",
+        "answer": "No"
       }
     },
     {
       "id": 8,
       "part": 1,
-      "type": "YES",
+      "type": "NO",
       "ur": {
         "question": "کیا روایتی رسوم اور مذہبی طریقوں سے شادی کرنے کی اجازت برقرار رہنی چاہیے؟",
-        "answer": "YES"
+        "answer": "No"
       },
       "en": {
-        "question": "Should the freedom to solemnise marriages according to traditional customs and religious practices be retained?",
-        "answer": "YES"
+        "question": "Should a person be prohibited from contracting another marriage during the subsistence of an existing marriage?",
+        "answer": "No"
       },
       "hi": {
-        "question": "क्या पारंपरिक रीति-रिवाजों और धार्मिक विधियों के अनुसार विवाह करने की अनुमति जारी रहनी चाहिए?",
-        "answer": "YES (हाँ)"
+        "question": " क्या किसी व्यक्ति को मौजूदा विवाह के जारी रहते हुए दूसरा विवाह करने से प्रतिबंधित किया जाना चाहिए?",
+        "answer": "No"
       },
       "mr": {
-        "question": "पारंपारिक रीतीरिवाज आणि धार्मिक पद्धतींनुसार विवाह करण्याची मुभा कायम ठेवली जावी का?",
-        "answer": "YES (होय)"
+        "question": "अस्तित्वात असलेला विवाह कायम असताना एखाद्या व्यक्तिला दुसरा विवाह करण्यास प्रतिबंध असावा का?",
+        "answer": "No "
       }
     },
     {
@@ -383,58 +383,58 @@ const UCC_DATA = {
         "answer": "NO"
       },
       "en": {
-        "question": "Should there be a uniform list of prohibited relationships for all religions?",
+        "question": "Should there be uniform provisions governing the grounds and consequences of void and voidable marriages?",
         "answer": "NO"
       },
       "hi": {
-        "question": "क्या सभी धर्मों के लिए निषिद्ध वैवाहिक संबंधों की एक समान सूची होनी चाहिए?",
-        "answer": "NO (नहीं)"
+        "question": "क्या शून्य (void) और शून्यकरणीय (voidable) विवाहों के आधारों और परिणामों को नियंत्रित करने वाले एकसमान प्रावधान होने चाहिए?",
+        "answer": "NO "
       },
       "mr": {
-        "question": "सर्व धर्मांसाठी निषिद्ध वैवाहिक संबंधांची एकच समान यादी असावी का?",
-        "answer": "NO (नाही)"
+        "question": "शून्य (void) आणि शून्यीभवनीय (voidable) विवाहांची कारणे आणि परिणाम यांबाबत एकसमान तरतुदी असाव्यात का?",
+        "answer": "NO "
       }
     },
     {
       "id": 10,
       "part": 1,
-      "type": "NO",
+      "type": "YES",
       "ur": {
         "question": "کیا تمام مذاہب کے لیے طلاق کی وجوہات اور طریقۂ کار یکساں ہونا چاہیے؟",
-        "answer": "NO"
+        "answer": "YES "
       },
       "en": {
-        "question": "Should the grounds and procedures for divorce be uniform across all religions?",
-        "answer": "NO"
+        "question": "Should the UCC preserve customary practices including religious ceremonies and rituals such as the way marriages are solemnised?",
+        "answer": "YES "
       },
       "hi": {
-        "question": "क्या सभी धर्मों के लिए तलाक के आधार और प्रक्रिया एक समान होनी चाहिए?",
-        "answer": "NO (नहीं)"
+        "question": "क्या समान नागरिक संहिता के अन्तर्गत धार्मिक समारोहों और रीति-रिवाजों सहित पारम्परिक प्रथाओं, यथा विवाह सम्पन्न करने की पद्धति को संरक्षित रखना चाहिए?",
+        "answer": "YES "
       },
       "mr": {
-        "question": "सर्व धर्मांसाठी घटस्फोटाची कारणे आणि कार्यपद्धती एकसमान असावी का?",
-        "answer": "NO (नाही)"
+        "question": "विवाह साजरा करण्याची पद्धत यांसारख्या धार्मिक समारंभ आणि प्रथा-परंपरा समान नागरी संहितेने कायम ठेवाव्यात का?",
+        "answer": "YES"
       }
     },
     {
       "id": 11,
       "part": 1,
-      "type": "NO_COMMENT",
+      "type": "NO",
       "ur": {
         "question": "کیا مردوں اور خواتین کے لیے طلاق کی وجوہات یکساں ہونی چاہییں؟",
-        "answer": "NO COMMENT"
+        "answer": "NO"
       },
       "en": {
-        "question": "Should the grounds for divorce be the same for men and women?",
-        "answer": "NO COMMENT"
+        "question": "Should there be common grounds and procedure for divorce applicable uniformly to all communities?",
+        "answer": "NO"
       },
       "hi": {
-        "question": "क्या पुरुषों और महिलाओं के लिए तलाक के आधार एक समान होने चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या विवाह-विच्छेद के आधार और प्रक्रिया सभी समुदायों पर समान रूप से लागू होने चाहिए?",
+        "answer": "NO"
       },
       "mr": {
-        "question": "पुरुष आणि महिलांसाठी घटस्फोटाची कारणे एकसमान असावीत का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "सर्व समुदायांना समानपणे लागू होणारी घटस्फोटाची समान कारणे आणि कार्यपद्धती असावी का?",
+        "answer": "NO"
       }
     },
     {
@@ -446,16 +446,16 @@ const UCC_DATA = {
         "answer": "NO"
       },
       "en": {
-        "question": "Should all forms of non-judicial divorce be prohibited?",
+        "question": "Should the grounds for divorce be the same for both sexes?",
         "answer": "NO"
       },
       "hi": {
-        "question": "क्या गैर-न्यायिक तलाक की सभी प्रक्रियाओं पर प्रतिबंध लगाया जाना चाहिए?",
-        "answer": "NO (नहीं)"
+        "question": "क्या स्त्री व पुरूष दोनों के लिए विवाह-विच्छेद के आधार समान होने चाहिए?",
+        "answer": "NO"
       },
       "mr": {
-        "question": "गैर-न्यायालयीन घटस्फोटाच्या सर्व पद्धतींवर बंदी घातली जावी का?",
-        "answer": "NO (नाही)"
+        "question": "घटस्फोटाची कारणे पती-पत्नीसाठी समान असावीत का?",
+        "answer": "NO"
       }
     },
     {
@@ -467,16 +467,16 @@ const UCC_DATA = {
         "answer": "NO"
       },
       "en": {
-        "question": "Should men and women have equal inheritance rights across all religions?",
+        "question": "Should the UCC prohibit extra-judicial divorce?",
         "answer": "NO"
       },
       "hi": {
-        "question": "क्या सभी धर्मों में पुरुषों और महिलाओं को विरासत में समान अधिकार मिलने चाहिए?",
-        "answer": "NO (नहीं)"
+        "question": "क्या समान नागरिक संहिता को न्यायेतर (extra-judicial) विवाह-विच्छेद पर रोक लगानी चाहिए?",
+        "answer": "NO"
       },
       "mr": {
-        "question": "सर्व धर्मांमध्ये पुरुष आणि महिलांना वारसाहक्कात समान अधिकार मिळायला हवेत का?",
-        "answer": "NO (नाही)"
+        "question": " समान नागरी संहितेने न्यायालयाबाहेरील (extra-judicial) घटस्फोटास प्रतिबंध करावा का?",
+        "answer": "NO"
       }
     },
     {
@@ -488,16 +488,16 @@ const UCC_DATA = {
         "answer": "NO"
       },
       "en": {
-        "question": "Should there be a uniform law of intestate succession, that is, inheritance in the absence of a will, for all religions?",
+        "question": "Should registration of divorce and nullity of marriage be made compulsory?",
         "answer": "NO"
       },
       "hi": {
-        "question": "क्या बिना वसीयत के संपत्ति के उत्तराधिकार के लिए सभी धर्मों में एक समान कानून होना चाहिए?",
-        "answer": "NO (नहीं)"
+        "question": "क्या विवाह-विच्छेद और विवाह की शून्यता (nullity) का पंजीकरण अनिवार्य किया जाना चाहिए?",
+        "answer": "NO "
       },
       "mr": {
-        "question": "मृत्यूपत्र (विल) नसताना वारसा हक्काच्या वाटणीसाठी सर्व धर्मांमध्ये एकसमान कायदा असावा का?",
-        "answer": "NO (नाही)"
+        "question": " घटस्फोट आणि विवाह रद्दझालेली (nullity) यांची नोंदणी सक्तीची करावी का?",
+        "answer": "NO "
       }
     },
     {
@@ -509,16 +509,16 @@ const UCC_DATA = {
         "answer": "NO"
       },
       "en": {
-        "question": "Should every person have the freedom to transfer their entire property according to their wishes through a will?",
+        "question": "Should imposing any condition on remarrying a divorced spouse, such as marrying a third person before such remarriage, be prohibited?",
         "answer": "NO"
       },
       "hi": {
-        "question": "क्या प्रत्येक व्यक्ति को वसीयत के माध्यम से अपनी पूरी संपत्ति अपनी इच्छानुसार हस्तांतरित करने की स्वतंत्रता होनी चाहिए?",
-        "answer": "NO (नहीं)"
+        "question": "क्या विवाह विच्छेदित जीवनसाथी से पुनर्विवाह करने पर कोई शर्त, जैसे ऐसे पुनर्विवाह से पहले किसी तीसरे व्यक्ति से विवाह करना, लगाए जाने पर रोक होनी चाहिए?",
+        "answer": "NO "
       },
       "mr": {
-        "question": "प्रत्येक व्यक्तीला मृत्यूपत्राद्वारे आपली संपूर्ण मालमत्ता स्वतःच्या इच्छेनुसार हस्तांतरित करण्याचे स्वातंत्र्य असावे का?",
-        "answer": "NO (नाही)"
+        "question": "घटस्फोटित पती/पत्नीशी पुनर्विवाह करण्यापूर्वी तिसऱ्या व्यक्तीशी विवाह करण्यासारखी कोणतीही अट लादण्यास प्रतिबंध असावा का?",
+        "answer": "NO"
       }
     },
     {
@@ -530,184 +530,184 @@ const UCC_DATA = {
         "answer": "NO"
       },
       "en": {
-        "question": "Should all children have equal inheritance rights irrespective of the marital status of their parents?",
+        "question": "Should the UCC contain uniform, gender-neutral provisions to deal with claims for maintenance arising from matrimonial disputes?",
         "answer": "NO"
       },
       "hi": {
-        "question": "क्या सभी बच्चों को उनके माता-पिता की वैवाहिक स्थिति से अलग, विरासत में समान अधिकार मिलने चाहिए?",
-        "answer": "NO (नहीं)"
+        "question": "क्या समान नागरिक संहिता में वैवाहिक विवादों से उत्पन्न भरण-पोषण के दावों से निपटने के लिए एकसमान, लिंग-निरपेक्ष प्रावधान होने चाहिए?",
+        "answer": "NO "
       },
       "mr": {
-        "question": "पालकांच्या वैवाहिक स्थितीचा विचार न करता सर्व मुलांना समान वारसा हक्क मिळायला हवेत का?",
-        "answer": "NO (नाही)"
+        "question": " वैवाहिक वादांमधून उद्भवणाऱ्या भरण-पोषण दाव्यांसाठी समान नागरी संहितेत एकसमान व लिंग-निरपेक्ष तरतुदी असाव्यात का?",
+        "answer": "NO "
       }
     },
     {
       "id": 17,
       "part": 1,
-      "type": "NO_COMMENT",
+      "type": "NO",
       "ur": {
         "question": "کیا لِو اِن ریلیشن شپ کے معاملات کو یکساں سول کوڈ کے تحت منظم کیا جانا چاہیے؟",
-        "answer": "NO COMMENT"
+        "answer": "NO"
       },
       "en": {
-        "question": "Should matters relating to live-in relationships be regulated under a Uniform Civil Code?",
-        "answer": "NO COMMENT"
+        "question": "Should there be a uniform law for the maintenance of dependent children irrespective of the religion of the parents?",
+        "answer": "NO"
       },
       "hi": {
-        "question": "क्या लिव-इन रिलेशनशिप से संबंधित मामलों को समान नागरिक संहिता के अंतर्गत विनियमित किया जाना चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या माता-पिता चाहे किसी धर्म के हों, उन पर आश्रित बच्चों के भरण-पोषण के लिए एक समान कानून होना चाहिए?",
+        "answer": "NO"
       },
       "mr": {
-        "question": "लिव्ह-इन रिलेशनशिप अर्थात विवाहाशिवाय सहजीवनाशी संबंधित बाबींचे नियमन समान नागरी संहितेअंतर्गत केले पाहिजे का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "पालकांच्या धर्माचा विचार न करता अवलंबित मुलांच्या भरणपोषणासाठी एकसमान कायदा असावा का?",
+        "answer": "NO"
       }
     },
     {
       "id": 18,
       "part": 1,
-      "type": "NO_COMMENT",
+      "type": "NO",
       "ur": {
         "question": "کیا لِو اِن ریلیشن شپ کا اندراج لازمی ہونا چاہیے؟",
-        "answer": "NO COMMENT"
+        "answer": "NO"
       },
       "en": {
-        "question": "Should the registration of live-in relationships be compulsory?",
-        "answer": "NO COMMENT"
+        "question": "Should there be a uniform law requiring financially capable adult children to maintain their dependent parents?",
+        "answer": "NO"
       },
       "hi": {
-        "question": "क्या लिव-इन रिलेशनशिप का पंजीकरण अनिवार्य होना चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या आर्थिक रूप से सक्षम वयस्क संतानों को अपने आश्रित माता-पिता का भरण-पोषण करने के लिए बाध्य करने वाला एक समान कानून होना चाहिए?",
+        "answer": "NO"
       },
       "mr": {
-        "question": "लिव्ह-इन रिलेशनशिपची नोंदणी अनिवार्य असावी का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "आर्थिकदृष्ट्या सक्षम प्रौढ मुलांनी त्यांच्यावर अवलंबित पालकांचा सांभाळ करावा, यासाठी एकसमान कायदा असावा का",
+        "answer": "NO"
       }
     },
     {
       "id": 19,
       "part": 1,
-      "type": "NO_COMMENT",
+      "type": "YES",
       "ur": {
         "question": "کیا لِو اِن ریلیشن شپ ختم ہونے پر اس کے خاتمے کا اندراج لازمی ہونا چاہیے؟",
-        "answer": "NO COMMENT"
+        "answer": "YES"
       },
       "en": {
-        "question": "Should the termination of a live-in relationship be compulsorily registered?",
-        "answer": "NO COMMENT"
+        "question": " Should the welfare and best interest of the child be the paramount consideration in matters relating to custody?",
+        "answer": "YES"
       },
       "hi": {
-        "question": "क्या लिव-इन रिलेशनशिप समाप्त होने पर उसके समापन का पंजीकरण अनिवार्य होना चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या अभिरक्षा (custody) से संबंधित मामलों में बालक का कल्याण और सर्वोत्तम हित ही सर्वोपरि विचार होना चाहिए",
+        "answer": "YES"
       },
       "mr": {
-        "question": "लिव्ह-इन रिलेशनशिप संपुष्टात आल्यावर त्याची नोंदणी अनिवार्य असावी का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "पालकत्व (custody) संबंधित बाबींमध्ये बालकाचे कल्याण आणि सर्वोत्तम हित हाच सर्वोच्च विचार असावा का?",
+        "answer": "YES"
       }
     },
     {
       "id": 20,
       "part": 1,
-      "type": "NO_COMMENT",
+      "type": "NO",
       "ur": {
         "question": "کیا لِو اِن ریلیشن شپ میں خواتین کو کفالت اور وراثت کے حقوق ملنے چاہییں؟",
-        "answer": "No Comment"
+        "answer": "NO"
       },
       "en": {
-        "question": "Should women in live-in relationships have maintenance and inheritance rights?",
-        "answer": "NO COMMENT"
+        "question": "Should all children, irrespective of the marital status of their parents, have equal rights in matters of succession?",
+        "answer": "NO"
       },
       "hi": {
-        "question": "क्या लिव-इन रिलेशनशिप में महिलाओं को भरण-पोषण और विरासत के अधिकार मिलने चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": " क्या माता-पिता की वैवाहिक स्थिति पर ध्यान दिए बिना, सभी बच्चों को उत्तराधिकार के मामलों में समान अधिकार मिलने चाहिए?",
+        "answer": "NO"
       },
       "mr": {
-        "question": "लिव्ह-इन रिलेशनशिपमधील महिलांना पोटगी आणि वारसा हक्क मिळायला हवेत का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "पालकांच्या वैवाहिक स्थितीचा विचार न करता, सर्व मुलांना वारसाहक्काच्या बाबतीत समान अधिकार असावेत का?",
+        "answer": "NO"
       }
     },
     {
       "id": 21,
       "part": 1,
-      "type": "NO_COMMENT",
+      "type": "NO",
       "ur": {
         "question": "کیا لِو اِن ریلیشن شپ سے پیدا ہونے والے بچوں کو وراثت کے حقوق ملنے چاہییں؟",
-        "answer": "No Comment"
+        "answer": "No"
       },
       "en": {
-        "question": "Should children born out of live-in relationships have inheritance rights?",
-        "answer": "NO COMMENT"
+        "question": " Should there be uniform provisions governing intestate succession, i.e., succession where a person dies without leaving a valid will, irrespective of the religion of the parties?",
+        "answer": "NOT"
       },
       "hi": {
-        "question": "क्या लिव-इन रिलेशनशिप से जन्मे बच्चों को विरासत के अधिकार मिलने चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या संबंधित पक्षों के धर्म पर ध्यान दिए बिना, इच्छापत्र विहीन उत्तराधिकार (यानी जब कोई व्यक्ति वैध इच्छापत्र छोड़े बिना मरता है) को नियंत्रित करने वाले एकसमान प्रावधान होने चाहिए?",
+        "answer": "NO"
       },
       "mr": {
-        "question": "लिव्ह-इन रिलेशनशिपमधून जन्मलेल्या मुलांना वारसा हक्क मिळायला हवेत का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "संबंधित व्यक्तींच्या धर्माचा विचार न करता, व्यक्तिचा मृत्यू कायदेशीर इच्छापत्र न करता झाल्यास वारसाहक्काबाबत समान तरतूदी असाव्यात का?",
+        "answer": "NO"
       }
     },
     {
       "id": 22,
       "part": 1,
-      "type": "NO_COMMENT",
+      "type": "NO",
       "ur": {
         "question": "کیا ایسے بچوں کو والدین سے نگہداشت اور کفالت حاصل کرنے کا حق ہونا چاہیے؟",
-        "answer": "No Comment"
+        "answer": "NO"
       },
       "en": {
-        "question": "Should such children have the right to care and maintenance from their parents?",
-        "answer": "NO COMMENT"
+        "question": " Should there be uniform provisions governing testamentary succession and Wills, irrespective of religion",
+        "answer": "NO "
       },
       "hi": {
-        "question": "क्या ऐसे बच्चों को अपने माता-पिता से देखभाल और भरण-पोषण प्राप्त करने का अधिकार होना चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या धर्म पर ध्यान दिए बिना, इच्छापत्रीय उत्तराधिकार और इच्छापत्रों को नियंत्रित करने वाले एकसमान प्रावधान होने चाहिए?",
+        "answer": "NO"
       },
       "mr": {
-        "question": "अशा मुलांना त्यांच्या पालकांकडून संगोपन आणि देखभालीचा खर्च मिळण्याचा अधिकार असावा का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "धर्माचा विचार न करता, इच्छापत्रीय वारसाहक्क आणि इच्छापत्र यांबाबत एकसमान तरतुदी असाव्यात का?",
+        "answer": "NO"
       }
     },
     {
       "id": 23,
       "part": 1,
-      "type": "NO_COMMENT",
+      "type": "NO",
       "ur": {
         "question": "کیا تمام بچوں کی کفالت کے لیے ایک یکساں قانون ہونا چاہیے؟",
-        "answer": "No Comment"
+        "answer": "NO"
       },
       "en": {
-        "question": "Should there be a uniform law governing the maintenance of all children?",
-        "answer": "NO COMMENT"
+        "question": "Should men and women have equal rights of inheritance across all communities?",
+        "answer": "NO"
       },
       "hi": {
-        "question": "क्या सभी बच्चों के भरण-पोषण के लिए एक समान कानून होना चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या सभी समुदायों में पुरुषों और महिलाओं को उत्तराधिकार के समान अधिकार मिलने चाहिए?",
+        "answer": "NO"
       },
       "mr": {
-        "question": "सर्व मुलांच्या देखभालीसाठी आणि पोषणासाठी एक समान कायदा असावा का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "सर्व समुदायांमध्ये पुरुष आणि स्त्रियांना वारसाहक्काचे समान अधिकार असावेत का?",
+        "answer": "NO"
       }
     },
     {
       "id": 24,
       "part": 1,
-      "type": "YES",
+      "type": "NO",
       "ur": {
         "question": "کیا بچوں کی تحویل کے معاملات میں ان کی فلاح و بہبود کو اولین اہمیت دی جانی چاہیے؟",
-        "answer": "YES"
+        "answer": "NO"
       },
       "en": {
-        "question": "Should the welfare of children be given the highest priority in child custody matters?",
-        "answer": "YES"
+        "question": " Should a person have the freedom to dispose of his or her entire property through a Will?",
+        "answer": "NO"
       },
       "hi": {
-        "question": "क्या बच्चों की अभिरक्षा के मामलों में उनके कल्याण को सर्वोच्च प्राथमिकता दी जानी चाहिए?",
-        "answer": "YES (हाँ)"
+        "question": "क्या किसी व्यक्ति को इच्छापत्र के माध्यम से अपनी संपूर्ण संपत्ति का निपटान करने की स्वतंत्रता होनी चाहिए?",
+        "answer": "NO"
       },
       "mr": {
-        "question": "मुलांच्या ताब्याच्या (कस्टडी) प्रकरणांमध्ये त्यांच्या हिताला व कल्याणाला सर्वोच्च प्राधान्य दिले जावे का?",
-        "answer": "YES (होय)"
+        "question": "एखाद्या व्यक्तीला इच्छापत्राद्वारे आपली संपूर्ण संपत्ती विल्हेवाट लावण्याचे स्वातंत्र्य असावे का?",
+        "answer": "NO"
       }
     },
     {
@@ -719,16 +719,16 @@ const UCC_DATA = {
         "answer": "NO COMMENT"
       },
       "en": {
-        "question": "Do complex laws relating to marital disputes encourage people to choose live-in relationships instead of marriage?",
+        "question": "Are provisions relating to solving marital disputes in the existing legal framework so cumbersome and time consuming that potential spouses are being driven to prefer live-in relationship over marriage?",
         "answer": "NO COMMENT"
       },
       "hi": {
-        "question": "क्या वैवाहिक विवादों से संबंधित जटिल कानून लोगों को विवाह के बजाय लिव-इन रिलेशनशिप की ओर आकर्षित करते हैं?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या मौजूदा कानूनी ढाँचे में वैवाहिक विवादों को सुलझाने से संबंधित प्रावधान इतने जटिल और समय लेने वाले हैं कि संभावित जीवनसाथी विवाह की तुलना में सहवासी (लिव-इन) संबंध को प्राथमिकता दे रहे हैं?",
+        "answer": "NO COMMENT"
       },
       "mr": {
-        "question": "वैवाहिक वादांशी संबंधित गुंतागुंतीचे कायदे लोकांना विवाहाऐवजी लिव्ह-इन रिलेशनशिपची निवड करण्यास प्रवृत्त करतात का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "वैवाहिक वाद सोडवण्यासंबंधीच्या सध्याच्या कायदेशीर तरतुदी इतक्या क्लिष्ट आणि वेळखाऊ आहेत का, की त्यामुळे संभाव्य जोडीदार विवाहापेक्षा सहजीवन (लिव्ह-इन) नातेसंबंधाला प्राधान्य देत आहेत?",
+        "answer": "NO COMMENT "
       }
     },
     {
@@ -740,16 +740,16 @@ const UCC_DATA = {
         "answer": "No Comment"
       },
       "en": {
-        "question": "Should there be a law to protect the rights of men and women involved in live-in relationships?",
+        "question": " Should the UCC contain provisions regulating live-in relationships with a view to ensuring the protection of men and women in such relationships?",
         "answer": "NO COMMENT"
       },
       "hi": {
-        "question": "क्या लिव-इन रिलेशनशिप में शामिल पुरुषों और महिलाओं के अधिकारों की रक्षा के लिए कानून होना चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या सहवासी (लिव-इन) संबंधों में रहने वाले पुरुषों और महिलाओं की सुरक्षा सुनिश्चित करने के उद्देश्य से समान नागरिक संहिता में ऐसे संबंधों को विनियमित करने वाले प्रावधान होने चाहिए?",
+        "answer": "NO COMMENT "
       },
       "mr": {
-        "question": "लिव्ह-इन रिलेशनशिपमध्ये राहणाऱ्या पुरुष आणि महिलांच्या हक्कांच्या संरक्षणासाठी कायदा असावा का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "अशा नातेसंबंधांमध्ये पुरुष आणि स्त्रियांच्या संरक्षणाची हमी देण्याच्या दृष्टीने समान नागरी संहितेत सहजीवन (लिव्ह-इन)नातेसंबंधांचे नियमन करणाऱ्या तरतुदी असाव्यात का?",
+        "answer": "NO COMMENT "
       }
     },
     {
@@ -761,16 +761,16 @@ const UCC_DATA = {
         "answer": "No Comment"
       },
       "en": {
-        "question": "Should registration be compulsory when entering into a live-in relationship?",
+        "question": "Should there be mandatory registration of live-in relationships?",
         "answer": "NO COMMENT"
       },
       "hi": {
-        "question": "क्या लिव-इन रिलेशनशिप में प्रवेश करते समय पंजीकरण अनिवार्य होना चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या सहवासी (लिव-इन) संबंधों का अनिवार्य पंजीकरण होना चाहिए?",
+        "answer": "NO COMMENT "
       },
       "mr": {
-        "question": "लिव्ह-इन रिलेशनशिपमध्ये प्रवेश करताना नोंदणी करणे अनिवार्य असावे का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "सहजीवन (लिव्ह-इन) नातेसंबंधांची सक्तीची नोंदणी असावी का?",
+        "answer": "NO COMMENT "
       }
     },
     {
@@ -782,16 +782,16 @@ const UCC_DATA = {
         "answer": "No Comment"
       },
       "en": {
-        "question": "Should registration be compulsory when a live-in relationship ends?",
+        "question": " Should there be mandatory registration of termination of live-in relationships?",
         "answer": "NO COMMENT"
       },
       "hi": {
-        "question": "क्या लिव-इन रिलेशनशिप समाप्त होने पर उसका पंजीकरण अनिवार्य होना चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": " क्या सहवासी (लिव-इन) संबंधों की समाप्ति का अनिवार्य पंजीकरण होना चाहिए?",
+        "answer": "NO COMMENT "
       },
       "mr": {
-        "question": "लिव्ह-इन रिलेशनशिप संपुष्टात आल्यावर त्याची नोंदणी करणे अनिवार्य असावे का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "सहजीवन (लिव्ह-इन) नातेसंबंध संपुष्टात आल्याची सक्तीची नोंदणी असावी का?",
+        "answer": "NO COMMENT "
       }
     },
     {
@@ -803,16 +803,16 @@ const UCC_DATA = {
         "answer": "No Comment"
       },
       "en": {
-        "question": "Should women be protected through maintenance and other legal rights if they are evicted from a live-in relationship?",
+        "question": " Should UCC include provisions to protect the rights of women in live-in relationships, such as inheritance rights and maintenance in certain circumstances like desertion?",
         "answer": "NO COMMENT"
       },
       "hi": {
-        "question": "क्या लिव-इन रिलेशनशिप में किसी महिला को घर से निकाले जाने की स्थिति में भरण-पोषण तथा अन्य अधिकारों की सुरक्षा मिलनी चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": " क्या सहवासी (लिव-इन) संबंधों में रहने वाली महिलाओं के परित्याग (desertion) जैसी विशिष्ट परिस्थितियों में उनके अधिकारों, यथा उत्तराधिकार व भरण-पोषण, का संरक्षण करने संबंधी प्रावधान समान नागरिक संहिता में शामिल होने चाहिए?",
+        "answer": "NO COMMENT "
       },
       "mr": {
-        "question": "लिव्ह-इन रिलेशनशिपमधून बाहेर काढल्यास महिलांना पोटगी व इतर कायदेशीर हक्कांचे संरक्षण मिळायला हवे का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "परित्याग (desertion) यांसारख्या विशिष्ट परिस्थितीत वारसाहक्क आणि पोटगी यांसारख्या सहजीवन (लिव्ह-इन)नातेसंबंधांतील स्त्रियांच्या हक्कांचे संरक्षण करणाऱ्या तरतुदी समान नागरी संहितेत असाव्यात का?",
+        "answer": "NO COMMENT "
       }
     },
     {
@@ -824,16 +824,16 @@ const UCC_DATA = {
         "answer": "No Comment"
       },
       "en": {
-        "question": "Should children born out of live-in relationships have inheritance rights?",
+        "question": "Should children born from live-in relationships have inheritance rights?",
         "answer": "NO COMMENT"
       },
       "hi": {
-        "question": "क्या लिव-इन रिलेशनशिप से जन्मे बच्चों को विरासत के अधिकार प्राप्त होने चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": "क्या सहवासी (लिव-इन) संबंधों से जन्मे बच्चों को उत्तराधिकार का अधिकार मिलना चाहिए?",
+        "answer": "NO COMMENT "
       },
       "mr": {
-        "question": "लिव्ह-इन रिलेशनशिपमधून जन्मलेल्या मुलांना वारसा हक्क मिळायला हवेत का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "सहजीवन (लिव्ह-इन) नातेसंबंधातून जन्मलेल्या मुलांना वारसाहक्क असावा का?",
+        "answer": "NO COMMENT "
       }
     },
     {
@@ -845,16 +845,16 @@ const UCC_DATA = {
         "answer": "No Comment"
       },
       "en": {
-        "question": "Should such children have the right to care and maintenance from their parents?",
+        "question": "Should children born from live-in relationships have the right to be cared and maintained by their parents?",
         "answer": "NO COMMENT"
       },
       "hi": {
-        "question": "क्या ऐसे बच्चों को अपने माता-पिता से देखभाल और भरण-पोषण प्राप्त करने का अधिकार होना चाहिए?",
-        "answer": "NO COMMENT (कोई टिप्पणी नहीं)"
+        "question": " क्या सहवासी (लिव-इन) संबंधों से जन्मे बच्चों को अपने माता-पिता से देखभाल और भरण-पोषण पाने का अधिकार होना चाहिए?",
+        "answer": "NO COMMENT "
       },
       "mr": {
-        "question": "अशा मुलांना पालकांकडून संगोपन व देखभाल मिळण्याचा अधिकार असावा का?",
-        "answer": "NO COMMENT (कोणतीही टिप्पणी नाही)"
+        "question": "सहजीवन (लिव्ह-इन) नातेसंबंधातून जन्मलेल्या मुलांना त्यांच्या पालकांकडून सांभाळ आणि भरण-पोषणाचा हक्क असावा का?",
+        "answer": "NO COMMENT "
       }
     },
     {
@@ -866,16 +866,16 @@ const UCC_DATA = {
         "answer": "آئینِ ہند کے آرٹیکل 44 میں یکساں سول کوڈ کے حصول کی گنجائش کا مطلب ہرگز یہ نہیں کہ اسے بلا ضرورت نافذ کیا جائے۔ مہاراشٹر میں اس کی کوئی واضح سماجی یا قانونی ضرورت ثابت کیے بغیر اسے نافذ کرنا مناسب نہیں۔ آئین کے رہنما اصولوں میں شراب بندی (آرٹیکل 47)، صحتِ عامہ کی بہتری اور دیگر فلاحی امور سے متعلق ہدایات بھی موجود ہیں۔ ریاست کو چاہیے کہ ان مقاصد کے حصول، عوامی صحت کے تحفظ اور سماجی مسائل کے حل کے لیے مؤثر اقدامات کرے۔ مسلمانوں کے مذہبی حقوق اور مسلم پرسنل لا کا احترام کرتے ہوئے خواتین اور بچوں کے حقوق کا تحفظ یقینی بنایا جائے اور کسی بھی قانون سازی سے پہلے تمام متعلقہ فریقوں سے بامعنی مشاورت کی جائے۔"
       },
       "en": {
-        "question": "What matters should be included in a Uniform Civil Code?",
-        "answer": "Article 44 of the Constitution of India provides for efforts towards securing a Uniform Civil Code. However, this does not mean that such a code should be implemented without establishing a genuine need for it. Implementing a Uniform Civil Code in Maharashtra without demonstrating a clear social or legal necessity would not be appropriate.\n\nThe Directive Principles of State Policy also contain provisions relating to prohibition of intoxicating drinks under Article 47, improvement of public health and other public welfare objectives. The State should take effective measures to achieve these objectives, protect public health and address existing social problems.\n\nWhile respecting the religious rights of Muslims and the principles of Muslim Personal Law, the rights of women and children must be effectively protected. Meaningful consultation with all stakeholders should take place before any legislation is introduced."
+        "question":"What areas do you think should be covered under the UCC?",
+        "answer": " None. Personal laws governing marriage, divorce, maintenance, inheritance, wills, and custody for Muslims are derived directly from the Holy Quran and Sunnah. Under Article 25 of the Constitution of India, citizens have the fundamental right to profess and practice their religion. Therefore, religious personal laws should be completely exempted, and UCC should not be implemented."
       },
       "hi": {
-        "question": "समान नागरिक संहिता में किन विषयों को शामिल किया जाना चाहिए?",
-        "answer": "भारतीय संविधान के अनुच्छेद 44 में समान नागरिक संहिता की दिशा में प्रयास करने का प्रावधान होने का अर्थ यह नहीं है कि इसे बिना किसी ठोस आवश्यकता के लागू कर दिया जाए। महाराष्ट्र में इसे लागू करने की कोई स्पष्ट सामाजिक या कानूनी आवश्यकता सिद्ध किए बिना ऐसा करना उचित नहीं होगा।\n\nसंविधान के नीति-निर्देशक सिद्धांतों में शराबबंदी (अनुच्छेद 47), सार्वजनिक स्वास्थ्य में सुधार तथा अन्य जनकल्याणकारी उद्देश्यों से संबंधित निर्देश भी शामिल हैं। राज्य को इन उद्देश्यों की प्राप्ति, सार्वजनिक स्वास्थ्य की रक्षा और सामाजिक समस्याओं के समाधान के लिए प्रभावी कदम उठाने चाहिए।\n\nमुसलमानों के धार्मिक अधिकारों और मुस्लिम पर्सनल लॉ का सम्मान करते हुए महिलाओं और बच्चों के अधिकारों की रक्षा सुनिश्चित की जानी चाहिए। किसी भी कानून के निर्माण से पहले सभी संबंधित पक्षों के साथ सार्थक परामर्श किया जाना चाहिए।"
+        "question": "आपके अनुसार समान नागरिक संहिता के अंतर्गत किन-किन विषयों को शामिल किया जाना चाहिए?",
+        "answer": "कोई भी नहीं। मुसलमानों के विवाह, तलाक, खुला, भरण-पोषण, विरासत, वसीयत और अभिभावकत्व जैसे व्यक्तिगत मामलों से संबंधित कानून पवित्र कुरआन और सुन्नत पर आधारित हैं। भारतीय संविधान के अनुच्छेद 25 के अंतर्गत प्रत्येक नागरिक को अपने धर्म को मानने और उसका पालन करने का मौलिक अधिकार प्राप्त है। इसलिए धार्मिक व्यक्तिगत कानूनों को समान नागरिक संहिता (UCC) के दायरे से पूरी तरह बाहर रखा जाना चाहिए और समान नागरिक संहिता लागू नहीं की जानी चाहिए।"
       },
       "mr": {
-        "question": "समान नागरी संहितेमध्ये कोणत्या बाबींचा समावेश केला जावा?",
-        "answer": "भारतीय संविधानाच्या कलम ४४ मध्ये समान नागरी संहितेसाठी प्रयत्न करण्याचे निर्देश असले, तरी याचा अर्थ असा नाही की कोणतीही खरी गरज सिद्ध न करता ती लगेच लागू केली जावी. महाराष्ट्रात कोणतीही ठोस सामाजिक किंवा कायदेशीर आवश्यकता सिद्ध केल्याशिवाय समान नागरी संहिता लागू करणे योग्य ठरणार नाही.\n\nसंविधानातील मार्गदर्शक तत्त्वांमध्ये दारूबंदी (कलम ४७), सार्वजनिक आरोग्याची सुधारणा आणि इतर लोककल्याणकारी उद्दिष्टांचाही समावेश आहे. शासनाने ही उद्दिष्टे साध्य करण्यासाठी, सार्वजनिक आरोग्य जपण्यासाठी आणि विद्यमान सामाजिक समस्या सोडवण्यासाठी प्रभावी पावले उचलली पाहिजेत.\n\nमुस्लिमांच्या धार्मिक हक्कांचा आणि मुस्लिम पर्सनल लॉच्या तत्त्वांचा आदर राखून महिला आणि बालकांच्या हक्कांचे प्रभावी संरक्षण केले पाहिजे. कोणताही कायदा करण्यापूर्वी सर्व संबंधित घटकांशी अर्थपूर्ण चर्चा आणि विचारविनिमय केला गेला पाहिजे."
+        "question": "समान नागरी संहितेअंतर्गत कोणकोणत्या क्षेत्रांचा समावेश असावा, असे तुम्हाला वाटते?",
+        "answer": "एकही नाही. मुस्लिमांच्या विवाह, तलाक, खुला, पोटगी, वारसा, मृत्युपत्र आणि पालकत्व यांसारख्या वैयक्तिक बाबींशी संबंधित कायदे पवित्र कुरआन आणि सुन्नत यांवर आधारित आहेत. भारतीय संविधानाच्या अनुच्छेद 25 नुसार प्रत्येक नागरिकाला आपल्या धर्माचे पालन करण्याचा आणि त्यानुसार आचरण करण्याचा मूलभूत अधिकार आहे. त्यामुळे धार्मिक वैयक्तिक कायद्यांना समान नागरी संहितेच्या (UCC) कक्षेबाहेर पूर्णपणे ठेवण्यात यावे आणि समान नागरी संहिता लागू करण्यात येऊ नये."
       }
     },
     {
@@ -887,16 +887,17 @@ const UCC_DATA = {
         "answer": "انسانی سماج میں مختلف مسائل کا  پیدا ہونا فطری بات ہے۔لیکن اس کے حل کے لیے پہلے سے موجود مذہبی اصول و رہنمائی  کی سمجھ اور اس کا نفاذ مسئلے کے حل کے لیے کافی ہیں ۔پرسنل لاء کے ذریعے تنازعات حل کیے جاسکتے ہیں ۔"
       },
       "en": {
-        "question": "What problems have you faced in matters relating to personal and family laws?",
-        "answer": "The occurrence of different types of problems in human society is natural. However, a proper understanding of existing religious principles and guidance, along with their appropriate implementation, can be sufficient to address many such problems. Family disputes can be resolved through personal laws."
+        "question":"What problems do people face while dealing with personal civil matters such as registration of marriage, getting a decree for divorce, claiming inheritance rights (with or without a Will), etc.? Do you have suggestions for improving the present state of affairs?",
+        "answer": "The problems faced by people are primarily procedural and administrative in nature, including judicial delays, high litigation costs, and bureaucratic hurdles, rather than deficiencies in religious personal laws.Instead of implementing a Uniform Civil Code, the government should strengthen the existing judicial infrastructure, increase the number of Family Courts, simplify administrative procedures, and encourage Alternative Dispute Resolution (ADR) mechanisms. Community-based institutions such as Dar-ul-Qaza may also be encouraged to facilitate the timely and affordable resolution of family disputes in accordance with the applicable personal laws."
+      
       },
       "hi": {
-        "question": "व्यक्तिगत और पारिवारिक कानूनों से संबंधित मामलों में आपको किन समस्याओं का सामना करना पड़ा है?",
-        "answer": "मानव समाज में विभिन्न प्रकार की समस्याओं का उत्पन्न होना स्वाभाविक है। लेकिन उनके समाधान के लिए पहले से मौजूद धार्मिक सिद्धांतों और मार्गदर्शन की सही समझ तथा उनका उचित पालन पर्याप्त हो सकता है। व्यक्तिगत कानूनों के माध्यम से पारिवारिक विवादों का समाधान किया जा सकता है।"
+        "question": "विवाह पंजीकरण, तलाक का आदेश प्राप्त करने, वसीयत के साथ या उसके बिना विरासत के अधिकार प्राप्त करने आदि जैसे व्यक्तिगत नागरिक मामलों में लोगों को किन समस्याओं का सामना करना पड़ता है? वर्तमान स्थिति में सुधार के लिए आपके क्या सुझाव हैं?",
+        "answer": "लोगों को होने वाली समस्याएँ मुख्य रूप से प्रक्रियात्मक और प्रशासनिक हैं। न्यायिक प्रक्रिया में देरी, मुकदमों का अधिक खर्च और प्रशासनिक कार्यवाही की जटिलताएँ इसके प्रमुख कारण हैं। ये समस्याएँ आवश्यक रूप से धार्मिक व्यक्तिगत कानूनों की कमियों के कारण उत्पन्न नहीं होतीं।समान नागरिक संहिता लागू करने के बजाय सरकार को मौजूदा न्यायिक व्यवस्था को मजबूत करना चाहिए, परिवार न्यायालयों की संख्या बढ़ानी चाहिए, प्रशासनिक प्रक्रियाओं को सरल बनाना चाहिए और वैकल्पिक विवाद समाधान (ADR) की व्यवस्था को प्रोत्साहित करना चाहिए। इसके अतिरिक्त, संबंधित व्यक्तिगत कानूनों के अंतर्गत पारिवारिक विवादों का शीघ्र और कम खर्च में समाधान करने के लिए दारुल-कजा जैसी सामुदायिक संस्थाओं को भी प्रोत्साहित किया जा सकता है।"
       },
       "mr": {
-        "question": "वैयक्तिक आणि कौटुंबिक कायद्यांच्या संदर्भात आपल्याला कोणत्या समस्यांना सामोरे जावे लागले आहे?",
-        "answer": "मानवी समाजात विविध प्रकारच्या समस्या निर्माण होणे नैसर्गिक आहे. तथापि, अस्तित्वात असलेल्या धार्मिक तत्त्वांची आणि मार्गदर्शनाची योग्य समज तसेच त्यांचे योग्य पालन अशा अनेक समस्या सोडवण्यासाठी पुरेसे आहे. कौटुंबिक वाद हे पर्सनल लॉच्या माध्यमातून सोडवले जाऊ शकतात."
+        "question": "विवाह नोंदणी, घटस्फोटाचा निर्णय मिळवणे, (इच्छापत्रासह किंवा त्याविना) वारसाहक्क मिळवणे यांसारख्या वैयक्तिक नागरी बाबी हाताळताना लोकांना कोणत्या अडचणींना सामोरे जावे लागते? सध्याची परिस्थिती सुधारण्यासाठी आपणाकडे काही सूचना आहेत का?",
+        "answer": "लोकांना येणाऱ्या अडचणी प्रामुख्याने प्रक्रियात्मक आणि प्रशासकीय स्वरूपाच्या आहेत. न्यायालयीन प्रक्रियेतील विलंब, खटल्यांचा वाढता खर्च आणि प्रशासकीय कामकाजातील अडथळे ही त्याची प्रमुख कारणे आहेत. या समस्या धार्मिक वैयक्तिक कायद्यांमधील त्रुटींमुळे निर्माण होतातच असे नाही.समान नागरी संहिता लागू करण्याऐवजी विद्यमान न्यायव्यवस्था अधिक सक्षम करावी, कौटुंबिक न्यायालयांची संख्या वाढवावी, प्रशासकीय प्रक्रिया सुलभ कराव्यात आणि पर्यायी विवाद निवारण यंत्रणांना (ADR) प्रोत्साहन द्यावे. तसेच, लागू असलेल्या वैयक्तिक कायद्यांच्या चौकटीत कौटुंबिक वादांचे जलद आणि कमी खर्चात निराकरण करण्यासाठी दारुल-कजा यांसारख्या समुदायाधारित संस्थांना प्रोत्साहन देता येईल."
       }
     },
     {
@@ -908,16 +909,17 @@ const UCC_DATA = {
         "answer": "خواتین کو وراثت سے محروم کرنا، مہر کی ادائیگی میں ٹال مٹول، نفقہ کے معاملات میں غیر ضروری تاخیر اور خاندانی تنازعات میں قانونی امداد کی کمی قابلِ توجہ مسائل ہیں۔ ان کے حل کے لیے موجودہ قوانین کا مؤثر نفاذ، مفت قانونی امداد، وراثتی حقوق کے بارے میں بیداری اور شکایات کے فوری ازالے کا نظام قائم کیا جائے۔ اصلاحات کے نام پر مذہبی آزادی ختم کرنے کے بجائے حقوق کے نفاذ اور انصاف کی فراہمی کو یقینی بنایا جائے۔"
       },
       "en": {
-        "question": "Which aspects of family laws are unfair to women? What measures would you suggest to address them?",
-        "answer": "Denying women their rightful inheritance, delaying the payment of mehr (dower), unnecessary delays in maintenance matters, and inadequate access to legal assistance in family disputes are important concerns that require attention.\n\nThese issues should be addressed through the effective implementation of existing laws, free legal aid, greater awareness of inheritance rights, and an efficient mechanism for the timely resolution of complaints.\n\nInstead of undermining religious freedom in the name of reform, priority should be given to enforcing existing rights effectively and ensuring access to justice."
+        "question": "Are there facets of family laws that are biased against women? Please give examples. Do you approve of them? If not, suggest ways to remove such biases.",
+        "answer":
+        "Muslim Personal Law is not inherently biased against women Islam granted women independent property rights, the right to Mahr (dower), maintenance, Khula (the right to seek dissolution of marriage), and specified shares in inheritance centuries ago The difference between the inheritance shares of men and women, in certain circumstances, is linked to their respective financial responsibilities and obligations rather than gender discrimination. Under Islamic law, men are obligated to pay Mahr and provide for the maintenance of their families, whereas women are not legally obligated to bear these financial responsibilities.Instances of injustice in practice often arise from ignorance, social customs, or the failure to implement Islamic principles properly. The appropriate solution is to ensure the effective enforcement of women’s existing rights under Muslim Personal Law, including the payment of Mahr and the rightful share in inheritance, along with greater public awareness, rather than changing the principles of religious personal law."
       },
       "hi": {
-        "question": "पारिवारिक कानूनों के कौन-से पहलू महिलाओं के लिए अन्यायपूर्ण हैं? उनके समाधान के लिए क्या सुझाव हैं?",
-        "answer": "महिलाओं को विरासत से वंचित करना, मेहर के भुगतान में टालमटोल करना, भरण-पोषण के मामलों में अनावश्यक देरी और पारिवारिक विवादों में कानूनी सहायता की कमी ऐसे महत्वपूर्ण मुद्दे हैं जिन पर ध्यान देने की आवश्यकता है।\n\nइन समस्याओं के समाधान के लिए वर्तमान कानूनों का प्रभावी क्रियान्वयन, निःशुल्क कानूनी सहायता, विरासत संबंधी अधिकारों के बारे में जागरूकता तथा शिकायतों के त्वरित निवारण की व्यवस्था स्थापित की जानी चाहिए।\n\nसुधारों के नाम पर धार्मिक स्वतंत्रता समाप्त करने के बजाय अधिकारों के प्रभावी क्रियान्वयन और न्याय की उपलब्धता सुनिश्चित की जानी चाहिए।"
+        "question": "क्या पारिवारिक कानूनों में महिलाओं के विरुद्ध पक्षपाती पहलू विद्यमान हैं? कृपया उदाहरण दें। क्या आप उनका समर्थन करते हैं? यदि नहीं, तो ऐसे पक्षपात को दूर करने के तरीके सुझाएँ।",
+        "answer": "मुस्लिम व्यक्तिगत कानून मूल रूप से महिलाओं के प्रति भेदभावपूर्ण नहीं है। इस्लाम ने सदियों पहले ही महिलाओं को स्वतंत्र संपत्ति का अधिकार, मेहर का अधिकार, भरण-पोषण का अधिकार, खुला के माध्यम से विवाह-विच्छेद की मांग करने का अधिकार और विरासत में निर्धारित हिस्से प्रदान किए हैं।कुछ परिस्थितियों में पुरुषों और महिलाओं के विरासत के हिस्सों में होने वाला अंतर लैंगिक भेदभाव पर आधारित नहीं है, बल्कि उनकी आर्थिक जिम्मेदारियों और दायित्वों से संबंधित है। इस्लामी कानून के अनुसार पुरुष पर मेहर देने और परिवार का भरण-पोषण करने की जिम्मेदारी होती है, जबकि महिलाओं पर ऐसी आर्थिक जिम्मेदारियाँ कानूनी रूप से अनिवार्य नहीं हैं।व्यवहार में दिखाई देने वाला अन्याय अक्सर कानून के प्रति अज्ञानता, सामाजिक रूढ़ियों या इस्लामी सिद्धांतों के उचित कार्यान्वयन की कमी के कारण उत्पन्न होता है। इसलिए धार्मिक व्यक्तिगत कानूनों में बदलाव करने के बजाय यह सुनिश्चित किया जाना चाहिए कि महिलाओं को मुस्लिम व्यक्तिगत कानून के अंतर्गत प्राप्त मौजूदा अधिकार, जैसे मेहर और विरासत में उनका उचित हिस्सा, प्रभावी रूप से मिलें। इसके साथ ही जन-जागरूकता भी बढ़ाई जानी चाहिए।",
       },
       "mr": {
-        "question": "कौटुंबिक कायद्यांमधील कोणते पैलू महिलांसाठी अन्यायकारक आहेत? त्यांच्या निवारणासाठी आपण काय सुचवाल?",
-        "answer": "महिलांना त्यांच्या कायदेशीर वारसाहक्कापासून वंचित ठेवणे, मेहर देण्यास टाळाटाळ करणे, पोटगीच्या प्रकरणांमध्ये विनाकारण होणारा विलंब आणि कौटुंबिक वादांमध्ये कायदेशीर मदतीचा अभाव या महत्त्वाच्या बाबींकडे लक्ष देणे गरजेचे आहे.\n\nसध्याच्या अस्तित्वात असलेल्या कायद्यांची प्रभावी अंमलबजावणी, मोफत कायदेशीर मदत, वारसा हक्कांबाबत जनजागृती आणि तक्रारींचे वेळेवर निवारण करणारी कार्यक्षम यंत्रणा याद्वारे या समस्या सोडवल्या पाहिजेत.\n\nसुधारणेच्या नावाखाली धार्मिक स्वातंत्र्यावर गदा आणण्याऐवजी, सध्याच्या अधिकारांची प्रभावी अंमलबजावणी करणे आणि न्यायाची उपलब्धता सुनिश्चित करणे याला सर्वोच्च प्राधान्य दिले पाहिजे."
+        "question": "कुटुंब कायद्यांमध्ये स्त्रियांविरुद्ध पूर्वग्रह असलेले पैलू आहेत का? कृपया उदाहरणे द्या. तुम्ही त्यांना मान्यता देता का? नसल्यास, असे पूर्वग्रह दूर करण्याचे मार्ग सुचवा.",
+        "answer": "मुस्लिम वैयक्तिक कायदा हा मूलतः महिलांविरुद्ध भेदभाव करणारा नाही. इस्लामने शतकानुशतके पूर्वीच महिलांना स्वतंत्र मालमत्ता हक्क, मेहरचा अधिकार, पोटगीचा अधिकार, खुलामार्फत विवाहविच्छेद मागण्याचा अधिकार आणि वारसाहक्कातील निश्चित हिस्सा प्रदान केला आहे.काही परिस्थितींमध्ये पुरुष आणि महिलांच्या वारसाहक्कातील हिस्स्यांमध्ये असणारा फरक हा लैंगिक भेदभावावर आधारित नसून त्यांच्या आर्थिक जबाबदाऱ्या आणि कर्तव्यांशी संबंधित आहे. इस्लामी कायद्यानुसार पुरुषावर मेहर देण्याची आणि कुटुंबाचा उदरनिर्वाह करण्याची /जबाबदारी असते; महिलांवर अशा आर्थिक जबाबदाऱ्या कायदेशीररीत्या बंधनकारक नसतात.प्रत्यक्ष व्यवहारात महिलांवर होणारा अन्याय अनेकदा कायद्याविषयीच्या अज्ञानामुळे, सामाजिक रूढींमुळे किंवा इस्लामी तत्त्वांची योग्य अंमलबजावणी न झाल्यामुळे उद्भवतो. त्यामुळे धार्मिक वैयक्तिक कायद्यांमध्ये बदल करण्याऐवजी महिलांना मुस्लिम वैयक्तिक कायद्यानुसार मिळणारे विद्यमान हक्क, जसे की मेहर आणि वारसाहक्कातील योग्य हिस्सा, प्रभावीपणे मिळतील याची खात्री करावी आणि जनजागृती वाढवावी."
       }
     },
     {
@@ -929,16 +931,16 @@ const UCC_DATA = {
         "answer": "زرعی زمین، آبائی مکان اور دیگر جائیداد کی وراثت میں متعلقہ قوانین، زمین کی نوعیت اور جائز وارثوں کے حقوق کو مدنظر رکھا جائے۔ مسلمانوں کے لیے وراثت کے تسلیم شدہ شرعی اصولوں کا احترام کیا جائے۔ کسی خاتون یا دوسرے وارث کو دباؤ، دھوکا دہی یا غلط ریکارڈ کے ذریعے اس کے جائز حصے سے محروم نہ کیا جائے۔ جائیداد کے ریکارڈ کی درستگی، شفاف تقسیم اور آسان قانونی چارہ جوئی کے مؤثر انتظامات کیے جائیں۔"
       },
       "en": {
-        "question": "Should separate principles apply to the inheritance of agricultural land and ancestral houses?",
-        "answer": "The inheritance of agricultural land, ancestral houses and other properties should be dealt with by taking into account the applicable laws, the nature of the property and the rights of lawful heirs.\n\nThe recognised principles of Sharia governing inheritance for Muslims should be respected. No woman or other lawful heir should be deprived of their rightful share through coercion, fraud or incorrect property records.\n\nAccurate property records, transparent distribution of assets and accessible, effective legal remedies should be ensured."
+        "question":" Do you believe that the scheme of succession pertaining to agricultural land and ancestral home should be different from the scheme for other types of properties? If yes, why and how should the scheme be different?",
+        "answer": " No. According to Islamic law of inheritance (Ilm-ul-Faraid), there should be no distinction between agricultural land, ancestral homes, and other movable or immovable properties left by a deceased person. All such properties belonging to a deceased Muslim should be distributed among the rightful heirs according to the shares prescribed in the Holy Quran and Sunnah.Exempting agricultural land or ancestral property from the applicable principles of Islamic inheritance would risk depriving women and other rightful heirs of their legitimate inheritance rights."
       },
       "hi": {
-        "question": "कृषि भूमि और पैतृक मकान की विरासत के लिए क्या अलग-अलग सिद्धांत होने चाहिए?",
-        "answer": "कृषि भूमि, पैतृक मकान और अन्य संपत्तियों के उत्तराधिकार के मामलों में संबंधित कानूनों, भूमि की प्रकृति तथा वैध उत्तराधिकारियों के अधिकारों को ध्यान में रखा जाना चाहिए।\n\nमुसलमानों के लिए विरासत से संबंधित मान्य शरीयत सिद्धांतों का सम्मान किया जाना चाहिए। किसी महिला या अन्य उत्तराधिकारी को दबाव, धोखाधड़ी अथवा गलत अभिलेखों के माध्यम से उसके वैध हिस्से से वंचित नहीं किया जाना चाहिए।\n\nसंपत्ति अभिलेखों की शुद्धता, पारदर्शी बँटवारे तथा सरल और प्रभावी कानूनी उपायों की व्यवस्था सुनिश्चित की जानी चाहिए।"
+        "question": "क्या आपको लगता है कि कृषि भूमि और पैतृक घर से संबंधित उत्तराधिकार की व्यवस्था अन्य प्रकार की संपत्तियों के उत्तराधिकार की व्यवस्था से भिन्न होनी चाहिए? यदि हाँ, तो क्यों और वह व्यवस्था किस प्रकार भिन्न होनी चाहिए?",
+        "answer": "नहीं। इस्लामी उत्तराधिकार कानून (इल्मुल फराइज़) के अनुसार कृषि भूमि, पैतृक मकान तथा अन्य चल और अचल संपत्तियों के बीच उत्तराधिकार के मामले में कोई भेद नहीं किया जाना चाहिए। किसी मृत मुस्लिम व्यक्ति द्वारा छोड़ी गई सभी संपत्तियों का वितरण पवित्र कुरआन और सुन्नत में निर्धारित हिस्सों के अनुसार संबंधित कानूनी वारिसों के बीच किया जाना चाहिए।कृषि भूमि या पैतृक संपत्ति को इस्लामी उत्तराधिकार के सिद्धांतों से बाहर रखने से महिलाओं तथा अन्य वैध वारिसों को उनके उचित विरासत के अधिकार से वंचित किए जाने का खतरा उत्पन्न हो सकता है।"
       },
       "mr": {
-        "question": "शेतजमीन आणि वडिलोपार्जित घराच्या वारसाहक्कासाठी वेगळे नियम असावेत का?",
-        "answer": "शेतीजमीन, वडिलोपार्जित घर आणि इतर मालमत्तांच्या वारसाहक्काच्या प्रकरणांमध्ये संबंधित कायदे, मालमत्तेचे स्वरूप आणि कायदेशीर वारसांचे हक्क विचारात घेतले पाहिजेत.\n\nमुस्लिमांसाठी वारसाहक्काशी संबंधित मान्यताप्राप्त शरियत तत्त्वांचा पूर्ण आदर केला पाहिजे. कोणत्याही महिलेला किंवा इतर कायदेशीर वारसाला दबाव, फसवणूक किंवा चुकीच्या नोंदींद्वारे त्यांच्या हक्काच्या वाट्यापासून वंचित ठेवले जाऊ नये.\n\nमालमत्ता नोंदींची अचूकता, पारदर्शक वाटप आणि सुलभ, प्रभावी कायदेशीर उपाययोजनांची खात्री दिली पाहिजे."
+        "question": "शेतजमीन आणि वडिलोपार्जित घर यासंबंधीची वारसाहक्क योजना इतर प्रकारच्या मालमत्तांच्या योजनेपेक्षा वेगळी असावी, असे तुम्हाला वाटते का? होय असल्यास, ती का आणि कशी वेगळी असावी?",
+        "answer": "नाही. इस्लामी वारसा कायद्यानुसार (इल्मुल फराईज) शेतजमीन, वडिलोपार्जित घर तसेच इतर जंगम आणि स्थावर मालमत्ता यांच्यामध्ये वारसाहक्काच्या दृष्टीने भेद केला जाऊ नये. मृत मुस्लिम व्यक्तीने मागे ठेवलेली सर्व मालमत्ता पवित्र कुरआन आणि सुन्नत यांमध्ये निर्धारित केलेल्या हिस्स्यांनुसार संबंधित कायदेशीर वारसांमध्ये वितरित केली पाहिजे.शेतजमीन किंवा वडिलोपार्जित मालमत्तेला इस्लामी वारसा तत्त्वांमधून वगळल्यास महिलांसह इतर कायदेशीर वारसांना त्यांच्या वैध वारसाहक्कापासून वंचित राहावे लागू शकते."
       }
     },
     {
@@ -950,16 +952,16 @@ const UCC_DATA = {
         "answer": "نہیں۔خاندانی قوانین میں اصلاحات کا مقصد انصاف کی فراہمی، خواتین اور بچوں کے حقوق کا تحفظ، قانونی تنازعات میں کمی اور عدالتی کارروائی کو مؤثر بنانا ہونا چاہیے۔ اصلاحات کے لیے تمام مذہبی برادریوں سے مشاورت کی جائے اور مسلمانوں کے تسلیم شدہ پرسنل لا کے اصولوں اور آئینی مذہبی آزادی کا احترام کیا جائے۔ خواتین کو وراثت سے محروم کرنے، نفقہ کی ادائیگی میں غفلت اور قانونی چارہ جوئی میں غیر ضروری تاخیر جیسے عملی مسائل کے حل کو ترجیح دی جائے۔"
       },
       "en": {
-        "question": "Is there a need to introduce changes or reforms in the existing family laws?",
-        "answer": "The objective of reforms in family laws should be to ensure justice, protect the rights of women and children, reduce legal disputes and improve the effectiveness of judicial proceedings.\n\nAny proposed reforms should be developed through consultation with all religious communities, while respecting the recognised principles of Muslim Personal Law and the constitutional guarantee of religious freedom.\n\nPriority should be given to resolving practical problems, including the denial of women's inheritance rights, negligence in the payment of maintenance and unnecessary delays in legal proceedings."
+        "question":"Do you believe that children should get identical maintenance and inheritance rights from their parents whether they are born of a valid marriage or not? Give reasons for your answer.",
+        "answer": " No. Islam places paramount importance on the sanctity of marriage and the preservation of lineage (Nasab). In Muslim Personal Law, inheritance rights are strictly linked to legitimacy arising from a valid marriage (Nikah). Equating children born outside of wedlock with those born of a valid marriage undermines the institution of marriage and the family structure. Therefore, matters of maintenance and inheritance must strictly follow the established principles of Muslim Personal Law.",
       },
       "hi": {
-        "question": "क्या वर्तमान पारिवारिक कानूनों में किसी बदलाव या सुधार की आवश्यकता है?",
-        "answer": "पारिवारिक कानूनों में सुधार का उद्देश्य न्याय प्रदान करना, महिलाओं और बच्चों के अधिकारों की रक्षा करना, कानूनी विवादों को कम करना तथा न्यायिक प्रक्रिया को प्रभावी बनाना होना चाहिए।\n\nसुधारों के लिए सभी धार्मिक समुदायों से परामर्श किया जाना चाहिए और मुसलमानों के मान्य व्यक्तिगत कानूनों के सिद्धांतों तथा संविधान द्वारा प्रदत्त धार्मिक स्वतंत्रता का सम्मान किया जाना चाहिए।\n\nमहिलाओं को विरासत से वंचित करने, भरण-पोषण के भुगतान में लापरवाही तथा कानूनी कार्यवाही में अनावश्यक देरी जैसी व्यावहारिक समस्याओं के समाधान को प्राथमिकता दी जानी चाहिए।"
+        "question": "क्या आप मानते हैं कि बच्चों को अपने माता-पिता से समान भरण-पोषण और उत्तराधिकार अधिकार मिलने चाहिए, चाहे वे वैध विवाह से जन्मे हों या नहीं? अपने उत्तर के कारण बताएँ।",
+        "answer": "नहीं। इस्लाम विवाह संस्था की पवित्रता, वंश की सुरक्षा (नसब) और पारिवारिक व्यवस्था की स्थिरता को अत्यधिक महत्व देता है। इस्लामी न्यायशास्त्र के अनुसार भरण-पोषण और विरासत अलग-अलग विषय हैं तथा इन पर मुस्लिम व्यक्तिगत कानून के स्थापित सिद्धांतों के अनुसार स्वतंत्र रूप से विचार किया जाना चाहिए।मुस्लिम व्यक्तिगत कानून के अंतर्गत विरासत के अधिकार वंश और बच्चे के माता-पिता के साथ कानूनी संबंध से संबंधित विशिष्ट सिद्धांतों द्वारा निर्धारित होते हैं। इसलिए इन स्थापित सिद्धांतों पर विचार किए बिना समान विरासत अधिकार लागू करना उचित नहीं होगा। भरण-पोषण और विरासत से संबंधित मामलों का निर्णय लागू कानूनी व्यवस्था, धार्मिक स्वतंत्रता और मुस्लिम व्यक्तिगत कानून के सिद्धांतों का सम्मान करते हुए किया जाना चाहिए।"
       },
       "mr": {
-        "question": "सध्याच्या कौटुंबिक कायद्यांमध्ये काही बदल किंवा सुधारणा करण्याची गरज आहे का?",
-        "answer": "नाही. कौटुंबिक कायद्यांमधील सुधारणांचा मुख्य हेतू न्याय देणे, महिला व बालकांच्या हक्कांचे रक्षण करणे, कायदेशीर वाद कमी करणे आणि न्यायालयीन कामकाज अधिक प्रभावी बनवणे हा असायला हवा.\n\nकोणतीही प्रस्तावित सुधारणा ही सर्व धार्मिक घटकांशी विचारविनिमय करून आणि मुस्लिम पर्सनल लॉची मान्यताप्राप्त तत्त्वे तसेच संविधानाने दिलेल्या धार्मिक स्वातंत्र्याचा आदर राखूनच केली पाहिजे.\n\nमहिलांना वारसाहक्कापासून वंचित ठेवणे, पोटगी देण्यातील हलगर्जीपणा आणि न्यायालयीन प्रक्रियेतील विनाकारण विलंब यासारख्या व्यावहारिक अडचणी सोडवण्याला प्राधान्य दिले पाहिजे."
+        "question": "मुले वैध विवाहातून जन्मलेली असोत किंवा नसोत, त्यांना त्यांच्या पालकांकडून समान भरण-पोषण आणि वारसाहक्क मिळावा, असे तुम्हाला वाटते का? तुमच्या उत्तराची कारणे द्या.",
+        "answer": "नाही. इस्लाममध्ये विवाहसंस्थेचे पावित्र्य, वंशपरंपरेचे संरक्षण (नसब) आणि कुटुंबव्यवस्थेची स्थिरता यांना अत्यंत महत्त्व आहे. इस्लामी न्यायशास्त्रानुसार पोटगी आणि वारसाहक्क हे स्वतंत्र विषय आहेत आणि त्यांचा विचार मुस्लिम वैयक्तिक कायद्यातील प्रस्थापित तत्त्वांनुसार स्वतंत्रपणे केला पाहिजे.मुस्लिम वैयक्तिक कायद्यानुसार वारसाहक्काचे नियम वंशपरंपरा आणि मुलाचे पालकांशी असलेले कायदेशीर नाते यांसंबंधीच्या विशिष्ट तत्त्वांवर आधारित आहेत. त्यामुळे या प्रस्थापित तत्त्वांचा विचार न करता सर्वांना समान वारसाहक्क लागू करणे योग्य ठरणार नाही. पोटगी आणि वारसाहक्क यांसंबंधीचे निर्णय लागू कायदेशीर चौकट, धार्मिक स्वातंत्र्य आणि मुस्लिम वैयक्तिक कायद्याची तत्त्वे यांचा आदर राखून घेतले पाहिजेत."
       }
     },
     {
@@ -971,16 +973,16 @@ const UCC_DATA = {
         "answer": "مہاراشٹر میں یکساں سول کوڈ سے متعلق کسی بھی فیصلے سے قبل اس کے آئینی، قانونی، مذہبی اور سماجی اثرات کا تفصیلی جائزہ لیا جائے۔ تمام مذہبی برادریوں، خواتین کی تنظیموں، قانونی ماہرین اور شہریوں سے بامعنی مشاورت کی جائے۔ کسی بھی قانون کے نفاذ میں مذہبی آزادی، مساوات، انصاف اور بنیادی حقوق کا تحفظ یقینی بنایا جائے۔ مسلم پرسنل لا سے متعلق معاملات میں متعلقہ مذہبی اصولوں اور قانونی حقوق کو نظرانداز نہ کیا جائے۔ خواتین اور بچوں کے حقوق کے مؤثر تحفظ کے لیے موجودہ قوانین پر عمل درآمد بہتر بنایا جائے۔"
       },
       "en": {
-        "question": "What other suggestions do you have regarding the Uniform Civil Code?",
-        "answer": "Before taking any decision regarding a Uniform Civil Code in Maharashtra, a detailed assessment of its constitutional, legal, religious and social implications should be undertaken.\n\nMeaningful consultations should be held with all religious communities, women's organisations, legal experts and citizens.\n\nAny legislation must safeguard religious freedom, equality, justice and fundamental rights. The recognised religious principles and legal rights associated with Muslim Personal Law should not be disregarded.\n\nImproving the implementation of existing laws should be prioritised to ensure the effective protection of the rights of women and children."
+        "question":"Which portions of present-day family laws need to be discarded or modified to ensure that the law in question is just and equitable? Please share your suggestions regarding the provisions to be made in the UCC for building a better, harmonious and futuristic Maharashtra.",
+        "answer": "No portion of Muslim Personal Law needs to be discarded or modified, as it is based on established principles of Islamic jurisprudence. Perceived injustices in family matters often arise from a lack of awareness, improper implementation, or the prevalence of outdated social customs rather than from the principles of religious personal law themselves.Instead of implementing a Uniform Civil Code, the following measures are recommended for building a better, harmonious, and progressive Maharashtra: 1. Preservation of Legal Pluralism: Respect India’s diversity and protect religious freedom under Articles 25 and 26 of the Constitution of India. The personal laws of different communities should be preserved rather than replaced by a Uniform Civil Code. 2. Effective Enforcement of Existing Rights: Ensure that women and other rightful beneficiaries can exercise and obtain their existing legal rights under the applicable personal laws in a timely and accessible manner. 3. Procedural and Judicial Reforms: Improve the functioning of Family Courts, simplify legal procedures, reduce litigation costs, and encourage community-based mediation and Alternative Dispute Resolution (ADR) mechanisms to facilitate the speedy and affordable settlement of family disputes and reduce the burden on courts.",
       },
       "hi": {
-        "question": "समान नागरिक संहिता के संबंध में आपके अन्य सुझाव क्या हैं?",
-        "answer": "महाराष्ट्र में समान नागरिक संहिता के संबंध में कोई भी निर्णय लेने से पहले उसके संवैधानिक, कानूनी, धार्मिक और सामाजिक प्रभावों का विस्तृत अध्ययन किया जाना चाहिए।\n\nसभी धार्मिक समुदायों, महिला संगठनों, कानूनी विशेषज्ञों और नागरिकों के साथ सार्थक परामर्श किया जाना चाहिए।\n\nकिसी भी कानून के क्रियान्वयन में धार्मिक स्वतंत्रता, समानता, न्याय और मौलिक अधिकारों की सुरक्षा सुनिश्चित की जानी चाहिए। मुस्लिम पर्सनल लॉ से संबंधित मामलों में मान्य धार्मिक सिद्धांतों और कानूनी अधिकारों की अनदेखी नहीं की जानी चाहिए।\n\nमहिलाओं और बच्चों के अधिकारों की प्रभावी सुरक्षा के लिए वर्तमान कानूनों के बेहतर क्रियान्वयन को प्राथमिकता दी जानी चाहिए।"
+        "question": "वर्तमान पारिवारिक कानूनों के किन हिस्सों को हटाने या संशोधित करने की आवश्यकता है ताकि संबंधित कानून न्यायसंगत और समतापूर्ण हो? एक बेहतर, सामंजस्यपूर्ण और भविष्योन्मुखी महाराष्ट्र के निर्माण के लिए समान नागरिक संहिता में किए जाने वाले प्रावधानों के संबंध में कृपया अपने सुझाव साझा करें।",
+        "answer": "मुस्लिम व्यक्तिगत कानून के किसी भी प्रावधान को समाप्त करने या संशोधित करने की आवश्यकता नहीं है, क्योंकि यह इस्लामी न्यायशास्त्र के स्थापित सिद्धांतों पर आधारित है। पारिवारिक मामलों में दिखाई देने वाला अन्याय अक्सर धार्मिक व्यक्तिगत कानूनों की कमियों के कारण नहीं, बल्कि कानून के प्रति अज्ञानता, उचित कार्यान्वयन की कमी या पुरानी सामाजिक रूढ़ियों के प्रचलन के कारण उत्पन्न होता है।समान नागरिक संहिता लागू करने के बजाय एक बेहतर, सौहार्दपूर्ण और प्रगतिशील महाराष्ट्र के निर्माण के लिए निम्नलिखित उपाय किए जाने चाहिए:1. कानूनी बहुलता का संरक्षण: भारत की विविधता का सम्मान किया जाए और भारतीय संविधान के अनुच्छेद 25 एवं 26 के अंतर्गत धार्मिक स्वतंत्रता की रक्षा की जाए। समान नागरिक संहिता के माध्यम से विभिन्न समुदायों के व्यक्तिगत कानूनों को बदलने के बजाय उन्हें बनाए रखा जाए।2. मौजूदा अधिकारों का प्रभावी कार्यान्वयन: यह सुनिश्चित किया जाए कि महिलाओं और अन्य पात्र लाभार्थियों को लागू व्यक्तिगत कानूनों के अंतर्गत प्राप्त अधिकार आसानी से और समय पर मिल सकें।3. प्रक्रियात्मक एवं न्यायिक सुधार: परिवार न्यायालयों की कार्यक्षमता बढ़ाई जाए, कानूनी प्रक्रियाओं को सरल बनाया जाए, मुकदमों का खर्च कम किया जाए और पारिवारिक विवादों के शीघ्र एवं कम खर्च में समाधान के लिए सामुदायिक मध्यस्थता केंद्रों तथा वैकल्पिक विवाद समाधान (ADR) की व्यवस्था को प्रोत्साहित किया जाए। इससे न्यायालयों पर बोझ भी कम होगा।"
       },
       "mr": {
-        "question": "समान नागरी संहितेबाबत आपल्या इतर कोणत्या सूचना आहेत?",
-        "answer": "महाराष्ट्रात समान नागरी संहितेबाबत कोणताही निर्णय घेण्यापूर्वी तिचे घटनात्मक, कायदेशीर, धार्मिक आणि सामाजिक परिणाम या सर्वांचा सखोल आणि सर्वंकष अभ्यास केला पाहिजे.\n\nसर्व धार्मिक समुदाय, महिला संघटना, कायदेतज्ज्ञ आणि नागरिक यांच्याशी सविस्तर आणि अर्थपूर्ण चर्चा झाली पाहिजे.\n\nकोणत्याही कायद्यामध्ये धार्मिक स्वातंत्र्य, समानता, न्याय आणि मूलभूत हक्कांचे संरक्षण सुनिश्चित केले पाहिजे. मुस्लिम पर्सनल लॉशी संबंधित मान्यताप्राप्त धार्मिक तत्त्वे आणि कायदेशीर हक्कांकडे दुर्लक्ष केले जाऊ नये.\n\nमहिला आणि मुलांच्या हक्कांचे प्रभावी संरक्षण सुनिश्चित करण्यासाठी अस्तित्वात असलेल्या कायद्यांची काटेकोर अंमलबजावणी करण्याला सर्वोच्च प्राधान्य दिले पाहिजे."
+        "question": "संबंधित कायदा न्याय्य आणि समन्यायी होण्यासाठी सध्याच्या कुटुंब कायद्यांमधील कोणते भाग वगळणे किंवा सुधारित करणे आवश्यक आहे? एक चांगले, सुसंवादी आणि भविष्यवेधी महाराष्ट्र घडवण्यासाठी समान नागरी संहितेत कराव्या लागणाऱ्या तरतुदींबाबत कृपया आपली मते कळवा.",
+        "answer": "मुस्लिम वैयक्तिक कायद्यातील कोणतीही तरतूद रद्द करण्याची किंवा बदलण्याची आवश्यकता नाही, कारण हा कायदा इस्लामी न्यायशास्त्रातील प्रस्थापित तत्त्वांवर आधारित आहे. कौटुंबिक बाबींमध्ये दिसून येणारा अन्याय अनेकदा धार्मिक वैयक्तिक कायद्यांतील त्रुटींमुळे नव्हे, तर कायद्याविषयीच्या अज्ञानामुळे, योग्य अंमलबजावणीच्या अभावामुळे किंवा कालबाह्य सामाजिक रूढींमुळे निर्माण होतो.समान नागरी संहिता लागू करण्याऐवजी अधिक चांगला, सुसंवादी आणि प्रगत महाराष्ट्र घडवण्यासाठी पुढील उपाययोजना करण्यात याव्यात:1. कायदेशीर बहुविधतेचे संरक्षण: भारतातील विविधतेचा आदर करावा आणि भारतीय संविधानाच्या अनुच्छेद 25 व 26 नुसार धार्मिक स्वातंत्र्याचे संरक्षण करावे. समान नागरी संहितेद्वारे विविध समुदायांचे वैयक्तिक कायदे बदलण्याऐवजी ते कायम ठेवावेत.2. विद्यमान हक्कांची प्रभावी अंमलबजावणी: महिलांना आणि इतर पात्र लाभार्थ्यांना लागू वैयक्तिक कायद्यांनुसार मिळणारे हक्क सुलभतेने आणि वेळेत प्राप्त होतील, याची खात्री करावी.3. प्रक्रियात्मक आणि न्यायव्यवस्थेतील सुधारणा: कौटुंबिक न्यायालयांची कार्यक्षमता वाढवावी, कायदेशीर प्रक्रिया सुलभ कराव्यात, खटल्यांचा खर्च कमी करावा आणि कौटुंबिक वादांचे जलद व कमी खर्चात निराकरण करण्यासाठी समुदायाधारित मध्यस्थी केंद्रे आणि पर्यायी विवाद निवारण यंत्रणांना (ADR) प्रोत्साहन द्यावे. यामुळे न्यायालयांवरील ताणही कमी होईल."
       }
     }
   ]
