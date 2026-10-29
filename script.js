@@ -6,11 +6,7 @@
 
 const UCC_DATA = {
   "introHeadings": {
-    "ur": {
-      "lang": "اردو",
-      "heading": "🏛️ یو سی سی: جانئے، سمجھئے، اپنی رائے دیجئے اور ذمہ داری نبھائیے!",
-      "subheading": "📢 حکومتِ مہاراشٹر کی جانب سے جاری کردہ سوالنامے پر اپنی رائے ضرور درج کریں اور دوسروں کو بھی رائے دینے کے لیے آمادہ کریں۔"
-    },
+    
     "en": {
       "lang": "English",
       "heading": "🏛️ UCC: Know It. Understand It. Share Your Views. Fulfil Your Responsibility!",
@@ -28,50 +24,7 @@ const UCC_DATA = {
     }
   },
   "translations": {
-    "ur": {
-      "langName": "اردو",
-      "dir": "rtl",
-      "portalTitle": "مہاراشٹر یکساں سول کوڈ کمیٹی کے انفرادی فارم کے جوابات",
-      "portalSubtitle": "بحیثیت مسلمان، اسلامی پرسنل لا کے تحفظ اور آئینی حقوق کے تناظر میں",
-      "part1Title": "حصہ اول: معروضی سوالات کے جوابات",
-      "part2Title": "حصہ دوم: فارم کے تحریری سوالات کے جوابات",
-      "searchPlaceholder": "سوال نمبر (1-37)، سوال یا جواب کا متن تلاش کریں...",
-      "clearSearchTitle": "تلاش صاف کریں",
-      "filterAll": "تمام (37)",
-      "filterPart1": "حصہ اول: معروضی (1-31)",
-      "filterPart2": "حصہ دوم: تحریری (32-37)",
-      "filterNo": "NO جوابات (14)",
-      "filterYes": "YES جوابات (3)",
-      "filterNoComment": "NO COMMENT (13)",
-      "copyAnswer": "جواب کاپی کریں",
-      "copied": "Copied!",
-      "copyFailed": "کاپی نہیں ہو سکا",
-      "questionLabel": "سوال",
-      "answerLabel": "جواب:",
-      "proposedAnswerLabel": "مجوزہ جواب:",
-      "writtenTag": "تحریری سوال",
-      "jumpToQ": "سوال پر جائیں",
-      "jumpModalTitle": "کسی بھی سوال پر براہ راست جائیں (1 تا 37)",
-      "noResultsTitle": "کوئی مماثل سوال نہیں ملا",
-      "noResultsDesc": "براہ کرم کوئی دوسرا لفظ تلاش کریں یا فلٹر کو ری سیٹ کریں۔",
-      "showingCount": "{count} سوالات",
-      "whatsappText": "🏛️ مہاراشٹر یو سی سی سوالنامے کے جوابات اور رہنما معلومات:\nحکومتِ مہاراشٹر کے جاری کردہ سوالنامے پر اپنی رائے ضرور درج کریں۔ تفصیلی سوالات اور جوابات کے لیے ملاحظہ فرمائیں:\n",
-      "selectPromptTitle": "براہ کرم سوالنامہ دیکھنے کے لیے اپنی زبان کا انتخاب کریں",
-      "selectPromptDesc": "مہاراشٹر یو سی سی سوالنامے کے تمام ۳۷ سوالات اور تصدیق شدہ جوابات دیکھنے کے لیے اوپر دیے گئے بٹنوں میں سے اپنی زبان منتخب کیجیے۔",
-      "officialPortalNotice": "حکومتِ مہاراشٹر کے سرکاری فارم میں جوابات درج کرنے کے لیے یہاں سے تصدیق شدہ جوابات کاپی کریں۔",
-      "suggestionTitle": "اپنی تجاویز / رائے درج کریں",
-      "suggestionBadge": "حکومتِ مہاراشٹر یو سی سی پورٹل",
-      "suggestionDesc": "حکومتِ مہاراشٹر کی یکساں سول کوڈ کمیٹی نے شہریوں سے انفرادی فارم کے ذریعے تجاویز اور رائے طلب کی ہے۔ اوپر دیے گئے تصدیق شدہ جوابات کا جائزہ لیں، کسی بھی سوال کا جواب کاپی کریں اور حکومت کے سرکاری پورٹل پر اپنی رائے براہِ راست درج کریں۔",
-      "suggestionBtnText": "سرکاری پورٹل پر رائے درج کریں",
-      "suggestionUrlLabel": "براہِ راست سرکاری لنک:",
-      "suggestionStep1": "تصدیق شدہ جوابات کا جائزہ لیں",
-      "suggestionStep2": "ایک کلک سے جواب کاپی کریں",
-      "suggestionStep3": "سرکاری پورٹل پر چسپاں کر کے جمع کریں",
-      "suggestionSafeText": "نئے ٹیب میں حکومتِ مہاراشٹر کا سرکاری پورٹل کھلے گا",
-      "quickBarText": "مہاراشٹر حکومت کے پورٹل پر اپنی رائے درج کرنے کے لیے:",
-      "quickBarBtnText": "سرکاری فارم کھولیں",
-      "portalLinkCopied": "سرکاری پورٹل کا لنک کاپی ہو گیا!"
-    },
+   
     "en": {
       "langName": "English",
       "dir": "ltr",
@@ -210,94 +163,79 @@ const UCC_DATA = {
       "id": 1,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا آپ اس وقت مہاراشٹر میں یکساں سول کوڈ نافذ کرنے کی حمایت کرتے ہیں؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": " Do you support the implementation of a UCC in the State of Maharashtra at this point in time?",
         "answer": "NO"
       },
       "hi": {
         "question": " क्या आप इस समय महाराष्ट्र राज्य में समान नागरिक संहिता (UCC) लागू करने का समर्थन करते हैं?",
-        "answer": "NO (नहीं)"
+        "answer": "NO "
       },
       "mr": {
         "question": "सध्याच्या टप्प्यावर महाराष्ट्र राज्यात समान नागरी संहिता (UCC) लागू करण्यास तुमचा पाठिंबा आहे का?",
-        "answer": "NO (नाही)"
+        "answer": "NO "
       }
     },
     {
       "id": 2,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا یکساں سول کوڈ مذہبی آزادی کے حق کی خلاف ورزی کیے بغیر نافذ کیا جا سکتا ہے؟",
-        "answer": "NO"
-      },
+    
       "en": {
         "question": " Do you believe that a UCC can be implemented without infringing the right to freedom of religion?",
         "answer": "NO"
       },
       "hi": {
         "question": " क्या आपको लगता है कि धर्म की स्वतंत्रता के अधिकार का उल्लंघन किए बिना समान नागरिक संहिता लागू की जा सकती है?",
-        "answer": "NO (नहीं)"
+        "answer": "NO "
       },
       "mr": {
         "question": "धर्मस्वातंत्र्याच्या अधिकाराचे उल्लंघन न करता समान नागरी संहिता लागू करता येईल, असे तुम्हाला वाटते का?",
-        "answer": "NO (नाही)"
+        "answer": "NO "
       }
     },
     {
       "id": 3,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا یکساں سول کوڈ قانونی تنازعات کو کم کرکے عدالتی کارروائی کو زیادہ مؤثر بنا سکتا ہے؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": "Do you believe that implementation of a UCC will promote gender equality and social justice?",
         "answer": "NO"
       },
       "hi": {
         "question": "क्या आपको लगता है कि समान नागरिक संहिता के लागू होने से स्त्री-पुरुष समानता और सामाजिक न्याय को बढ़ावा मिलेगा?",
-        "answer": "NO (नहीं)"
+        "answer": "NO "
       },
       "mr": {
         "question": "समान नागरी संहितेच्या अंमलबजावणीमुळे स्त्री-पुरूष समानता आणि सामाजिक न्याय यांना चालना मिळेल, असे तुम्हाला वाटते का?",
-        "answer": "NO (नाही)"
+        "answer": "NO "
       }
     },
     {
       "id": 4,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا شادی، طلاق اور دیگر خاندانی معاملات کے لیے تمام مذاہب پر ایک ہی قانون لاگو ہونا چاہیے؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": "Do you think the implementation of a UCC will help in reducing legal disputes and making legal processes more efficient?",
         "answer": "NO"
       },
       "hi": {
         "question": "क्या आपको लगता है कि समान नागरिक संहिता के लागू होने से कानूनी विवादों में कमी आएगी और कानूनी प्रक्रियाएँ अधिक कुशल बनेंगी?",
-        "answer": "NO (नहीं)"
+        "answer": "NO"
       },
       "mr": {
         "question": "समान नागरी संहितेच्या अंमलबजावणीमुळे कायदेशीर वाद कमी होण्यास आणि कायदेशीर प्रक्रिया अधिक कार्यक्षम होण्यास मदत होईल, असे तुम्हाला वाटते का?",
-        "answer": "NO (नाही)"
+        "answer": "NO"
       }
     },
     {
       "id": 5,
       "part": 1,
       "type": "NO_COMMENT",
-      "ur": {
-        "question": "کیا شادی، طلاق اور لِو اِن ریلیشن شپ وغیرہ کے اندراج کے لیے مشترکہ نظام ہونا چاہیے؟",
-        "answer": "No Comments"
-      },
+     
       "en": {
         "question": " Should there be a common system for registration and maintenance of records relating to marriages, divorces and live-in relationships and other matters covered by the UCC?",
         "answer": "No Comments"
@@ -315,10 +253,7 @@ const UCC_DATA = {
       "id": 6,
       "part": 1,
       "type": "NO_COMMENT",
-      "ur": {
-        "question": "شادی کی کم از کم عمر کیا ہونی چاہیے؟",
-        "answer": "No Comments"
-      },
+   
       "en": {
         "question": "What should be the minimum age of marriage?",
         "answer": "No Comments"
@@ -336,31 +271,25 @@ const UCC_DATA = {
       "id": 7,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا کسی شخص کو پہلے سے شادی شدہ ہونے کے باوجود دوسری شادی کی اجازت ہونی چاہیے؟",
-        "answer": "No"
-      },
+   
       "en": {
         "question": "Should there be a standard list of relationships within which marriage is prohibited?",
         "answer": "No"
       },
       "hi": {
         "question": " क्या ऐसे संबंधों की एक मानक सूची होनी चाहिए जिनके भीतर विवाह वर्जित हो?",
-        "answer": "No"
+        "answer": "NO"
       },
       "mr": {
         "question": "ज्या नातेसंबंधांमध्ये विवाह प्रतिबंधित आहे, त्यांची एक प्रमाणित यादी असावी का?",
-        "answer": "No"
+        "answer": "NO"
       }
     },
     {
       "id": 8,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا روایتی رسوم اور مذہبی طریقوں سے شادی کرنے کی اجازت برقرار رہنی چاہیے؟",
-        "answer": "No"
-      },
+     
       "en": {
         "question": "Should a person be prohibited from contracting another marriage during the subsistence of an existing marriage?",
         "answer": "No"
@@ -378,10 +307,7 @@ const UCC_DATA = {
       "id": 9,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا تمام مذاہب کے لیے ممنوعہ رشتوں کی ایک ہی فہرست ہونی چاہیے؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": "Should there be uniform provisions governing the grounds and consequences of void and voidable marriages?",
         "answer": "NO"
@@ -398,32 +324,26 @@ const UCC_DATA = {
     {
       "id": 10,
       "part": 1,
-      "type": "YES",
-      "ur": {
-        "question": "کیا تمام مذاہب کے لیے طلاق کی وجوہات اور طریقۂ کار یکساں ہونا چاہیے؟",
-        "answer": "YES "
-      },
+      "type": "NO_COMMENT",
+  
       "en": {
         "question": "Should the UCC preserve customary practices including religious ceremonies and rituals such as the way marriages are solemnised?",
-        "answer": "YES "
+        "answer": "NO COMMENT"
       },
       "hi": {
         "question": "क्या समान नागरिक संहिता के अन्तर्गत धार्मिक समारोहों और रीति-रिवाजों सहित पारम्परिक प्रथाओं, यथा विवाह सम्पन्न करने की पद्धति को संरक्षित रखना चाहिए?",
-        "answer": "YES "
+        "answer": "NO COMMENT"
       },
       "mr": {
         "question": "विवाह साजरा करण्याची पद्धत यांसारख्या धार्मिक समारंभ आणि प्रथा-परंपरा समान नागरी संहितेने कायम ठेवाव्यात का?",
-        "answer": "YES"
+        "answer": "NO COMMENT"
       }
     },
     {
       "id": 11,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا مردوں اور خواتین کے لیے طلاق کی وجوہات یکساں ہونی چاہییں؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": "Should there be common grounds and procedure for divorce applicable uniformly to all communities?",
         "answer": "NO"
@@ -441,10 +361,7 @@ const UCC_DATA = {
       "id": 12,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا غیر عدالتی طلاق کے تمام طریقوں پر پابندی لگائی جانی چاہیے؟",
-        "answer": "NO"
-      },
+      
       "en": {
         "question": "Should the grounds for divorce be the same for both sexes?",
         "answer": "NO"
@@ -462,10 +379,7 @@ const UCC_DATA = {
       "id": 13,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا تمام مذاہب میں مردوں اور خواتین کو وراثت کے یکساں حقوق ملنے چاہییں؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": "Should the UCC prohibit extra-judicial divorce?",
         "answer": "NO"
@@ -483,10 +397,7 @@ const UCC_DATA = {
       "id": 14,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا وصیت کے بغیر وراثت کی تقسیم کے لیے تمام مذاہب میں یکساں قانون ہونا چاہیے؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": "Should registration of divorce and nullity of marriage be made compulsory?",
         "answer": "NO"
@@ -504,10 +415,7 @@ const UCC_DATA = {
       "id": 15,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا ہر شخص کو وصیت کے ذریعے اپنی پوری جائیداد اپنی مرضی سے منتقل کرنے کی آزادی ہونی چاہیے؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": "Should imposing any condition on remarrying a divorced spouse, such as marrying a third person before such remarriage, be prohibited?",
         "answer": "NO"
@@ -525,10 +433,7 @@ const UCC_DATA = {
       "id": 16,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا تمام بچوں کو ان کے والدین کی ازدواجی حیثیت سے قطع نظر یکساں وراثتی حقوق ملنے چاہییں؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": "Should the UCC contain uniform, gender-neutral provisions to deal with claims for maintenance arising from matrimonial disputes?",
         "answer": "NO"
@@ -546,10 +451,7 @@ const UCC_DATA = {
       "id": 17,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا لِو اِن ریلیشن شپ کے معاملات کو یکساں سول کوڈ کے تحت منظم کیا جانا چاہیے؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": "Should there be a uniform law for the maintenance of dependent children irrespective of the religion of the parents?",
         "answer": "NO"
@@ -567,10 +469,7 @@ const UCC_DATA = {
       "id": 18,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا لِو اِن ریلیشن شپ کا اندراج لازمی ہونا چاہیے؟",
-        "answer": "NO"
-      },
+    
       "en": {
         "question": "Should there be a uniform law requiring financially capable adult children to maintain their dependent parents?",
         "answer": "NO"
@@ -588,10 +487,7 @@ const UCC_DATA = {
       "id": 19,
       "part": 1,
       "type": "YES",
-      "ur": {
-        "question": "کیا لِو اِن ریلیشن شپ ختم ہونے پر اس کے خاتمے کا اندراج لازمی ہونا چاہیے؟",
-        "answer": "YES"
-      },
+      
       "en": {
         "question": " Should the welfare and best interest of the child be the paramount consideration in matters relating to custody?",
         "answer": "YES"
@@ -609,10 +505,7 @@ const UCC_DATA = {
       "id": 20,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا لِو اِن ریلیشن شپ میں خواتین کو کفالت اور وراثت کے حقوق ملنے چاہییں؟",
-        "answer": "NO"
-      },
+  
       "en": {
         "question": "Should all children, irrespective of the marital status of their parents, have equal rights in matters of succession?",
         "answer": "NO"
@@ -630,10 +523,7 @@ const UCC_DATA = {
       "id": 21,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا لِو اِن ریلیشن شپ سے پیدا ہونے والے بچوں کو وراثت کے حقوق ملنے چاہییں؟",
-        "answer": "No"
-      },
+     
       "en": {
         "question": " Should there be uniform provisions governing intestate succession, i.e., succession where a person dies without leaving a valid will, irrespective of the religion of the parties?",
         "answer": "NOT"
@@ -651,10 +541,7 @@ const UCC_DATA = {
       "id": 22,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا ایسے بچوں کو والدین سے نگہداشت اور کفالت حاصل کرنے کا حق ہونا چاہیے؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": " Should there be uniform provisions governing testamentary succession and Wills, irrespective of religion",
         "answer": "NO "
@@ -672,10 +559,7 @@ const UCC_DATA = {
       "id": 23,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا تمام بچوں کی کفالت کے لیے ایک یکساں قانون ہونا چاہیے؟",
-        "answer": "NO"
-      },
+     
       "en": {
         "question": "Should men and women have equal rights of inheritance across all communities?",
         "answer": "NO"
@@ -693,10 +577,7 @@ const UCC_DATA = {
       "id": 24,
       "part": 1,
       "type": "NO",
-      "ur": {
-        "question": "کیا بچوں کی تحویل کے معاملات میں ان کی فلاح و بہبود کو اولین اہمیت دی جانی چاہیے؟",
-        "answer": "NO"
-      },
+    
       "en": {
         "question": " Should a person have the freedom to dispose of his or her entire property through a Will?",
         "answer": "NO"
@@ -713,32 +594,26 @@ const UCC_DATA = {
     {
       "id": 25,
       "part": 1,
-      "type": "NO_COMMENT",
-      "ur": {
-        "question": "کیا ازدواجی تنازعات سے متعلق پیچیدہ قوانین لوگوں کو شادی کے بجائے لِو اِن ریلیشن شپ کی طرف مائل کرتے ہیں؟",
-        "answer": "NO COMMENT"
-      },
+      "type": "NO",
+   
       "en": {
         "question": "Are provisions relating to solving marital disputes in the existing legal framework so cumbersome and time consuming that potential spouses are being driven to prefer live-in relationship over marriage?",
-        "answer": "NO COMMENT"
+        "answer": "NO "
       },
       "hi": {
         "question": "क्या मौजूदा कानूनी ढाँचे में वैवाहिक विवादों को सुलझाने से संबंधित प्रावधान इतने जटिल और समय लेने वाले हैं कि संभावित जीवनसाथी विवाह की तुलना में सहवासी (लिव-इन) संबंध को प्राथमिकता दे रहे हैं?",
-        "answer": "NO COMMENT"
+        "answer": "NO "
       },
       "mr": {
         "question": "वैवाहिक वाद सोडवण्यासंबंधीच्या सध्याच्या कायदेशीर तरतुदी इतक्या क्लिष्ट आणि वेळखाऊ आहेत का, की त्यामुळे संभाव्य जोडीदार विवाहापेक्षा सहजीवन (लिव्ह-इन) नातेसंबंधाला प्राधान्य देत आहेत?",
-        "answer": "NO COMMENT "
+        "answer": "NO  "
       }
     },
     {
       "id": 26,
       "part": 1,
       "type": "NO_COMMENT",
-      "ur": {
-        "question": "کیا لِو اِن ریلیشن شپ میں شامل مرد اور خواتین کے حقوق کے تحفظ کے لیے قانون ہونا چاہیے؟",
-        "answer": "No Comment"
-      },
+   
       "en": {
         "question": " Should the UCC contain provisions regulating live-in relationships with a view to ensuring the protection of men and women in such relationships?",
         "answer": "NO COMMENT"
@@ -756,10 +631,7 @@ const UCC_DATA = {
       "id": 27,
       "part": 1,
       "type": "NO_COMMENT",
-      "ur": {
-        "question": "کیا کسی لِو اِن ریلیشن شپ میں داخل ہونے کے وقت اندراج لازمی ہونا چاہیے؟",
-        "answer": "No Comment"
-      },
+     
       "en": {
         "question": "Should there be mandatory registration of live-in relationships?",
         "answer": "NO COMMENT"
@@ -777,10 +649,7 @@ const UCC_DATA = {
       "id": 28,
       "part": 1,
       "type": "NO_COMMENT",
-      "ur": {
-        "question": "کیا لِو اِن ریلیشن شپ ختم ہونے پر لازمی اندراج ہونا چاہیے؟",
-        "answer": "No Comment"
-      },
+     
       "en": {
         "question": " Should there be mandatory registration of termination of live-in relationships?",
         "answer": "NO COMMENT"
@@ -798,10 +667,7 @@ const UCC_DATA = {
       "id": 29,
       "part": 1,
       "type": "NO_COMMENT",
-      "ur": {
-        "question": "کیا لِو اِن ریلیشن شپ میں خواتین کو بے دخل کیے جانے کی صورت میں کفالت اور دیگر حقوق کا تحفظ ملنا چاہیے؟",
-        "answer": "No Comment"
-      },
+      
       "en": {
         "question": " Should UCC include provisions to protect the rights of women in live-in relationships, such as inheritance rights and maintenance in certain circumstances like desertion?",
         "answer": "NO COMMENT"
@@ -818,32 +684,26 @@ const UCC_DATA = {
     {
       "id": 30,
       "part": 1,
-      "type": "NO_COMMENT",
-      "ur": {
-        "question": "کیا لِو اِن ریلیشن شپ سے پیدا ہونے والے بچوں کو وراثت کے حقوق حاصل ہونے چاہییں؟",
-        "answer": "No Comment"
-      },
+      "type": "NO",
+      
       "en": {
         "question": "Should children born from live-in relationships have inheritance rights?",
-        "answer": "NO COMMENT"
+        "answer": "NO "
       },
       "hi": {
         "question": "क्या सहवासी (लिव-इन) संबंधों से जन्मे बच्चों को उत्तराधिकार का अधिकार मिलना चाहिए?",
-        "answer": "NO COMMENT "
+        "answer": "NO  "
       },
       "mr": {
         "question": "सहजीवन (लिव्ह-इन) नातेसंबंधातून जन्मलेल्या मुलांना वारसाहक्क असावा का?",
-        "answer": "NO COMMENT "
+        "answer": "NO  "
       }
     },
     {
       "id": 31,
       "part": 1,
       "type": "NO_COMMENT",
-      "ur": {
-        "question": "کیا ایسے بچوں کو والدین کی طرف سے نگہداشت اور کفالت حاصل کرنے کا حق ہونا چاہیے؟",
-        "answer": "No Comment"
-      },
+     
       "en": {
         "question": "Should children born from live-in relationships have the right to be cared and maintained by their parents?",
         "answer": "NO COMMENT"
@@ -861,10 +721,7 @@ const UCC_DATA = {
       "id": 32,
       "part": 2,
       "type": "WRITTEN",
-      "ur": {
-        "question": "یکساں سول کوڈ میں کن امور کو شامل کیا جانا چاہیے؟",
-        "answer": "آئینِ ہند کے آرٹیکل 44 میں یکساں سول کوڈ کے حصول کی گنجائش کا مطلب ہرگز یہ نہیں کہ اسے بلا ضرورت نافذ کیا جائے۔ مہاراشٹر میں اس کی کوئی واضح سماجی یا قانونی ضرورت ثابت کیے بغیر اسے نافذ کرنا مناسب نہیں۔ آئین کے رہنما اصولوں میں شراب بندی (آرٹیکل 47)، صحتِ عامہ کی بہتری اور دیگر فلاحی امور سے متعلق ہدایات بھی موجود ہیں۔ ریاست کو چاہیے کہ ان مقاصد کے حصول، عوامی صحت کے تحفظ اور سماجی مسائل کے حل کے لیے مؤثر اقدامات کرے۔ مسلمانوں کے مذہبی حقوق اور مسلم پرسنل لا کا احترام کرتے ہوئے خواتین اور بچوں کے حقوق کا تحفظ یقینی بنایا جائے اور کسی بھی قانون سازی سے پہلے تمام متعلقہ فریقوں سے بامعنی مشاورت کی جائے۔"
-      },
+     
       "en": {
         "question":"What areas do you think should be covered under the UCC?",
         "answer": " None. Personal laws governing marriage, divorce, maintenance, inheritance, wills, and custody for Muslims are derived directly from the Holy Quran and Sunnah. Under Article 25 of the Constitution of India, citizens have the fundamental right to profess and practice their religion. Therefore, religious personal laws should be completely exempted, and UCC should not be implemented."
@@ -882,10 +739,7 @@ const UCC_DATA = {
       "id": 33,
       "part": 2,
       "type": "WRITTEN",
-      "ur": {
-        "question": "ذاتی اور خاندانی قوانین کے معاملات میں آپ کو کن مسائل کا سامنا کرنا پڑا ہے؟",
-        "answer": "انسانی سماج میں مختلف مسائل کا  پیدا ہونا فطری بات ہے۔لیکن اس کے حل کے لیے پہلے سے موجود مذہبی اصول و رہنمائی  کی سمجھ اور اس کا نفاذ مسئلے کے حل کے لیے کافی ہیں ۔پرسنل لاء کے ذریعے تنازعات حل کیے جاسکتے ہیں ۔"
-      },
+  
       "en": {
         "question":"What problems do people face while dealing with personal civil matters such as registration of marriage, getting a decree for divorce, claiming inheritance rights (with or without a Will), etc.? Do you have suggestions for improving the present state of affairs?",
         "answer": "The problems faced by people are primarily procedural and administrative in nature, including judicial delays, high litigation costs, and bureaucratic hurdles, rather than deficiencies in religious personal laws.Instead of implementing a Uniform Civil Code, the government should strengthen the existing judicial infrastructure, increase the number of Family Courts, simplify administrative procedures, and encourage Alternative Dispute Resolution (ADR) mechanisms. Community-based institutions such as Dar-ul-Qaza may also be encouraged to facilitate the timely and affordable resolution of family disputes in accordance with the applicable personal laws."
@@ -904,10 +758,7 @@ const UCC_DATA = {
       "id": 34,
       "part": 2,
       "type": "WRITTEN",
-      "ur": {
-        "question": "خاندانی قوانین کے کون سے پہلو خواتین کے لیے غیر منصفانہ ہیں؟ ان کے حل کے لیے کیا تجاویز ہیں؟",
-        "answer": "خواتین کو وراثت سے محروم کرنا، مہر کی ادائیگی میں ٹال مٹول، نفقہ کے معاملات میں غیر ضروری تاخیر اور خاندانی تنازعات میں قانونی امداد کی کمی قابلِ توجہ مسائل ہیں۔ ان کے حل کے لیے موجودہ قوانین کا مؤثر نفاذ، مفت قانونی امداد، وراثتی حقوق کے بارے میں بیداری اور شکایات کے فوری ازالے کا نظام قائم کیا جائے۔ اصلاحات کے نام پر مذہبی آزادی ختم کرنے کے بجائے حقوق کے نفاذ اور انصاف کی فراہمی کو یقینی بنایا جائے۔"
-      },
+   
       "en": {
         "question": "Are there facets of family laws that are biased against women? Please give examples. Do you approve of them? If not, suggest ways to remove such biases.",
         "answer":
@@ -926,10 +777,7 @@ const UCC_DATA = {
       "id": 35,
       "part": 2,
       "type": "WRITTEN",
-      "ur": {
-        "question": "زرعی زمین اور آبائی مکان کی وراثت کے لیے کیا الگ اصول ہونے چاہییں؟",
-        "answer": "زرعی زمین، آبائی مکان اور دیگر جائیداد کی وراثت میں متعلقہ قوانین، زمین کی نوعیت اور جائز وارثوں کے حقوق کو مدنظر رکھا جائے۔ مسلمانوں کے لیے وراثت کے تسلیم شدہ شرعی اصولوں کا احترام کیا جائے۔ کسی خاتون یا دوسرے وارث کو دباؤ، دھوکا دہی یا غلط ریکارڈ کے ذریعے اس کے جائز حصے سے محروم نہ کیا جائے۔ جائیداد کے ریکارڈ کی درستگی، شفاف تقسیم اور آسان قانونی چارہ جوئی کے مؤثر انتظامات کیے جائیں۔"
-      },
+      
       "en": {
         "question":" Do you believe that the scheme of succession pertaining to agricultural land and ancestral home should be different from the scheme for other types of properties? If yes, why and how should the scheme be different?",
         "answer": " No. According to Islamic law of inheritance (Ilm-ul-Faraid), there should be no distinction between agricultural land, ancestral homes, and other movable or immovable properties left by a deceased person. All such properties belonging to a deceased Muslim should be distributed among the rightful heirs according to the shares prescribed in the Holy Quran and Sunnah.Exempting agricultural land or ancestral property from the applicable principles of Islamic inheritance would risk depriving women and other rightful heirs of their legitimate inheritance rights."
@@ -947,10 +795,7 @@ const UCC_DATA = {
       "id": 36,
       "part": 2,
       "type": "WRITTEN",
-      "ur": {
-        "question": "کیا موجودہ خاندانی قوانین میں کسی تبدیلی یا اصلاح کی ضرورت ہے؟",
-        "answer": "نہیں۔خاندانی قوانین میں اصلاحات کا مقصد انصاف کی فراہمی، خواتین اور بچوں کے حقوق کا تحفظ، قانونی تنازعات میں کمی اور عدالتی کارروائی کو مؤثر بنانا ہونا چاہیے۔ اصلاحات کے لیے تمام مذہبی برادریوں سے مشاورت کی جائے اور مسلمانوں کے تسلیم شدہ پرسنل لا کے اصولوں اور آئینی مذہبی آزادی کا احترام کیا جائے۔ خواتین کو وراثت سے محروم کرنے، نفقہ کی ادائیگی میں غفلت اور قانونی چارہ جوئی میں غیر ضروری تاخیر جیسے عملی مسائل کے حل کو ترجیح دی جائے۔"
-      },
+      
       "en": {
         "question":"Do you believe that children should get identical maintenance and inheritance rights from their parents whether they are born of a valid marriage or not? Give reasons for your answer.",
         "answer": " No. Islam places paramount importance on the sanctity of marriage and the preservation of lineage (Nasab). In Muslim Personal Law, inheritance rights are strictly linked to legitimacy arising from a valid marriage (Nikah). Equating children born outside of wedlock with those born of a valid marriage undermines the institution of marriage and the family structure. Therefore, matters of maintenance and inheritance must strictly follow the established principles of Muslim Personal Law.",
@@ -968,10 +813,7 @@ const UCC_DATA = {
       "id": 37,
       "part": 2,
       "type": "WRITTEN",
-      "ur": {
-        "question": "یکساں سول کوڈ کے بارے میں آپ کی دیگر تجاویز کیا ہیں؟",
-        "answer": "مہاراشٹر میں یکساں سول کوڈ سے متعلق کسی بھی فیصلے سے قبل اس کے آئینی، قانونی، مذہبی اور سماجی اثرات کا تفصیلی جائزہ لیا جائے۔ تمام مذہبی برادریوں، خواتین کی تنظیموں، قانونی ماہرین اور شہریوں سے بامعنی مشاورت کی جائے۔ کسی بھی قانون کے نفاذ میں مذہبی آزادی، مساوات، انصاف اور بنیادی حقوق کا تحفظ یقینی بنایا جائے۔ مسلم پرسنل لا سے متعلق معاملات میں متعلقہ مذہبی اصولوں اور قانونی حقوق کو نظرانداز نہ کیا جائے۔ خواتین اور بچوں کے حقوق کے مؤثر تحفظ کے لیے موجودہ قوانین پر عمل درآمد بہتر بنایا جائے۔"
-      },
+      
       "en": {
         "question":"Which portions of present-day family laws need to be discarded or modified to ensure that the law in question is just and equitable? Please share your suggestions regarding the provisions to be made in the UCC for building a better, harmonious and futuristic Maharashtra.",
         "answer": "No portion of Muslim Personal Law needs to be discarded or modified, as it is based on established principles of Islamic jurisprudence. Perceived injustices in family matters often arise from a lack of awareness, improper implementation, or the prevalence of outdated social customs rather than from the principles of religious personal law themselves.Instead of implementing a Uniform Civil Code, the following measures are recommended for building a better, harmonious, and progressive Maharashtra: 1. Preservation of Legal Pluralism: Respect India’s diversity and protect religious freedom under Articles 25 and 26 of the Constitution of India. The personal laws of different communities should be preserved rather than replaced by a Uniform Civil Code. 2. Effective Enforcement of Existing Rights: Ensure that women and other rightful beneficiaries can exercise and obtain their existing legal rights under the applicable personal laws in a timely and accessible manner. 3. Procedural and Judicial Reforms: Improve the functioning of Family Courts, simplify legal procedures, reduce litigation costs, and encourage community-based mediation and Alternative Dispute Resolution (ADR) mechanisms to facilitate the speedy and affordable settlement of family disputes and reduce the burden on courts.",
